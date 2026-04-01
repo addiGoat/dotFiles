@@ -1,0 +1,46 @@
+#!/bin/bash
+
+confirm_action() {
+	printf "%s\n" "No" "Yes" | rofi -dmenu -p "$1"
+}
+
+choice=$(printf "%s\n" " Lock" "󰍃 Logout" "󰤄 Suspend" "󰜉 Reboot" "󰐥 Shutdown" | rofi -dmenu)
+
+case "$choice" in
+	" Lock")
+		hyprlock
+		;;
+	"󰍃 Logout")
+		i3-msg exit
+		;;
+	"󰤄 Suspend")
+		systemctl suspend
+		;;
+	"󰜉 Reboot")
+		confirm=$(confirm_action "Reboot?")
+		case "$confirm" in
+			Yes)
+				systemctl reboot
+				;;
+			*)
+				exit
+				;;
+		esac
+		;;
+	"󰐥 Shutdown")
+		confirm=$(confirm_action "Shutdown?")
+		case "$confirm" in
+			Yes)
+				systemctl poweroff
+				;;
+			*)
+				exit
+				;;
+		esac
+		;;
+	*)
+		exit
+		;;
+esac
+
+

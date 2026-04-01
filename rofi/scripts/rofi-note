@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+NOTES_FILE="$HOME/notes.txt"
+
+mkdir -p "$(dirname "$NOTES_FILE")"
+touch "$NOTES_FILE"
+
+recent_notes=$(tail -n 5 "$NOTES_FILE" | tac | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
+message=$(printf "<span weight='bold'>Recent notes</span>\n%s" "${recent_notes:-No notes yet}")
+
+note=$(rofi -dmenu -p "Quick note" -mesg "$message")
+
+[ -z "$note" ] && exit
+
+echo "$(date '+%Y-%m-%d %H:%M') - $note" >> "$NOTES_FILE"
+notify-send "Note saved" "$note"

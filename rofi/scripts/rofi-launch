@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+choice=$(printf "%s\n" "devdocs" "iLearn" "Google" "Youtube" "ChatGPT" | rofi -dmenu)
+
+case "$choice" in
+	"devdocs")
+		xdg-open "https://devdocs.io/"
+		;;
+	"iLearn")
+		xdg-open "https://ilearn.canadorecollege.ca"
+		;;
+	"Google")
+		xdg-open "https://www.google.com/"
+		;;
+	"Youtube")
+		xdg-open "https://www.youtube.com/"
+		;;
+	"ChatGPT")
+		xdg-open "https://chatgpt.com/"
+		;;
+esac

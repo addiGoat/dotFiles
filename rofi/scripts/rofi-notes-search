@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+note=$(tac ~/notes.txt | rofi -dmenu -p "Notes")
+
+[ -z "$note" ] && exit
+
+echo "$note" | xclip -selection clipboard
+notify-send "Copied note to clipboard"
