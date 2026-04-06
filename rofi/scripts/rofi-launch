@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
-choice=$(printf "%s\n" "devdocs" "iLearn" "Google" "Youtube" "ChatGPT" | rofi -dmenu)
+choice=$(printf "%s\n" "GitHub" "ChatGPT" "iLearn" "Google" "Youtube" "DevDocs" | rofi -dmenu)
 
 case "$choice" in
-	"devdocs")
-		xdg-open "https://devdocs.io/"
+	"GitHub")
+		xdg-open "https://github.com/addiGoat?tab=repositories"
+		;;
+	"ChatGPT")
+		xdg-open "https://chatgpt.com/"
 		;;
 	"iLearn")
 		xdg-open "https://ilearn.canadorecollege.ca"
@@ -15,7 +18,7 @@ case "$choice" in
 	"Youtube")
 		xdg-open "https://www.youtube.com/"
 		;;
-	"ChatGPT")
-		xdg-open "https://chatgpt.com/"
+	"DevDocs")
+		xdg-open "https://devdocs.io/"
 		;;
 esac

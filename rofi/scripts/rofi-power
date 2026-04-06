@@ -11,7 +11,7 @@ case "$choice" in
 		hyprlock
 		;;
 	"󰍃 Logout")
-		i3-msg exit
+		hyprctl dispatch exit
 		;;
 	"󰤄 Suspend")
 		systemctl suspend
