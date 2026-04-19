@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+save_replay() {
+  local num=$1
+  pkill -SIGRTMIN+$num -f '^gpu-screen-recorder '
+}
+
+choice=$(printf "%s\n" "10 seconds" "30 seconds" "60 seconds" "5 minutes" | rofi -dmenu \
+  -theme ~/.local/share/rofi/themes/spotlight-dark.rasi \
+  -theme-str '
+    inputbar { enabled: false; }
+    mainbox { children: [ message, listview ]; }
+    listview { lines: 4; }
+  ' \
+  -p  "How long to capture?" \
+  -mesg "Choose replay length to save")
+
+case "$choice" in
+  "10 seconds") save_replay 1 ;;
+  "30 seconds") save_replay 2 ;;
+  "60 seconds") save_replay 3 ;;
+  "5 minutes") save_replay 4 ;;
+esac
+
+
+
+notify-send "Replay Saved!" "Captured last $choice"

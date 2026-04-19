@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-choice=$(printf "%s\n" "GitHub" "ChatGPT" "iLearn" "Google" "Youtube" "DevDocs" | rofi -dmenu)
+choice=$(printf "%s\n" "GitHub" "ChatGPT" "iLearn" "Google" "Youtube" "Catppuccin Palette" "DevDocs" | rofi -dmenu)
 
 case "$choice" in
 	"GitHub")
@@ -14,6 +14,9 @@ case "$choice" in
 		;;
 	"Google")
 		xdg-open "https://www.google.com/"
+		;;
+	"Catppuccin Palette")
+		xdg-open "https://catppuccin.com/palette/"
 		;;
 	"Youtube")
 		xdg-open "https://www.youtube.com/"

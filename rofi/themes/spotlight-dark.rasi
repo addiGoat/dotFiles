@@ -38,15 +38,15 @@ window {
 
 inputbar {
     font:       "JetBrainsMono Nerd Font 12";
-    padding:    6px;
+    padding:    8px;
     spacing:    12px;
-    children:   [ icon-search, entry ];
+    children:   [ entry ];
 }
 
 icon-search {
     expand:     false;
     filename:   "search";
-    size: 28px;
+    size: 1px;
 }
 
 icon-search, entry, element-icon, element-text {
@@ -55,8 +55,9 @@ icon-search, entry, element-icon, element-text {
 
 entry {
     font:   inherit;
+    horizontal-align: 0.5;
 
-    placeholder         : "Search";
+    placeholder         : " Search";
     placeholder-color   : @fg2;
 }
 
@@ -81,7 +82,7 @@ listview {
 
 element {
     padding:            8px 16px;
-    spacing:            16px;
+    spacing:            8px;
     background-color:   transparent;
 }
 
@@ -99,7 +100,7 @@ element selected normal, element selected active {
 }
 
 element-icon {
-    size:   1em;
+    size:   28px;
 }
 
 element-text {
