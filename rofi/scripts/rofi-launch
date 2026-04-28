@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-choice=$(printf "%s\n" "GitHub" "ChatGPT" "iLearn" "Google" "Youtube" "Catppuccin Palette" "DevDocs" | rofi -dmenu)
+choice=$(printf "%s\n" "ChatGPT" "GitHub" "iLearn" "Google" "Youtube" "Catppuccin Palette" "DevDocs" | rofi -dmenu)
 
 case "$choice" in
-	"GitHub")
-		xdg-open "https://github.com/addiGoat?tab=repositories"
-		;;
 	"ChatGPT")
 		xdg-open "https://chatgpt.com/"
+		;;
+	"GitHub")
+		xdg-open "https://github.com/addiGoat?tab=repositories"
 		;;
 	"iLearn")
 		xdg-open "https://ilearn.canadorecollege.ca"
