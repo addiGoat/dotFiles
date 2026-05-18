@@ -17,5 +17,5 @@ zoxide init fish --cmd cd | source
 
 export "EDITOR=nvim"
 
-fish_add_pat /home/addigoat/.spicetify
+fish_add_path /home/addigoat/.spicetify
 fish_add_path /home/addigoat/.scripts
