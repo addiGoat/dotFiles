@@ -1,0 +1,158 @@
+@define-color base-bg #24273a;
+@define-color text #363a4f;
+@define-color sep1 #7999d9;
+@define-color sep2 #718ec9;
+@define-color sep3 #5d78b0;
+@define-color sep4 #546da2;
+
+* {
+  font-family: JetBrainsMono Nerd Font, monospace;
+  font-size: 16px;
+}
+
+window#waybar {
+  background-color: @base-bg;
+  color: #cdd6f4;
+}
+
+#workspaces {
+  margin-left: 65px;
+  background: @base-bg;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  color: #cdd6f4;
+}
+
+#workspaces button.active {
+  background-color: #89b4fa;
+  color: @text;
+}
+
+#clock {
+  color: @text;
+  background: @sep3;
+  padding: 0px 40px;
+}
+
+#battery {
+  background: @sep2;
+  color: @text;
+  padding: 0px 20px;
+}
+
+#network {
+  background: @sep1;
+  color: @text;
+  padding: 0px 10px;
+}
+
+
+#custom-sep1 {
+  background: @base-bg; /* next module bg */
+  color: @sep1;      /* previous module bg */
+  padding: 0;
+  font-size: 26px;
+}
+
+#custom-sep2 {
+  background: @sep1; /* next module bg */
+  color: @sep2;      /* previous module bg */
+  padding: 0;
+  font-size: 26px;
+}
+
+#custom-sep3 {
+  background: @sep2; /* next module bg */
+  color: @sep3;      /* previous module bg */
+  padding: 0;
+  font-size: 26px;
+}
+
+#custom-sep4 {
+  background: @sep3; /* next module bg */
+  color: @sep4;      /* previous module bg */
+  padding: 0;
+  font-size: 26px;
+}
+
+#custom-sep5 {
+  background: @base-bg; /* next module bg */
+  color: @sep1;      /* previous module bg */
+  padding: 0;
+  font-size: 26px;
+}
+
+#custom-sepR {
+  background: @sep1; /* next module bg */
+  color: @sep2;      /* previous module bg */
+  padding: 0;
+  font-size: 26px;
+}
+
+#custom-sepRr {
+  background: @base-bg; /* next module bg */
+  color: @sep1;      /* previous module bg */
+  padding: 0;
+  font-size: 26px;
+}
+
+#custom-sepRrr {
+  background: @sep2; /* next module bg */
+  color: @sep3;      /* previous module bg */
+  padding: 0;
+  font-size: 26px;
+}
+
+#custom-sepL {
+  background: @sep1; /* next module bg */
+  color: @sep2;      /* previous module bg */
+  padding: 0;
+  font-size: 26px;
+}
+
+#custom-sepLl {
+  background: @base-bg; /* next module bg */
+  color: @sep1;      /* previous module bg */
+  padding: 0;
+  font-size: 26px;
+}
+
+#custom-sepLll {
+  background: @sep2; /* next module bg */
+  color: @sep3;      /* previous module bg */
+  padding: 0;
+  font-size: 26px;
+}
+
+#custom-music {
+  padding: 0 10px;
+  margin: 0 0px;
+  background: @sep4;
+}
+
+#custom-music.playing {
+  color: @text;
+}
+
+#custom-music.paused {
+  color: @text;
+}
+
+#custom-music.stopped {
+  color: @text;
+}
+
+#pulseaudio {
+  color: @text;
+  background: @sep3;
+  padding: 0 10px;
+}
+
+#custom-power {
+  color: #f5c2e7;
+  background: @sep1;
+  padding: 0px;
+  font-size: 24px;
+}

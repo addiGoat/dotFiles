@@ -1,0 +1,118 @@
+* {
+    font: "JetBrainsMono Nerd Font 14";
+    bg: #14100e;
+    fg: #cdd6f8;
+    hi-bg: #7999d9;
+    hi-fg: #d8d0c8;
+    bg-blue: #24273a;
+
+    border: 0px;
+    border-radius: 0px;
+    margin: 0px;
+}
+
+window {
+    width: 665px;
+    location: north;
+    anchor: north;
+    y-offset: 400px;
+
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    border-radius: 0px;
+    background-color: @bg-blue;
+}
+
+mainbox, leftbox, rightbox, inputbar, listview, prompt, entry, leftblank {
+    margin: 0px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+mainbox {
+    orientation: horizontal;
+    children: [ "leftbox", "rightbox" ];
+    spacing: 0px;
+    padding: 0px;
+    background-color: @bg-blue;
+}
+
+leftbox {
+    orientation: vertical;
+    children: [ "prompt", "leftblank" ];
+    width: 68px;
+    expand: false;
+    spacing: 0px;
+    padding: 0px;
+    background-color: @bg-blue;
+}
+
+rightbox {
+    orientation: vertical;
+    children: [ "inputbar", "listview" ];
+    expand: true;
+    spacing: 0px;
+    padding: 0px;
+    background-color: @bg-blue;
+}
+
+inputbar {
+    children: [ "entry" ];
+    spacing: 0px;
+    padding: 0px;
+    margin: 0px;
+    background-color: @bg;
+}
+
+prompt {
+    padding: 6px 12px;
+    background-color: @hi-bg;
+    text-color: @hi-fg;
+}
+
+entry {
+    margin: 0px;
+    padding: 6px 12px;
+    background-color: @bg;
+    text-color: @fg;
+}
+
+leftblank {
+    expand: true;
+    background-color: @bg-blue;
+}
+
+listview {
+    lines: 6;
+    fixed-height: true;
+    spacing: 0px;
+    padding: 0px;
+    background-color: @bg-blue;
+}
+
+element {
+    margin: 0px;
+    border: 0px;
+    border-radius: 0px;
+    padding: 4px 12px;
+    background-color: @bg-blue;
+    text-color: @fg;
+}
+
+element selected {
+    margin: 0px;
+    border: 0px;
+    border-radius: 0px;
+    background-color: @hi-bg;
+    text-color: @hi-fg;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+scrollbar {
+    enabled: false;
+}

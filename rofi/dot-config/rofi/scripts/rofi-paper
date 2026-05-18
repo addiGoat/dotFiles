@@ -1,0 +1,9 @@
+#!/usr/bin/env fish
+
+set paperDir "$HOME/Pictures/Wallpapers"
+
+set file (
+	command ls $paperDir | rofi -dmenu 
+)
+
+echo "loadfile $paperDir/$file" | socat - /tmp/mpv-socket

@@ -1,0 +1,5 @@
+@theme "~/.config/rofi/dmenu-split.rasi"
+
+configuration {
+	show-icons: false;
+}
