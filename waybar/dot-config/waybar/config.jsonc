@@ -1,0 +1,132 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+
+  "modules-left": ["custom/power", "custom/sep5", "hyprland/workspaces"],
+  "modules-center": ["custom/sepLl", "custom/sepL", "custom/sepLll", "clock", "custom/sepRrr", "custom/sepR", "custom/sepRr" ],
+  "modules-right": ["custom/sep1", "network", "custom/sep2", "custom/sep3", "pulseaudio", "custom/sep4", "custom/music" ],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "active-only": false,
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "*":
+      [1, 2, 3, 4, 5]
+    } 
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "tooltip-format": "{:%A, %d %B %Y}"
+  },
+
+  "network": {
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "󰈀  Connected",
+    "format-disconnected": "  Offline"
+  },
+
+  "battery": {
+    "format": " {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-full": "  {capacity}%"
+  },
+
+  "cpu": {
+    "format": "  {usage}%"
+  },
+
+  "memory": {
+    "format": "  {used}MB"
+  },
+
+  "tray": {
+    "spacing": 10
+  },
+
+  "custom/sep1": {
+    "format": "",
+    "interval": "once",
+    "tooltip": "false"
+  },
+
+  "custom/sep2": {
+    "format": "",
+    "interval": "once",
+    "tooltip": "false"
+  },
+
+  "custom/sep3": {
+    "format": "",
+    "interval": "once",
+    "tooltip": "false"
+  },
+
+  "custom/sep4": {
+    "format": "",
+    "interval": "once",
+    "tooltip": "false"
+  },
+
+  "custom/sep5": {
+    "format": "",
+    "interval": "once",
+    "tooltip": "false"
+  },
+
+  "custom/music": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "waybar-module-music --marquee --title-width 15 --effect-speed 150",
+    "on-click": "playerctl play-pause"
+  },
+
+  "custom/power": {
+    "format": "  ",
+    "tooltip": "true",
+    "tooltip-format": "Arch Linux",
+    "on-click": "/home/addigoat/scripts/rofi/rofi-power"
+  },
+
+  "custom/sepR": {
+    "format": "",
+    "interval": "once",
+    "tooltip": "false"
+  },
+
+  "custom/sepRr": {
+    "format": "",
+    "interval": "once",
+    "tooltip": "false"
+  },
+
+  "custom/sepRrr": {
+    "format": "",
+    "interval": "once",
+    "tooltip": "false"
+  },
+
+  "custom/sepL": {
+    "format": "",
+    "interval": "once",
+    "tooltip": "false"
+  },
+
+  "custom/sepLl": {
+    "format": "",
+    "interval": "once",
+    "tooltip": "false"
+  },
+
+  "custom/sepLll": {
+    "format": "",
+    "interval": "once",
+    "tooltip": "false"
+  },
+
+  "pulseaudio": {
+    "format": "󰕾 {volume}%",
+  }
+}

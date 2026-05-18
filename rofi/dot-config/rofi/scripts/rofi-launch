@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+choice=$(printf "%s\n" "ChatGPT" "GitHub" "iLearn" "Google" "Youtube" "Catppuccin Palette" "DevDocs" | rofi -dmenu)
+
+case "$choice" in
+	"ChatGPT")
+		xdg-open "https://chatgpt.com/"
+		;;
+	"GitHub")
+		xdg-open "https://github.com/addiGoat?tab=repositories"
+		;;
+	"iLearn")
+		xdg-open "https://ilearn.canadorecollege.ca"
+		;;
+	"Google")
+		xdg-open "https://www.google.com/"
+		;;
+	"Catppuccin Palette")
+		xdg-open "https://catppuccin.com/palette/"
+		;;
+	"Youtube")
+		xdg-open "https://www.youtube.com/"
+		;;
+	"DevDocs")
+		xdg-open "https://devdocs.io/"
+		;;
+esac
