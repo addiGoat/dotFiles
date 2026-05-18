@@ -1,4 +1,4 @@
-source /usr/share/cachyos-fish-config/cachyos-config.fish
+source ~/.config/fish/cachyos-config.fish
 
 function fish_greeting
     if not set -q NO_FETCH
