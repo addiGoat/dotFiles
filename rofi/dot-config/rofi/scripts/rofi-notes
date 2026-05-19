@@ -1,0 +1,44 @@
+#!/usr/bin/env fish
+
+set noteDir "$HOME/Notes"
+set prompt "+ New Note"
+
+
+set choice (
+begin
+  echo "$prompt"
+  for note in "$noteDir"/*.md
+    echo (basename "$note")
+  end
+end | rofi -dmenu -p "Notes"
+)
+
+switch $choice
+  case "$prompt"
+    set name (rofi -dmenu -p "Name")
+    test -z $name; and exit 0
+    set target "$noteDir/$name.md"
+    touch $target
+    kitty --class rofi-notes nvim "$target"
+  case ""
+    echo "User exited launcher"; exit 0
+  case "*"
+  set noteChoice (printf "%s\n" "View" "Edit" "Delete" | rofi -dmenu)
+  switch $noteChoice
+    case "View"
+      kitty --class rofi-notes glow -t "$noteDir/$choice"
+    case "Edit"
+      kitty --class rofi-notes nvim "$noteDir/$choice"
+    case "Delete"
+      set confirm (printf "%s\n" "Yes" "No" | rofi -dmenu)
+      if test "$confirm" = "Yes"
+        rm "$noteDir/$choice"
+        exit 0
+      else
+        exit 0
+      end
+  end
+end
+
+
+
