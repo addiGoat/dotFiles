@@ -1,40 +1,33 @@
 require("modules.startup")
-local mainMod = "ALT"
 
-local function bind(key, dispatch, args)
-	hl.bind(mainMod .. " + " .. key, dispatch, args or {})
-end
+local utils = require("modules.utils")
 
-local function bindSuper(key, dispatch, args)
-	hl.bind("SUPER + " .. key, dispatch, args or {})
-end
-
-bind("Q", hl.dsp.window.close())
-bind("RETURN", hl.dsp.exec_cmd(Terminal))
-bind("E", hl.dsp.exec_cmd(FileExplorer))
-bind("D", hl.dsp.exec_cmd(Launcher))
+utils.bind("Q", hl.dsp.window.close())
+utils.bind("RETURN", hl.dsp.exec_cmd(Terminal))
+utils.bind("E", hl.dsp.exec_cmd(FileExplorer))
+utils.bind("D", hl.dsp.exec_cmd(Launcher))
 
 -- Move focus with Alt+Arrows
-bind("left", hl.dsp.focus({ direction = "left" }))
-bind("right", hl.dsp.focus({ direction = "right" }))
-bind("up", hl.dsp.focus({ direction = "up" }))
-bind("down", hl.dsp.focus({ direction = "down" }))
+utils.bind("left", hl.dsp.focus({ direction = "left" }))
+utils.bind("right", hl.dsp.focus({ direction = "right" }))
+utils.bind("up", hl.dsp.focus({ direction = "up" }))
+utils.bind("down", hl.dsp.focus({ direction = "down" }))
 
 -- Move active window with Alt+Shift+Arrows
-bind("SHIFT + left", hl.dsp.window.move({ direction = "left" }))
-bind("SHIFT + right", hl.dsp.window.move({ direction = "right" }))
-bind("SHIFT + up", hl.dsp.window.move({ direction = "up" }))
-bind("SHIFT + down", hl.dsp.window.move({ direction = "down" }))
+utils.bind("SHIFT + left", hl.dsp.window.move({ direction = "left" }))
+utils.bind("SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+utils.bind("SHIFT + up", hl.dsp.window.move({ direction = "up" }))
+utils.bind("SHIFT + down", hl.dsp.window.move({ direction = "down" }))
 
 -- Focus workspace with Mod+Number key
 for i = 1, 5 do
 	-- Alt+[1-5] for tiled workspace/main monitor
-	bind(i, hl.dsp.focus({ workspace = i }))
-	bind("SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
+	utils.bind(i, hl.dsp.focus({ workspace = i }))
+	utils.bind("SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
 
 	-- Super+[1-5] for floating workspace/second monitor
-	bindSuper(i, hl.dsp.focus({ workspace = i + 5}))
-	bindSuper("SHIFT + " .. i, hl.dsp.window.move({ workspace = i + 5 }))
+	utils.bindSuper(i, hl.dsp.focus({ workspace = i + 5}))
+	utils.bindSuper("SHIFT + " .. i, hl.dsp.window.move({ workspace = i + 5 }))
 end
 
 
@@ -53,13 +46,13 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
 -- Move/Resize windows
-bindSuper("mouse:272", hl.dsp.window.drag())
-bindSuper("mouse:273", hl.dsp.window.resize())
+utils.bindSuper("mouse:272", hl.dsp.window.drag())
+utils.bindSuper("mouse:273", hl.dsp.window.resize())
 
 -- Screen Capture
-bindSuper("SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
+utils.bindSuper("SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
 
 -- DEBUG
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind("ALT + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 

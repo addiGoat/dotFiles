@@ -8,3 +8,4 @@ require("modules.rules")
 
 require("plugins.bars")
 
+require("modules.rofi")
