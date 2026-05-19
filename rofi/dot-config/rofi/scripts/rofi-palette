@@ -1,0 +1,18 @@
+#!/usr/bin/env fish
+
+set -l scriptDir "/home/addigoat/.config/rofi/scripts/palette"
+
+set choice (
+begin
+  for cmd in "$scriptDir"/rofi-*
+    echo (basename "$cmd")
+  end
+end | rofi -dmenu -p "Cmds"
+)
+
+if test "$choice" = ""
+	echo "User exited."
+	exit 0
+end
+
+"$scriptDir/$choice"
