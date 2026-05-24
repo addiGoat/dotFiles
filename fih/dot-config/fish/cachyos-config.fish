@@ -87,7 +87,7 @@ end
 alias ls='eza -al --color=auto --group-directories-first --icons' # preferred listing
 alias la='eza -a --color=auto --group-directories-first --icons'  # all files and dirs
 alias ll='eza -l --color=auto --group-directories-first --icons'  # long format
-alias lt='eza -aT --color=auto --group-directories-first --icons' # tree listing
+alias lt='eza -aT --color=auto --group-directories-first --icons --ignore-glob=".git"' # tree listing
 alias l.="eza -a | grep -e '^\.'"                                     # show only dotfiles
 
 # Common use
