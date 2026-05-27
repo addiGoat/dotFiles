@@ -18,9 +18,18 @@ function M.make_special(mod, key, name, class, cmd)
 		name = name .. "-scratchpad",
 		match = { class = class },
 		float = true,
-		workspace = "special:" .. name .. " silent",
+		workspace = "special-" .. name .. " silent",
 		size = {1280, 720},
 		move = {"monitor_w / 0.5", "monitor_h / 0.5"}
+	})
+end
+
+function M.notify(content, duration)
+	duration = duration or 3000
+
+	hl.notification.create({
+		text = content,
+		duration = duration
 	})
 end
 
