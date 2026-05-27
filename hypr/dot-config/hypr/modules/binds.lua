@@ -4,6 +4,7 @@ local utils = require("modules.utils")
 
 utils.bind("Q", hl.dsp.window.close())
 utils.bind("RETURN", hl.dsp.exec_cmd(Terminal))
+utils.bind("SHIFT + RETURN", hl.dsp.exec_cmd("firefox"))
 utils.bind("E", hl.dsp.exec_cmd(FileExplorer))
 utils.bind("D", hl.dsp.exec_cmd(Launcher))
 
