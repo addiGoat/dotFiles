@@ -16,7 +16,7 @@ window {
   padding: 6px;
 
   location: south;
-  y-offset: -50px;
+  y-offset: -100px;
 }
 
 mainbox {
@@ -24,7 +24,7 @@ mainbox {
 }
   
 inputbar {
-  background-color: @blue-trans;
+  background-color: @bg0;
   border: 2px;
   border-color: @blue;
   border-radius: 10px;
