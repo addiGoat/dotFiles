@@ -5,11 +5,11 @@
 hl.config({
   plugin = {
     hyprbars = {
-        bar_color = "rgba(42455cdd)",
+        bar_color = "rgba(42455cff)",
 
         ["col.text"] = "rgb(cfb4d1)",
 
-	bar_height = 40,
+	bar_height = 32,
 	bar_padding = 14,
 	bar_part_of_window = true,
 	bar_precedence_over_border = true,
@@ -48,6 +48,11 @@ hl.plugin.hyprbars.add_button({
 	action = "hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = \"maximized\", action = \"toggle\" })'",
 })
 
+hl.window_rule({
+    name = "force-opaque-floating",
+    match = { float = true },
+    opacity = 1.0,
+})
 
 hl.window_rule({
 	name = "disable-bar-on-tiled",
@@ -58,5 +63,5 @@ hl.window_rule({
 hl.window_rule({
 	name = "change-focused-bar-color",
 	match = { focus = true },
-	["hyprbars:bar_color"] = "rgba(9681dbdd)",
+	["hyprbars:bar_color"] = "rgba(9681dbff)",
 })
