@@ -1,0 +1,77 @@
+* {
+  bg0: #24273A;
+  bg1: #26233a;
+  fg0: #e0def4;
+  fg1: #908caa;
+
+  blue: #718ec9;
+  blue-trans: #718ec915;
+}
+
+window {
+  background-color: @bg0;
+  border: 2px;
+  border-color: @bg1;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+  
+inputbar {
+  background-color: @blue-trans;
+  border: 2px;
+  border-color: @blue;
+  border-radius: 10px;
+  margin: 0 0 10px 0;
+}
+
+entry {
+  padding: 10px;
+  text-color: @fg0;
+}
+
+listview {
+  lines: 10;
+  scrollbar: true;
+}
+
+scrollbar {
+  background-color: @bg1;
+  border-radius: 6px;
+  handle-color: @fg0;
+  handle-width: 6px;
+  margin: 0 0 0 6px;
+}
+
+element {
+  background-color: #000000;
+  border: 2px;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+element normal.normal {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+element alternate.normal {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+element selected.normal {
+  background-color: @blue-trans;
+  border-color: #5d78b0;
+}
+
+element-text {
+  text-color: @fg1;
+}
+
+element-text selected {
+  text-color: @fg0;
+}

@@ -1,6 +1,6 @@
 @import "config/general"
 
-@import "themes/murz"
+@import "themes/murz-nobox"
 
 configuration {
 	show-icons: false;

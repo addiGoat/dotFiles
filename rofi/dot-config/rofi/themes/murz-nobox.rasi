@@ -1,0 +1,37 @@
+* {
+  bg0: #24273A;
+  bg1: #26233a;
+  fg0: #e0def4;
+  fg1: #908caa;
+
+  blue: #718ec9;
+  blue-trans: #718ec915;
+}
+
+window {
+  background-color: transparent;
+  border: 2px;
+  border-color: transparent;
+  border-radius: 12px;
+  padding: 6px;
+
+  location: south;
+  y-offset: -50px;
+}
+
+mainbox {
+  children: [inputbar];
+}
+  
+inputbar {
+  background-color: @blue-trans;
+  border: 2px;
+  border-color: @blue;
+  border-radius: 10px;
+  margin: 0 0 0 0;
+}
+
+entry {
+  padding: 10px;
+  text-color: @fg0;
+}

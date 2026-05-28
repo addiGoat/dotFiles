@@ -1,0 +1,13 @@
+#!/usr/bin/env fish
+
+function openUrl -a entry
+	xdg-open "https://duckduckgo.com/?q=%21$entry"
+end
+
+set command (rofi -config ~/.config/rofi/nobox.rasi -dmenu)
+
+if test -z "$command"
+	exit 0
+else if test (string sub --length 1 $command) = "!"
+	openUrl (string trim -c ! $command)
+end
