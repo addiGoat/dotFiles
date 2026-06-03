@@ -14,4 +14,4 @@ bindRofi("ALT", "SHIFT + L", "launch")
 bindRofi("ALT", "SHIFT + X", "power")
 
 -- Web (cmd eventually)
-bindRofi("ALT", "semicolon", "web")
+bindRofi("ALT", "semicolon", "powerbar")

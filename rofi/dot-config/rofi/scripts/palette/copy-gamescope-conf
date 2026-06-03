@@ -1,0 +1,3 @@
+#!/usr/bin/env fish
+
+echo "gamescope -w 2560 -h 1440 -r 165 -- %command%" | wl-copy

@@ -4,7 +4,7 @@ set -l scriptDir "/home/addigoat/.config/rofi/scripts/palette"
 
 set choice (
 begin
-  for cmd in "$scriptDir"/rofi-*
+  for cmd in "$scriptDir"/*
     echo (basename "$cmd")
   end
 end | rofi -dmenu -p "Cmds"

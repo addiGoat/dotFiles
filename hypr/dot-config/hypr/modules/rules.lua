@@ -39,3 +39,29 @@ hl.window_rule({
 	rounding = 20,
 	rounding_power = 2
 })
+
+-- for secondary windows, like settings menu or friends popup
+hl.window_rule({
+	name = "make-windows-float",
+	match = {
+		class = "^(steam|org.kde.kdenlive)$",
+	},
+	float = true
+})
+
+-- keep the main window tiled
+hl.window_rule({
+	name = "tile-main-steam",
+	match = { title = "^(Steam)$" },
+	float = false
+})
+
+hl.window_rule({
+	name = "float-obs-stats",
+	match = { title = "Stats", class = "com.obsproject.Studio" },
+	float = true,
+
+	size = {665, 255}
+})
+
+
