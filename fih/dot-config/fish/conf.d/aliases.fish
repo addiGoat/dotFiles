@@ -17,3 +17,5 @@ alias gpl "git pull"
 alias gc "git commit"
 alias gcm "git commit -m"
 alias tailget "sudo tailscale file get /home/addigoat/Taildrop/"
+
+abbr fixlock "sudo systemctl restart sddm"
