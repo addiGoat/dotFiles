@@ -15,18 +15,11 @@ return {
             vim.diagnostic.config({
                 virtual_text = true
             })
-            vim.lsp.enable('luarocks')
+            vim.lsp.enable('lua_ls')
+
+            vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, {})
+            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
         end
-    },
-    {
-        "folke/lazydev.nvim",
-        ft = "lua", -- only load on lua files
-        opts = {
-            library = {
-                -- See the configuration section for more details
-                -- Load luvit types when the `vim.uv` word is found
-                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-            },
-        },
-    },
+    }
 }
