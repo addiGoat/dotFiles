@@ -1,4 +1,5 @@
 require("opts")
+require("config.lsp")
 
 -- Sync clipboard
 vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
