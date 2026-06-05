@@ -30,7 +30,9 @@ return {
                         use_float = false
                     },
                 },
-                ["<cr>"] = "open_and_close"
+                ["<cr>"] = "open_and_close",
+                ["<Tab>"] = "next_source",
+                ["<S-Tab>"] = "prev_source"
             },
         }
     }
