@@ -18,4 +18,6 @@ alias gc "git commit"
 alias gcm "git commit -m"
 alias tailget "sudo tailscale file get /home/addigoat/Taildrop/"
 
+abbr lg lazygit
+
 abbr fixlock "sudo systemctl restart sddm"
