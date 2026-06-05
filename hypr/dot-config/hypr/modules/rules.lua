@@ -64,4 +64,10 @@ hl.window_rule({
 	size = {665, 255}
 })
 
+hl.window_rule({
+    name = "opaque-youtube-windows",
+    match = { title = ".* - YouTube.*" },
+    opaque = true
+})
+
 
