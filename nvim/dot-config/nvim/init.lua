@@ -1,7 +1,7 @@
 require("opts")
 
 -- Sync clipboard
-vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)    
+vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 -- Switch Relative/Absolute line numbers
 local number_group = vim.api.nvim_create_augroup("NumberGroup", { clear = true })
