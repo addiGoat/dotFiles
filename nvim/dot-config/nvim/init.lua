@@ -1,10 +1,4 @@
-vim.o.tabstop = 4
-vim.o.expandtab = true
-vim.o.softtabstop = 4
-vim.o.shiftwidth = 4
-
-vim.o.number = true
-vim.o.relativenumber = true
+require("opts")
 
 -- Sync clipboard
 vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)    
@@ -54,89 +48,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
-vim.g.mapleader = " "
-
-local plugins = {
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    {
-        'nvim-telescope/telescope.nvim', version = '*',
-        dependencies = {
-            'nvim-lua/plenary.nvim'
-        }
-    },
-    {
-        'nvim-treesitter/nvim-treesitter',
-        branch = 'master',
-        lazy = false,
-        build = ':TSUpdate'
-    },
-    {
-        'nvim-neo-tree/neo-tree.nvim',
-        branch = "v3.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-            "nvim-tree/nvim-web-devicons", -- optional, but recommended
-        },
-        lazy = false,
-        keys = {
-            { '\\', ':Neotree filesystem toggle left<CR>', desc = 'NeoTree Toggle', silent = true },
-        }
-    },
-    {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        config = true
-    }
-}
-
-
-local opts = {}
-
 -- Setup Lazy
-require("lazy").setup(plugins, opts)
+require("lazy").setup("plugins")
 
--- Telescope Keybinds
-local builtin = require("telescope.builtin")
-vim.keymap.set('n', '<Leader>ff', builtin.find_files, { desc = 'Telescope file finder' })
-vim.keymap.set('n', '<Leader>fg', builtin.live_grep, { desc = 'Telescope file finder' })
 
-require("catppuccin").setup()
-vim.cmd.colorscheme "catppuccin"
-
--- Treesitter config
-local config = require("nvim-treesitter.configs")
-config.setup({
-    ensure_installed = { "lua", "javascript", "cpp", "html", "css" },
-    auto_install = true,
-    highlight = { enable = true },
-    indent = { enable = true }
-})
-
--- Neo-Tree Setup
-require('neo-tree').setup({
-    close_if_last_window = true,
-    commands = {
-        open_and_close = function(state)
-            local node = state.tree:get_node()
-            state.commands.open(state)
-
-            if node.type == "file" then
-                vim.cmd("Neotree close")
-            end
-        end,
-    },
-    window = {
-        mappings = {
-            ["<space>"] = {
-                "toggle_preview",
-                config = {
-                    use_float = false
-                },
-            },
-            ["<cr>"] = "open_and_close"
-        },
-    }
-})
 
