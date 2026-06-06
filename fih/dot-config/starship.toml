@@ -1,8 +1,11 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+add_newline = true
+
 format = """
-[](red)\
-$os\
+[╭─](fg:surface2)\
+[▐](fg:red)\
+[󰣇](bg:red fg:#f4c2e7)\
 $username\
 [](bg:peach fg:red)\
 $directory\
@@ -21,18 +24,29 @@ $haskell\
 $python\
 [](fg:green bg:sapphire)\
 $conda\
-[](fg:sapphire bg:lavender)\
-$time\
-[ ](fg:lavender)\
+[](fg:sapphire)\
+$fill\
+[](fg:peach)\
 $cmd_duration\
+[](fg:red bg:peach)\
+$time\
+[   ](fg:crust)\
 $line_break\
+[╰─](fg:surface2)\
 $character"""
 
+# ░
+# ╭─
+# ╰─
 palette = 'catppuccin_macchiato'
 
 [os]
-disabled = false
+disabled = true
 style = "bg:red fg:crust"
+
+[fill]
+symbol = "·"
+style = "fg:surface2"
 
 [os.symbols]
 Windows = ""
@@ -73,7 +87,7 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = "󰝚 "
 "Pictures" = " "
-"Developer" = "󰲋 "
+"projects" = "󰲋 "
 
 [git_branch]
 symbol = ""
@@ -144,7 +158,7 @@ ignore_base = false
 disabled = false
 time_format = "%R"
 style = "bg:lavender"
-format = '[[  $time ](fg:crust bg:lavender)]($style)'
+format = '[[ $time ](fg:crust bg:red)]($style)'
 
 [line_break]
 disabled = false
@@ -160,7 +174,7 @@ vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 
 [cmd_duration]
 show_milliseconds = true
-format = " in $duration "
+format = "[[ in $duration ](fg:crust bg:peach)]($style)"
 style = "bg:lavender"
 disabled = false
 show_notifications = true

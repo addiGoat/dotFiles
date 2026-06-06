@@ -6,7 +6,7 @@ function fish_greeting
     end
 end
 
-# starship init fish | source
+starship init fish | source
 zoxide init fish --cmd cd | source
 
 # overwrite greeting
