@@ -1,4 +1,4 @@
-require("opts")
+require("config.opts")
 require("config.lsp")
 
 -- Sync clipboard
