@@ -10,8 +10,8 @@ bindRofi("ALT", "SHIFT + P", "palette")
 -- Website launcher
 bindRofi("ALT", "SHIFT + L", "launch")
 
--- Power
+-- Power Menu
 bindRofi("ALT", "SHIFT + X", "power")
 
--- Web (cmd eventually)
+-- Powerbar
 bindRofi("ALT", "semicolon", "powerbar")
