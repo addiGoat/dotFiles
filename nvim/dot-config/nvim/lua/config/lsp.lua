@@ -9,15 +9,7 @@ callback = function(args)
         vim.keymap.set(mode, bind, cmd, { buffer = bufnr, desc = desc } )
     end
     map('n', 'K', vim.lsp.buf.hover, 'LSP Hover')
+    map('n', '<leader>gd', vim.lsp.buf.definition, 'Goto Definition')
+    map('n', '<leader>ca', vim.lsp.buf.code_action, 'LSP Code Action')
 end
 })
---        config = function()
---            vim.diagnostic.config({
---                virtual_text = true
---            })
---            vim.lsp.enable('lua_ls')
---
---            vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, {})
---            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
---            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
---        end

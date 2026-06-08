@@ -33,6 +33,7 @@ vim.keymap.set("n", "<Esc>", function()
   end
 end, {silent = true})
 
+
 -- Install Lazy Package Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -52,6 +53,4 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup Lazy
 require("lazy").setup("plugins")
-
-
 
