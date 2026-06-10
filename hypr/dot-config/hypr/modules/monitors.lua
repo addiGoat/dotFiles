@@ -14,6 +14,12 @@ if env.is_desktop then
 		position = "0x360",
 		scale = "1",
 	})
+
+    hl.config({
+        cursor = {
+            default_monitor = "DP-1",
+        },
+    })
 else
 	hl.monitor({
 		output = "eDP-1",

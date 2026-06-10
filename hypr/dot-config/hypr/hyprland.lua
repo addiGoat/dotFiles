@@ -10,3 +10,4 @@ require("modules.events")
 require("plugins.bars")
 
 require("modules.rofi")
+
