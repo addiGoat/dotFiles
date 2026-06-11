@@ -15,3 +15,6 @@ bindRofi("ALT", "SHIFT + X", "power")
 
 -- Powerbar
 bindRofi("ALT", "semicolon", "powerbar")
+
+-- Replay
+bindRofi("ALT", "SHIFT + S", "replay")

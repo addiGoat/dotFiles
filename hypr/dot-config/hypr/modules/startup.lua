@@ -19,4 +19,5 @@ hl.on("hyprland.start", function ()
 	hl.exec_cmd(
 		"mpvpaper -o \"--loop panscan=1 input-ipc-server=/tmp/mpv-socket\" ALL ~/Pictures/Wallpapers/NightFox.png"
 	)
+    hl.exec_cmd("gpu-screen-recorder -w DP-1 -f 60 -a default_output -a default_input -q very_high -r 300 -o ~/Videos/Replays -c mkv")
 end)

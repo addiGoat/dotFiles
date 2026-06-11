@@ -53,6 +53,8 @@ utils.bindSuper("mouse:273", hl.dsp.window.resize())
 -- Screen Capture
 utils.bindSuper("SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
+utils.bind("S", hl.dsp.exec_cmd("pkill -SIGUSR1 -f '^gpu-screen-recorder'"))
+
 
 -- DEBUG
 hl.bind("ALT + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
