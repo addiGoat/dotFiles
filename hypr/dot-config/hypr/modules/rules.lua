@@ -49,6 +49,13 @@ hl.window_rule({
 	float = true
 })
 
+hl.window_rule({
+    name = "make-kden-square",
+    match = { class = "org.kde.kdenlive" },
+    rounding = 0,
+    ["hyprbars:no_bar"] = true
+})
+
 -- keep the main window tiled
 hl.window_rule({
 	name = "tile-main-steam",
