@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-choice=$(printf "%s\n" "ChatGPT" "GitHub" "iLearn" "Google" "Youtube" "Catppuccin Palette" "DevDocs" | rofi -dmenu)
+choice=$(printf "%s\n" "ChatGPT" "GitHub" "iLearn" "Google" "Youtube" "Catppuccin Palette" "DevDocs" | rofi -dmenu -i)
 
 case "$choice" in
 	"ChatGPT")
