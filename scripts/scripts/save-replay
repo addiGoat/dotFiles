@@ -1,0 +1,47 @@
+#!/usr/bin/env fish
+
+set capture "$argv[1]"
+set capture_type "$argv[2]"
+set capture_dir "/home/addigoat/Videos/Replays/"
+
+# Get file type
+switch "$capture_type"
+    case replay
+        set capture_type "Replay"
+    case record
+        set capture_type "Video"
+    case screenshot
+        set capture_type "Capture"
+    case '*'
+        set capture_type "what the fuck"
+end
+
+# Close on invalid path
+if not test -e $capture
+    notify-send "$capture_type not saved" "$capture: Not a valid file"
+    exit 1
+end
+
+# Send notification and check for user input
+set action $(notify-send --action=default=Open --action=alt=Rename "$capture_type Saved:" "$capture")
+if test -z "$action" 
+    exit 0
+end
+
+# Switch on user action
+switch $action
+    # Left Click (Open in yazi)
+    case "default"
+        kitty -e --title="kitty-float" yazi "$capture"
+
+    # Right Click (Rename)
+    case "alt"
+        set new_name (rofi -config ~/.config/rofi/nobox.rasi -dmenu)
+        if test -z "$new_name"
+            exit 0
+        else if test -e "$capture_dir/$new_name.mkv"
+            notify-send "Error" "File already exists"
+        else
+            mv "$capture" "$capture_dir/$new_name.mkv"; or notify-send "Error" "Failed to rename"
+        end
+end

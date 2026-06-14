@@ -22,6 +22,9 @@ markup=1
 actions=1
 sort=-time
 
+on-button-right=invoke-action alt
+on-button-middle=invoke-action alt
+
 [urgency=low]
 default-timeout=3000
 background-color=#232136

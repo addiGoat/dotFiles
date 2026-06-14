@@ -77,4 +77,21 @@ hl.window_rule({
     opaque = true
 })
 
+hl.window_rule({
+    name = "float-various-util-windows",
+    match = { title = "kitty-float" },
+    float = true,
+    size = {1280, 720},
+    opaque = true
+})
 
+hl.window_rule({
+    name = "float mpv",
+    match = { class = "mpv" },
+    float = true,
+    size = {1280, 720},
+    opaque = true,
+
+    rounding = 0,
+    ["hyprbars:no_bar"] = true
+})

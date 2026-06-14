@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+video=$1
+
+if [ -z "$1" ]; then
+	echo "Usage: plaympv <video-file>"
+	exit 1
+fi
+
+
+mpv "$1" --lavfi-complex='[aid1][aid2]amix[ao]'

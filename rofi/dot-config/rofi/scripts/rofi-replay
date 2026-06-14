@@ -19,4 +19,4 @@ esac
 
 
 
-notify-send "Replay Saved!" "Captured last $choice"
+notify-send "Captured $choice"
