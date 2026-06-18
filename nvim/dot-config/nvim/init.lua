@@ -33,6 +33,38 @@ vim.keymap.set("n", "<Esc>", function()
   end
 end, {silent = true})
 
+-- Tmux run window
+local function tmux_run(cmd)
+    vim.cmd("write")
+
+    local pane = vim.g.tmux_runner_pane
+
+    -- Check whether the stored pane still exists
+    if pane and pane ~= "" then
+        local ok = vim.fn.system("tmux list-panes -F '#{pane_id}' | grep -Fx " .. pane)
+        if vim.v.shell_error ~= 0 then
+            pane = nil
+            vim.g.tmux_runner_pane = nil
+        end
+    end
+
+    -- Create a new pane if needed
+    if not pane then
+        pane = vim.trim(vim.fn.system(
+            "tmux split-window -v -p 30 -P -F '#{pane_id}'"
+        ))
+        vim.g.tmux_runner_pane = pane
+    end
+
+    vim.fn.system("tmux send-keys -t " .. pane .. " C-c")
+    vim.fn.system("tmux send-keys -t " .. pane .. " clear C-m")
+    vim.fn.system("tmux send-keys -t " .. pane .. " " .. vim.fn.shellescape(cmd) .. " C-m")
+end
+
+vim.keymap.set("n", "<leader>r", function()
+  tmux_run("make run")
+end, { desc = "Run project in tmux pane" })
+
 -- Install Lazy Package Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -49,6 +81,5 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
-
 -- Setup Lazy
 require("lazy").setup("plugins")

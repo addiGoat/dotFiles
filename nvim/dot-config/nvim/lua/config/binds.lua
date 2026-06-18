@@ -6,3 +6,8 @@ end
 map('n', '<leader>w', '<cmd>w<CR>', "Save File")
 map('n', '<leader>a', '<cmd>wa<CR>', "Save All")
 map('n', '<leader>x', '<cmd>wqa<CR>', "Save All & Quit")
+
+map('n', '<c-h>', ':wincmd h<CR>', "wincmd left")
+map('n', '<c-j>', ':wincmd j<CR>', "wincmd down")
+map('n', '<c-k>', ':wincmd k<CR>', "wincmd up")
+map('n', '<c-l>', ':wincmd l<CR>', "wincmd right")
