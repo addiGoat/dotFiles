@@ -95,3 +95,21 @@ hl.window_rule({
     rounding = 0,
     ["hyprbars:no_bar"] = true
 })
+
+
+hl.window_rule({
+    name = "yarg",
+    match = { title = "YARG" },
+    float = true,
+    opaque = true
+})
+
+hl.window_rule({
+    name = "raylib windows",
+    match = { title = "freddy-duty" },
+
+    float = true,
+    center = true,
+    monitor = "DP-1",
+    rounding = 0
+})
