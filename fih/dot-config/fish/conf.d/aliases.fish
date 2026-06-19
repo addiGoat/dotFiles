@@ -1,23 +1,20 @@
-# general applications
-alias c code
-alias v nvim
-# alias z zoxide
-alias spot spotify_player
-alias hyprconf "nvim ~/dotfiles/hypr/hyprland.conf"
+# necessary
 alias yay paru
-alias matrix "unimatrix -fa -s 95 -c magenta"
-alias py python3
 
-alias fixlock "hyprctl --instance 0 'keyword misc:allow_session_lock_restore 1'; hyprctl --instance 0 'dispatch exec caelestia shell lock lock'"
-# git functions
-alias ga. "git add ."
-alias ga "git add"
-alias gp "git push"
-alias gpl "git pull"
-alias gc "git commit"
-alias gcm "git commit -m"
-alias tailget "sudo tailscale file get /home/addigoat/Taildrop/"
-
+# general applications
+abbr v nvim
 abbr lg lazygit
+abbr y yazi
 
+# Helpers
+abbr tailget "sudo tailscale file get /home/addigoat/Taildrop/"
 abbr fixlock "sudo systemctl restart sddm"
+
+# Replace ls with eza
+alias ls "eza -l --color=auto --group-directories-first --icons"
+alias la "eza -la --color=auto --group-directories-first --icons"
+alias lsg "eza -lg --color=auto --group-directories-first --icons"
+alias lag "eza -lag --color=auto --group-directories-first --icons"
+alias lt 'eza -aT --color=auto --group-directories-first --icons --ignore-glob=".git"'
+
+alias grep='grep --color=auto'
