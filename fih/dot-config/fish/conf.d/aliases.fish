@@ -5,6 +5,8 @@ alias yay paru
 abbr v nvim
 abbr lg lazygit
 abbr y yazi
+abbr py python3
+abbr pyenv "source .venv/bin/activate.fish"
 
 # Helpers
 abbr tailget "sudo tailscale file get /home/addigoat/Taildrop/"
