@@ -36,7 +36,7 @@ end
 hl.window_rule({
 	name = "style-floating-windows",
 	match = { float = true },
-	rounding = 20,
+	rounding = 10,
 	rounding_power = 2
 })
 
