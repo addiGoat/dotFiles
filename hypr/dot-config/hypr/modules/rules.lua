@@ -82,7 +82,8 @@ hl.window_rule({
     match = { title = "kitty-float" },
     float = true,
     size = {1280, 720},
-    opaque = true
+    opaque = true,
+    ["hyprbars:no_bar"] = true
 })
 
 hl.window_rule({

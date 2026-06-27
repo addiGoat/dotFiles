@@ -10,7 +10,7 @@ end
 -- GLOBAL VARIABLES --
 Terminal = "kitty"
 Launcher = "rofi -show drun"
-FileExplorer = "nautilus"
+FileExplorer = "yazi"
 
 -- ENVIRONMENT VARIABLES --
 	hl.env("HYPRCURSOR_SIZE", "24")
