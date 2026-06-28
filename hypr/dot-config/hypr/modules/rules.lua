@@ -114,3 +114,14 @@ hl.window_rule({
     monitor = "DP-1",
     rounding = 0
 })
+
+hl.window_rule({
+    name = "pavucontrol-widget",
+    match = { class = "org.pulseaudio.pavucontrol" },
+    float = true,
+    opaque = true,
+    border_color = "#5d78b0",
+    monitor = "DP-1",
+    move = {2050, 50},
+    ["hyprbars:no_bar"] = true
+})

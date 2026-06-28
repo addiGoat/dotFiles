@@ -128,5 +128,6 @@
 
   "pulseaudio": {
     "format": "󰕾 {volume}%",
+    "on-click": "/home/addigoat/scripts/pavu-wrapper.sh",
   }
 }
