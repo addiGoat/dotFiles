@@ -1,3 +1,4 @@
+require("modules.env")
 hl.config({
     general = {
         gaps_in  = 2,
