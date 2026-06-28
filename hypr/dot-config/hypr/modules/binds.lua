@@ -10,9 +10,15 @@ utils.bind("E", hl.dsp.exec_cmd("kitty --title=kitty-float yazi ~"))
 
 -- Move focus with Alt+Arrows
 utils.bind("left", hl.dsp.focus({ direction = "left" }))
-utils.bind("right", hl.dsp.focus({ direction = "right" }))
 utils.bind("up", hl.dsp.focus({ direction = "up" }))
 utils.bind("down", hl.dsp.focus({ direction = "down" }))
+utils.bind("right", hl.dsp.focus({ direction = "right" }))
+
+
+utils.bind("h", hl.dsp.focus({ direction = "left" }))
+utils.bind("j", hl.dsp.focus({ direction = "down" }))
+utils.bind("k", hl.dsp.focus({ direction = "up" }))
+utils.bind("l", hl.dsp.focus({ direction = "right" }))
 
 -- Move active window with Alt+Shift+Arrows
 utils.bind("SHIFT + left", hl.dsp.window.move({ direction = "left" }))
