@@ -8,7 +8,7 @@ end
 bindRofi("ALT", "SHIFT + P", "palette")
 
 -- Website launcher
-bindRofi("ALT", "SHIFT + L", "launch")
+bindRofi("ALT", "SHIFT + M", "launch")
 
 -- Power Menu
 bindRofi("ALT", "SHIFT + X", "power")

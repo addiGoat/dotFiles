@@ -10,10 +10,9 @@ utils.bind("E", hl.dsp.exec_cmd("kitty --title=kitty-float yazi ~"))
 
 -- Move focus with Alt+Arrows
 utils.bind("left", hl.dsp.focus({ direction = "left" }))
-utils.bind("up", hl.dsp.focus({ direction = "up" }))
 utils.bind("down", hl.dsp.focus({ direction = "down" }))
+utils.bind("up", hl.dsp.focus({ direction = "up" }))
 utils.bind("right", hl.dsp.focus({ direction = "right" }))
-
 
 utils.bind("h", hl.dsp.focus({ direction = "left" }))
 utils.bind("j", hl.dsp.focus({ direction = "down" }))
@@ -22,9 +21,14 @@ utils.bind("l", hl.dsp.focus({ direction = "right" }))
 
 -- Move active window with Alt+Shift+Arrows
 utils.bind("SHIFT + left", hl.dsp.window.move({ direction = "left" }))
-utils.bind("SHIFT + right", hl.dsp.window.move({ direction = "right" }))
-utils.bind("SHIFT + up", hl.dsp.window.move({ direction = "up" }))
 utils.bind("SHIFT + down", hl.dsp.window.move({ direction = "down" }))
+utils.bind("SHIFT + up", hl.dsp.window.move({ direction = "up" }))
+utils.bind("SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+
+utils.bind("SHIFT + h", hl.dsp.window.move({ direction = "left" }))
+utils.bind("SHIFT + j", hl.dsp.window.move({ direction = "down" }))
+utils.bind("SHIFT + k", hl.dsp.window.move({ direction = "up" }))
+utils.bind("SHIFT + l", hl.dsp.window.move({ direction = "right" }))
 
 -- Focus workspace with Mod+Number key
 for i = 1, 5 do
