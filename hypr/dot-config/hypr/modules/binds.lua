@@ -4,7 +4,7 @@ local utils = require("modules.utils")
 
 utils.bind("Q", hl.dsp.window.close())
 utils.bind("RETURN", hl.dsp.exec_cmd(Terminal))
-utils.bind("SHIFT + RETURN", hl.dsp.exec_cmd("firefox"))
+utils.bind("SHIFT + RETURN", hl.dsp.exec_cmd("gtk-launch $(xdg-settings get default-web-browser)"))
 utils.bind("D", hl.dsp.exec_cmd(Launcher))
 utils.bind("E", hl.dsp.exec_cmd("kitty --title=kitty-float yazi ~"))
 
