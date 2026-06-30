@@ -17,3 +17,10 @@ if os.path.exists(config.configdir / "theme.py"):
 
 config.bind('J', 'tab-prev', mode='normal')
 config.bind('K', 'tab-next', mode='normal')
+
+
+c.fonts.default_size = "14pt"
+c.fonts.default_family = "JetBrainsMono Nerd Font"
+
+c.colors.webpage.darkmode.enabled = True
+c.tabs.padding = { "bottom": 5, "top": 5, "left": 5, "right": 5 }

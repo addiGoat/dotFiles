@@ -4,7 +4,7 @@ choice=$(printf "%s\n" "ChatGPT" "GitHub" "iLearn" "Google" "Youtube" "Catppucci
 
 case "$choice" in
 	"ChatGPT")
-		xdg-open "https://chatgpt.com/"
+		gtk-launch chatgpt.desktop
 		;;
 	"GitHub")
 		xdg-open "https://github.com/addiGoat?tab=repositories"
