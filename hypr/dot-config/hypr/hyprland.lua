@@ -6,6 +6,7 @@ require("modules.input")
 require("modules.special_workspaces")
 require("modules.rules")
 require("modules.events")
+require("modules.scratchpad")
 
 require("plugins.bars")
 
