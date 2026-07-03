@@ -19,8 +19,19 @@ config.bind('J', 'tab-prev', mode='normal')
 config.bind('K', 'tab-next', mode='normal')
 
 
-c.fonts.default_size = "14pt"
+c.fonts.default_size = "12pt"
 c.fonts.default_family = "JetBrainsMono Nerd Font"
 
 c.colors.webpage.darkmode.enabled = True
 c.tabs.padding = { "bottom": 5, "top": 5, "left": 5, "right": 5 }
+
+c.content.blocking.enabled = True
+c.content.blocking.method = "both"
+
+c.content.blocking.adblock.lists = [
+    "https://easylist.to/easylist/easylist.txt",
+    "https://easylist.to/easylist/easyprivacy.txt",
+    "https://secure.fanboy.co.nz/fanboy-annoyance.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/quick-fixes.txt",
+]
