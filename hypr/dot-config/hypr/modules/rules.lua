@@ -125,3 +125,13 @@ hl.window_rule({
     move = {2050, 50},
     ["hyprbars:no_bar"] = true
 })
+
+hl.window_rule({
+    name = "pygui window",
+    match = { title = "Helper Window" },
+
+    float = true,
+    center = true,
+    rounding = 0,
+    ["hyprbars:no_bar"] = true
+})

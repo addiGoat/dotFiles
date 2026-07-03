@@ -7,12 +7,13 @@ utils.bind("RETURN", hl.dsp.exec_cmd(Terminal))
 utils.bind("SHIFT + RETURN", hl.dsp.exec_cmd("gtk-launch $(xdg-settings get default-web-browser)"))
 utils.bind("D", hl.dsp.exec_cmd(Launcher))
 utils.bind("E", hl.dsp.exec_cmd("kitty --title=kitty-float yazi ~"))
+utils.bindSuper("F", hl.dsp.window.fullscreen({ mode="fullscreen", action="toggle" }))
 
 -- Move focus with Alt+Arrows
-utils.bind("left", hl.dsp.focus({ direction = "left" }))
-utils.bind("down", hl.dsp.focus({ direction = "down" }))
-utils.bind("up", hl.dsp.focus({ direction = "up" }))
-utils.bind("right", hl.dsp.focus({ direction = "right" }))
+-- utils.bind("left", hl.dsp.focus({ direction = "left" }))
+-- utils.bind("down", hl.dsp.focus({ direction = "down" }))
+-- utils.bind("up", hl.dsp.focus({ direction = "up" }))
+-- utils.bind("right", hl.dsp.focus({ direction = "right" }))
 
 utils.bind("h", hl.dsp.focus({ direction = "left" }))
 utils.bind("j", hl.dsp.focus({ direction = "down" }))
@@ -20,10 +21,10 @@ utils.bind("k", hl.dsp.focus({ direction = "up" }))
 utils.bind("l", hl.dsp.focus({ direction = "right" }))
 
 -- Move active window with Alt+Shift+Arrows
-utils.bind("SHIFT + left", hl.dsp.window.move({ direction = "left" }))
-utils.bind("SHIFT + down", hl.dsp.window.move({ direction = "down" }))
-utils.bind("SHIFT + up", hl.dsp.window.move({ direction = "up" }))
-utils.bind("SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+-- utils.bind("SHIFT + left", hl.dsp.window.move({ direction = "left" }))
+-- utils.bind("SHIFT + down", hl.dsp.window.move({ direction = "down" }))
+-- utils.bind("SHIFT + up", hl.dsp.window.move({ direction = "up" }))
+-- utils.bind("SHIFT + right", hl.dsp.window.move({ direction = "right" }))
 
 utils.bind("SHIFT + h", hl.dsp.window.move({ direction = "left" }))
 utils.bind("SHIFT + j", hl.dsp.window.move({ direction = "down" }))
