@@ -29,7 +29,7 @@ function M.notify(content, duration)
 
 	hl.notification.create({
 		text = content,
-		duration = duration
+		timeout = duration
 	})
 end
 
