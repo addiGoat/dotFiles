@@ -1,0 +1,18 @@
+#!/usr/bin/env fish
+
+set state $argv[1]
+set sinks (pactl --format=json list sink-inputs |
+    jq -r '.[] | [.index, .properties."node.name"] | @tsv' )
+
+
+echo $state
+for sink in $sinks
+    echo $sink | 
+        while read -l index name
+            if test $name = "love"
+            end
+        end
+end
+
+
+
