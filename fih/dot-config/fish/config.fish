@@ -1,4 +1,6 @@
 source ~/.config/fish/conf.d/done.fish
+source ~/.config/fish/path.fish
+source ~/.config/fish/var.fish
 
 ## Config
 # format man pages
@@ -36,17 +38,14 @@ function fish_greeting
     end
 end
 
+function fish_user_key_bindings
+    fish_vi_key_bindings insert
+    bind -M default escape 'set fish_bind_mode insert; commandline -f repaint-mode'
+    bind -M insert escape 'set fish_bind_mode default; commandline -f repaint-mode'
+end
+
 starship init fish | source
 zoxide init fish --cmd cd | source
 
-# overwrite greeting
-# potentially disabling fastfetch
-#function fish_greeting
-#    # smth smth
-#end
 
-export "EDITOR=nvim"
 
-fish_add_path /home/addigoat/.spicetify
-fish_add_path /home/addigoat/.scripts
-fish_add_path /home/addigoat/.cargo/bin
