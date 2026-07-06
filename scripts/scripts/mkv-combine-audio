@@ -1,0 +1,134 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+usage() {
+	cat <<'EOF'
+Usage: mkv-combine-audio [options] <input.mkv> [output.mp4]
+
+Mixes the first two audio tracks into one AAC audio track and writes an MP4.
+
+Options:
+  -y, --yes              overwrite output if it already exists
+  --reencode-video      force H.264 video instead of copying compatible video
+  --crf <value>         H.264 CRF when reencoding video (default: 20)
+  --audio-bitrate <br>  AAC bitrate for mixed audio (default: 192k)
+  -h, --help            show this help
+EOF
+}
+
+die() {
+	echo "mkv-combine-audio: $*" >&2
+	exit 1
+}
+
+need() {
+	command -v "$1" >/dev/null 2>&1 || die "missing required command: $1"
+}
+
+overwrite=0
+force_reencode_video=0
+crf=20
+audio_bitrate=192k
+args=()
+
+while [ "$#" -gt 0 ]; do
+	case "$1" in
+		-y|--yes)
+			overwrite=1
+			shift
+			;;
+		--reencode-video)
+			force_reencode_video=1
+			shift
+			;;
+		--crf)
+			[ "$#" -ge 2 ] || die "--crf needs a value"
+			crf=$2
+			shift 2
+			;;
+		--audio-bitrate)
+			[ "$#" -ge 2 ] || die "--audio-bitrate needs a value"
+			audio_bitrate=$2
+			shift 2
+			;;
+		-h|--help)
+			usage
+			exit 0
+			;;
+		--)
+			shift
+			args+=("$@")
+			break
+			;;
+		-*)
+			die "unknown option: $1"
+			;;
+		*)
+			args+=("$1")
+			shift
+			;;
+	esac
+done
+
+[ "${#args[@]}" -ge 1 ] || {
+	usage
+	exit 1
+}
+[ "${#args[@]}" -le 2 ] || die "too many arguments"
+
+need ffmpeg
+need ffprobe
+
+input=${args[0]}
+[ -f "$input" ] || die "input file does not exist: $input"
+
+if [ "${#args[@]}" -eq 2 ]; then
+	output=${args[1]}
+else
+	input_dir=$(dirname -- "$input")
+	input_base=$(basename -- "$input")
+	output="$input_dir/${input_base%.*}.mp4"
+fi
+
+[ "$input" != "$output" ] || die "input and output cannot be the same path"
+if [ -e "$output" ] && [ "$overwrite" -ne 1 ]; then
+	die "output already exists: $output (use -y to overwrite)"
+fi
+
+audio_count=$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$input" | wc -l)
+[ "$audio_count" -ge 2 ] || die "input needs at least two audio tracks; found $audio_count"
+
+video_codec=$(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of default=nw=1:nk=1 "$input")
+[ -n "$video_codec" ] || die "input has no video stream"
+
+ffmpeg_overwrite=(-n)
+if [ "$overwrite" -eq 1 ]; then
+	ffmpeg_overwrite=(-y)
+fi
+
+video_args=(-c:v copy)
+if [ "$force_reencode_video" -eq 1 ]; then
+	video_args=(-c:v libx264 -preset medium -crf "$crf" -pix_fmt yuv420p)
+else
+	case "$video_codec" in
+		h264|hevc|av1|mpeg4)
+			video_args=(-c:v copy)
+			;;
+		*)
+			echo "Video codec '$video_codec' is not a common MP4 codec; reencoding to H.264." >&2
+			video_args=(-c:v libx264 -preset medium -crf "$crf" -pix_fmt yuv420p)
+			;;
+	esac
+fi
+
+ffmpeg "${ffmpeg_overwrite[@]}" \
+	-i "$input" \
+	-filter_complex "[0:a:0][0:a:1]amix=inputs=2:duration=longest:dropout_transition=0[a]" \
+	-map 0:v:0 -map "[a]" \
+	"${video_args[@]}" \
+	-c:a aac -b:a "$audio_bitrate" \
+	-movflags +faststart \
+	"$output"
+
+echo "Wrote $output"
