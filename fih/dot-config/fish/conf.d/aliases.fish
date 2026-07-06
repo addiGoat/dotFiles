@@ -20,3 +20,5 @@ alias lag "eza -lag --color=auto --group-directories-first --icons"
 alias lt 'eza -aT --color=auto --group-directories-first --icons --ignore-glob=".git|.venv"'
 
 alias grep='grep --color=auto'
+
+abbr kristal '/usr/bin/love /home/addigoat/BuildFiles/Kristal/'
