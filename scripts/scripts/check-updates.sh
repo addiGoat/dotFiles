@@ -11,10 +11,10 @@ if (( $TOTAL > 0 )); then
 		
 	case "$response" in
 		"yes")
-			NO_FETCH=1 kitty --hold --title="System Update" -e  /home/addigoat/.scripts/update-system.sh
+			NO_FETCH=1 kitty --hold --title="System Update" -e  /home/addigoat/scripts/update-system.sh
 			;;
 		"default")
-			/home/addigoat/.scripts/update-gui.sh
+			/home/addigoat/scripts/update-gui.sh
 			;;
 	esac
 fi
