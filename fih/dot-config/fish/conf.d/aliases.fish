@@ -22,3 +22,4 @@ alias lt 'eza -aT --color=auto --group-directories-first --icons --ignore-glob="
 alias grep='grep --color=auto'
 
 abbr kristal '/usr/bin/love /home/addigoat/Projects/Engines/Kristal/'
+abbr kristail tail -f ~/Projects/Engines/Kristal/kristal.log
