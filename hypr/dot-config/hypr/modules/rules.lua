@@ -122,7 +122,8 @@ hl.window_rule({
     opaque = true,
     border_color = "#5d78b0",
     monitor = "DP-1",
-    move = {2050, 50},
+    move = {1675, 50},
+    size = {875, 460},
     ["hyprbars:no_bar"] = true
 })
 

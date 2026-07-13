@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-stdbuf -oL -eL /usr/bin/love /home/addigoat/Projects/Engines/Kristal/ >> /home/addigoat/Projects/Engines/Kristal/kristal.log 2>&1
+log_path='/home/addigoat/Projects/Engines/Kristal/kristal.log'
+echo "-----clear-----" > $log_path 
+stdbuf -oL -eL /usr/bin/love /home/addigoat/Projects/Engines/Kristal/ >> $log_path 2>&1
