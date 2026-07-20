@@ -19,7 +19,6 @@ return {
         dependencies = { 'mason-org/mason.nvim' },
         opts = {
             ensure_installed = {
-                'pyright',
                 'emmylua_ls'
             }
         }
