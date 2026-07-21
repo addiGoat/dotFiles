@@ -136,3 +136,12 @@ hl.window_rule({
     rounding = 0,
     ["hyprbars:no_bar"] = true
 })
+
+hl.window_rule({
+    name = "godot-rules",
+    match = { class = "Godot" },
+
+    rounding = 0,
+    ["hyprbars:no_bar"] = true
+
+})
