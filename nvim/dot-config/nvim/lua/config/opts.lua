@@ -14,3 +14,21 @@ vim.o.winborder = "rounded"
 vim.o.winblend = 5
 
 vim.g.mapleader = " "
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+
+vim.opt.foldenable = true
+
+vim.opt.foldcolumn = "1"
+
+vim.opt.fillchars = {
+    foldopen = "",
+    foldclose = "",
+    fold = " ",
+    foldsep = " ",
+    foldinner = " ",
+}

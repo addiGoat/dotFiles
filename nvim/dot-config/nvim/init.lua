@@ -53,3 +53,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 -- Setup Lazy
 require("lazy").setup("plugins")
+
+vim.keymap.set({ "n", "x" }, "<leader>ca", function()
+	require("tiny-code-action").code_action()
+end, { noremap = true, silent = true })

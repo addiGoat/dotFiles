@@ -10,7 +10,6 @@ callback = function(args)
     end
     map('n', 'K', vim.lsp.buf.hover, 'LSP Hover')
     map('n', '<leader>gd', vim.lsp.buf.definition, 'Goto Definition')
-    map('n', '<leader>ca', vim.lsp.buf.code_action, 'LSP Code Action')
 end
 })
 
