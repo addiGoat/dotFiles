@@ -11,6 +11,7 @@ abbr pyenv "source .venv/bin/activate.fish"
 # Helpers
 abbr tailget "sudo tailscale file get /home/addigoat/Taildrop/"
 abbr fixlock "sudo systemctl restart sddm"
+abbr hyprupdate "hyprpm update --verbose; and hyprpm reload"
 
 alias grep='grep --color=auto'
 
