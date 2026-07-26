@@ -11,6 +11,7 @@ return {
         { '\\', ':Neotree filesystem toggle left<CR>', desc = 'NeoTree Toggle', silent = true },
     },
     opts = {
+        popup_border_style = "",
         close_if_last_window = true,
         commands = {
             open_and_close = function(state)
@@ -34,6 +35,14 @@ return {
                 ["<Tab>"] = "next_source",
                 ["<S-Tab>"] = "prev_source"
             },
+        },
+        filesystem = {
+            filtered_items = {
+                hide_by_pattern = {
+                    "*.gd.uid"
+                }
+            }
+
         }
     }
 }
