@@ -12,3 +12,5 @@ require("plugins.bars")
 
 require("modules.rofi")
 
+
+require("modules.window_rules.init")
