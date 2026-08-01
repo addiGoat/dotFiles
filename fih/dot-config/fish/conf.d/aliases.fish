@@ -18,6 +18,10 @@ alias grep='grep --color=auto'
 abbr kristal '/usr/bin/love /home/addigoat/Projects/Engines/Kristal/'
 abbr kristail tail -f ~/Projects/Engines/Kristal/kristal.log
 
+# Config Shortcut
+
+abbr hyprconf 'nvim ~/.config/hypr/'
+
 ## ---- replace builtins ----
 
 # ls with eza
