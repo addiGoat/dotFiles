@@ -10,6 +10,8 @@
 configuration {
   font: env(ROFI_FONT, "JetBrainsMono Nerd Font Medium 12");
 
+  modi: "drun,run,window,emoji,ssh";
+
   drun {
     display-name: "";
   }
