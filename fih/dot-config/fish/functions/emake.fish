@@ -1,4 +1,4 @@
-function emake --description "Open a Makefile in micro"
+function emake --description "Open a Makefile in terminal editor"
     set -l target_dir
     set -l is_default 0
 
@@ -30,5 +30,5 @@ function emake --description "Open a Makefile in micro"
         return 1
     end
 
-    micro "$makefile_path"
+    $EDITOR "$makefile_path"
 end
