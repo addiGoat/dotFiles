@@ -14,3 +14,6 @@ require("modules.rofi")
 
 
 require("modules.window_rules.init")
+
+-- horrible horrible idea
+require("plugins.foxyd")
