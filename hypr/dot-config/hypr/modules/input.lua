@@ -33,3 +33,8 @@ hl.device({
     name        = "ergo-m575s-mouse",
     sensitivity = -0.55,
 })
+
+hl.device({
+    name        = "logitech-g502-x-ls-1",
+    sensitivity = -0.60,
+})
