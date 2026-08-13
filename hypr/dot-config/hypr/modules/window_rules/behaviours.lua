@@ -11,6 +11,7 @@ hl.window_rule({
 hl.window_rule({
     match  = { tag = "game" },
     monitor = "DP-1",
+    workspace = 20,
     fullscreen = true
 })
 
