@@ -36,6 +36,10 @@ local window_profiles = {
         match = { title = "YARG" },
         tags = { "opaque", "float" }
     },
+    {
+        match = { class = "gamescope"},
+        tags = { "game" }
+    }
 }
 
 for _, profile in ipairs(window_profiles) do

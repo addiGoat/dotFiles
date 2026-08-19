@@ -23,7 +23,7 @@ FileExplorer = "yazi"
 
 -- AUTOSTART --
 hl.on("hyprland.start", function ()
-	hl.exec_cmd("waybar")
+	hl.exec_cmd("waybar >> ~/.cache/waybar.log 2>&1")
 	hl.exec_cmd("hyprpm reload")
 	hl.exec_cmd(
 		"mpvpaper -o \"--loop panscan=1 input-ipc-server=/tmp/mpv-socket\" ALL ~/Pictures/Wallpapers/NightFox.png"

@@ -35,7 +35,7 @@ echo $status
 case "$status" in
 	0)
 		# Install
-		NO_FETCH=1 kitty --hold --title="System Update" -e /home/addigoat/.scripts/update-system.sh 
+		NO_FETCH=1 kitty --hold --title="System Update" -e /home/addigoat/scripts/update-system.sh 
 		;;
 	1)
 		# Cancel

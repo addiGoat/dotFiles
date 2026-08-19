@@ -8,6 +8,13 @@ hl.window_rule({
      ["hyprbars:no_bar"] = true
 })
 
+hl.window_rule({
+    match  = { tag = "game" },
+    monitor = "DP-1",
+    workspace = 20,
+    fullscreen = true
+})
+
 -- Specific Override Tags
 --
 hl.window_rule({

@@ -6,6 +6,8 @@ hl.config({
         kb_options = "caps:swapescape",
         kb_rules   = "",
 
+        numlock_by_default = true,
+
         follow_mouse = 1,
 
         sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
@@ -30,4 +32,9 @@ hl.gesture({
 hl.device({
     name        = "ergo-m575s-mouse",
     sensitivity = -0.55,
+})
+
+hl.device({
+    name        = "logitech-g502-x-ls-1",
+    sensitivity = -0.60,
 })

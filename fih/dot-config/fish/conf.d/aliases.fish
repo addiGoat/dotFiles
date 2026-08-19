@@ -18,14 +18,18 @@ alias grep='grep --color=auto'
 abbr kristal '/usr/bin/love /home/addigoat/Projects/Engines/Kristal/'
 abbr kristail tail -f ~/Projects/Engines/Kristal/kristal.log
 
+# Config Shortcut
+
+abbr hyprconf 'nvim ~/.config/hypr/'
+
 ## ---- replace builtins ----
 
 # ls with eza
-alias ls "eza -l --color=auto --group-directories-first --icons"
-alias la "eza -la --color=auto --group-directories-first --icons"
-alias lsg "eza -lg --color=auto --group-directories-first --icons"
-alias lag "eza -lag --color=auto --group-directories-first --icons"
-alias lt 'eza -aT --color=auto --group-directories-first --icons --ignore-glob=".git|.venv"'
+alias ls "eza -l --color=auto --group-directories-first --icons=auto"
+alias la "eza -la --color=auto --group-directories-first --icons=auto"
+alias lsg "eza -lg --color=auto --group-directories-first --icons=auto"
+alias lag "eza -lag --color=auto --group-directories-first --icons=auto"
+alias lt 'eza -aT --color=auto --group-directories-first --icons=auto --ignore-glob=".git|.venv"'
 
 # cat with bat
 

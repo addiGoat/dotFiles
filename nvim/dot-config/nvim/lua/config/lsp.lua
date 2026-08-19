@@ -1,5 +1,9 @@
 vim.diagnostic.config({
-    virtual_text = true
+    virtual_text = {
+        severity = {
+            min = vim.diagnostic.severity.WARN,
+        },
+    },
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
