@@ -30,8 +30,8 @@ else
 
 	hl.monitor({
 		output = "HDMI-A-1",
-		mode = "1920x1080@60",
-		position = "2560x0",
+		mode = "2560x1440@59.95Hz",
+		position = "0x-1440",
 		scale = "1",
 	})
 end
