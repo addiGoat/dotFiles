@@ -9,12 +9,28 @@ utils.bindSuper("G", hl.dsp.focus({ workspace = 20 }))
 
 -- EXPERIMENT
 -- stop normal windows from opening on game workspace
---
+
+hl.on("window.open", function(w)
+    -- 20 is the game workspace
+    if hl.get_active_workspace().id == 20 then
+        if w.tags == nil then
+            return
+        end
+
+        -- check all tags of opened window
+        for _, value in pairs(w.tags) do
+            -- if any tag has the value "game", cancel the function
+            if value == "game" then
+                return
+            end
+        end
+        -- otherwise move the window to a default workspace
+        hl.dispatch(hl.dsp.window.move({ workspace = 1, window = w }))
+
+    end
+end)
+
 -- hl.on("window.open", function(w)
---     if hl.get_active_workspace().id == 20 then
---         hl.exec_cmd('notify-send "window_early" "fuck you"')
---         if w.tag ~= "game" then
---             hl.dispatch(hl.dsp.window.move({ workspace = 1, window = w }))
---         end
---     end
+--     hl.notification.create({ text = utils.tableToString(w.tags), timeout = 5000 })
+--     print(w)
 -- end)

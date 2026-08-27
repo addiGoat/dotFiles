@@ -33,5 +33,13 @@ function M.notify(content, duration)
 	})
 end
 
-return M
+function M.tableToString(tbl)
+    local result = "{"
+    for k, v in pairs(tbl) do
+        result = result .. tostring(k) .. " = " .. tostring(v) .. ", "
+    end
+    result = result .. "}"
+    return result
+end
 
+return M

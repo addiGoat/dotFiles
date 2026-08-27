@@ -3,7 +3,6 @@ require("modules.general_appearance")
 require("modules.startup")
 require("modules.binds")
 require("modules.input")
-require("modules.special_workspaces")
 require("modules.rules")
 require("modules.events")
 require("modules.scratchpad")
@@ -14,6 +13,7 @@ require("modules.rofi")
 
 
 require("modules.window_rules.init")
+require("modules.special_workspaces")
 
 -- horrible horrible idea
 require("plugins.foxyd")
