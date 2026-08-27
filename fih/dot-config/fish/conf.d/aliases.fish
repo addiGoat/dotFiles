@@ -8,10 +8,13 @@ abbr y yazi
 abbr py python3
 abbr pyenv "source .venv/bin/activate.fish"
 
+abbr ssh "kitten ssh"
+
 # Helpers
 abbr tailget "sudo tailscale file get /home/addigoat/Taildrop/"
 abbr fixlock "sudo systemctl restart sddm"
 abbr hyprupdate "hyprpm update --verbose; and hyprpm reload"
+abbr userctl "systemctl --user"
 
 alias grep='grep --color=auto'
 
