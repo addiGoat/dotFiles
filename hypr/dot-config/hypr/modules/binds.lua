@@ -9,6 +9,8 @@ utils.bind("D", hl.dsp.exec_cmd(Launcher))
 utils.bind("E", hl.dsp.exec_cmd("kitty --title=kitty-float yazi ~"))
 utils.bindSuper("F", hl.dsp.window.fullscreen({ mode="fullscreen", action="toggle" }))
 
+utils.bindSuper("T", hl.dsp.window.float({ action="toggle"}))
+
 -- Move focus with Alt+Arrows
 -- utils.bind("left", hl.dsp.focus({ direction = "left" }))
 -- utils.bind("down", hl.dsp.focus({ direction = "down" }))
