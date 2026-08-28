@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-choice=$(printf "%s\n" "ChatGPT" "GitHub" "iLearn" "Google" "Youtube" "Catppuccin Palette" "DevDocs" | rofi -dmenu -i)
+choice=$(printf "%s\n" "ChatGPT" "GitHub" "Cloudflare" "iLearn" "Google" "Youtube" "Catppuccin Palette" "DevDocs" | rofi -dmenu -i)
 
 case "$choice" in
 	"ChatGPT")
@@ -9,6 +9,9 @@ case "$choice" in
 	"GitHub")
 		xdg-open "https://github.com/addiGoat?tab=repositories"
 		;;
+    "Cloudflare")
+        xdg-open "https://dash.cloudflare.com/fc028d4ce32f18cb01120d766a58ac30/addigoat.ca"
+        ;;
 	"iLearn")
 		xdg-open "https://ilearn.canadorecollege.ca"
 		;;
