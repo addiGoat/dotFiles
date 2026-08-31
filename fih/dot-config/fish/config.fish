@@ -38,10 +38,16 @@ function fish_greeting
     end
 end
 
-function fish_user_key_bindings
-    fish_vi_key_bindings insert
-    bind -M default escape 'set fish_bind_mode insert; commandline -f repaint-mode'
-    bind -M insert escape 'set fish_bind_mode default; commandline -f repaint-mode'
+if status is-interactive
+    if set -q NVIM
+        fish_default_key_bindings
+    else
+        function fish_user_key_bindings
+            fish_vi_key_bindings insert
+            bind -M default escape 'set fish_bind_mode insert; commandline -f repaint-mode'
+            bind -M insert escape 'set fish_bind_mode default; commandline -f repaint-mode'
+        end
+    end
 end
 
 starship init fish | source
