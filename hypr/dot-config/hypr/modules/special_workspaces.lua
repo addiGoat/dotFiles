@@ -3,9 +3,11 @@ local mainMod = "ALT"
 
 utils.make_special(mainMod, "SHIFT + D", "vesktop", "vesktop", "vesktop")
 
--- Game Workspace
+utils.make_special("SUPER", "B", "bitwarden", "Bitwarden", "bitwarden-desktop")
 
+-- Game Workspace
 utils.bindSuper("G", hl.dsp.focus({ workspace = 20 }))
+utils.bindSuper("SHIFT + G", hl.dsp.window.move({ workspace = 20 }))
 
 -- EXPERIMENT
 -- stop normal windows from opening on game workspace
