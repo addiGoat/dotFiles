@@ -37,6 +37,10 @@ local window_profiles = {
         tags = { "opaque", "float" }
     },
     {
+        match = { title = "^Minecraft\\*? [0-9]+\\.[0-9]+\\.[0-9]+$" },
+        tags = { "game" }
+    },
+    {
         match = { class = "gamescope"},
         tags = { "game" }
     }
