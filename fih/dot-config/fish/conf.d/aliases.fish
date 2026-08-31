@@ -7,8 +7,8 @@ abbr lg lazygit
 abbr y yazi
 abbr py python3
 abbr pyenv "source .venv/bin/activate.fish"
-
 abbr ssh "kitten ssh"
+abbr b bat
 
 # Helpers
 abbr tailget "sudo tailscale file get /home/addigoat/Taildrop/"
@@ -28,12 +28,6 @@ abbr hyprconf 'nvim ~/.config/hypr/'
 ## ---- replace builtins ----
 
 # ls with eza
-alias ls "eza -l --color=auto --group-directories-first --icons=auto"
-alias la "eza -la --color=auto --group-directories-first --icons=auto"
-alias lsg "eza -lg --color=auto --group-directories-first --icons=auto"
-alias lag "eza -lag --color=auto --group-directories-first --icons=auto"
-alias lt 'eza -aT --color=auto --group-directories-first --icons=auto --ignore-glob=".git|.venv"'
+alias ls "eza --color=auto --group-directories-first --icons=auto"
+alias ll "eza -l --no-user --color=auto --group-directories-first --icons=auto"
 
-# cat with bat
-
-abbr b bat
