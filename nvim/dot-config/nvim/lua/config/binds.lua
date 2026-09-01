@@ -3,13 +3,21 @@ local map = function(mode, key, cmd, desc)
 end
 
 
-map('n', '<leader>w', '<cmd>w<CR>', "Save File")
+-- General operation commands
+
 map('n', '<leader>a', '<cmd>wa<CR>', "Save All")
 map('n', '<leader>x', '<cmd>wqa<CR>', "Save All & Quit")
 map('n', '<leader>qq', '<cmd>q!<CR>', "Quit Without Saving")
 map('n', '<leader>qa', '<cmd>qa!<CR>', "Quit all buffers Without Saving")
 
--- map('n', '<c-h>', ':wincmd h<CR>', "wincmd left")
--- map('n', '<c-j>', ':wincmd j<CR>', "wincmd down")
--- map('n', '<c-k>', ':wincmd k<CR>', "wincmd up")
--- map('n', '<c-l>', ':wincmd l<CR>', "wincmd right")
+
+-- Escape function switch
+-- if search is highlighted, escape will unhighlight
+-- if no search, escape enters insert mode
+vim.keymap.set("n", "<Esc>", function()
+  if vim.v.hlsearch == 1 then
+    vim.cmd("nohlsearch")
+  else
+    vim.cmd("startinsert")
+  end
+end, {silent = true})
