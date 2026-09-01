@@ -2,3 +2,4 @@ rustup.fish
 /scripts/scripts/launch-unreal.sh
 /nvim/dot-config/nvim/lazy-lock.json
 /scripts/scripts/yip
+/nvim/dot-config/nvim/nvim.log
