@@ -16,11 +16,3 @@ callback = function(args)
     map('n', '<leader>gd', vim.lsp.buf.definition, 'Goto Definition')
 end
 })
-
-vim.lsp.config('emmylua_ls', {
-    cmd = { 'lua-language-server' },
-    filetypes = { 'lua' },
-    root_markers = { '.luarc.json', '.luarc.jsonc', '.git' },
-})
-
-vim.lsp.enable('emmylua_ls')
