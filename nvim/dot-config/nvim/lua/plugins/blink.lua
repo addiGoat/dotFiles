@@ -6,7 +6,7 @@ return {
             'rafamadriz/friendly-snippets',
         },
         build = function()
-            require('blink.cmp').build():pwait()
+            require('blink.cmp').build():wait(60000)
         end,
 
         opts = {
@@ -24,21 +24,45 @@ return {
             -- See :h blink-cmp-config-keymap for defining your own keymap
             keymap = {
                 preset = 'none',
+                ['<C-Space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+                ['<C-n>'] = { 'select_next', 'fallback' },
+                ['<C-p>'] = { 'select_prev', 'fallback' },
                 ['<C-CR>'] = { 'select_and_accept' },
-                ['<C-y>'] = false
+                ['<C-e>'] = { 'hide' },
+                ['<Tab>'] = { 'snippet_forward', 'fallback' },
+                ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
             },
 
-            -- (Default) Only show the documentation popup when manually triggered
-            completion = { documentation = { auto_show = false } },
+            completion = {
+                documentation = {
+                    auto_show = true,
+                    auto_show_delay_ms = 300,
+                },
+                ghost_text = {
+                    enabled = true,
+                },
+            },
 
-            -- (Default) list of enabled providers defined so that you can extend it
-            -- elsewhere in your config, without redefining it, due to `opts_extend`
-            sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
+            sources = {
+                default = { 'lsp', 'path', 'snippets' },
+                per_filetype = {
+                    markdown = { 'path', 'snippets', 'buffer' },
+                    text = { 'buffer' },
+                },
+            },
 
-            -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
-            -- You may use a lua implementation instead by using `implementation = "lua"`
-            -- See the fuzzy documentation for more information
-            fuzzy = { implementation = "lua" }
+            fuzzy = {
+                implementation = 'prefer_rust_with_warning',
+                sorts = {
+                    'exact',
+                    'score',
+                    'sort_text',
+                },
+            },
+
+            signature = {
+                enabled = true,
+            },
         },
     }
 }
