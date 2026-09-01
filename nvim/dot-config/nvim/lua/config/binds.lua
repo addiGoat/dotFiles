@@ -5,6 +5,7 @@ end
 
 -- General operation commands
 
+map('n', '<leader>w', '<cmd>w<CR>', "Save Current")
 map('n', '<leader>a', '<cmd>wa<CR>', "Save All")
 map('n', '<leader>x', '<cmd>wqa<CR>', "Save All & Quit")
 map('n', '<leader>qq', '<cmd>q!<CR>', "Quit Without Saving")
