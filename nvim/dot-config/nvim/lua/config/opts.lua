@@ -13,7 +13,6 @@ vim.opt.conceallevel = 2
 vim.o.winborder = "rounded"
 vim.o.winblend = 5
 
-vim.g.mapleader = " "
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"

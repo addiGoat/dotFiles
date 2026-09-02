@@ -1,3 +1,6 @@
+-- Set the leader key before absolutely anything else
+vim.g.mapleader = " "
+
 require("config.opts")
 require("config.lsp")
 require("config.binds")
@@ -6,34 +9,6 @@ require("config.binds")
 vim.schedule(function()
     vim.o.clipboard = 'unnamedplus'
 end)
-
--- Switch Relative/Absolute line numbers
-local number_group = vim.api.nvim_create_augroup("NumberGroup", { clear = true })
-
-vim.api.nvim_create_autocmd("InsertEnter", {
-  group = number_group,
-  callback = function()
-    vim.o.relativenumber = false
-  end
-})
-
-vim.api.nvim_create_autocmd("InsertLeave", {
-  group = number_group,
-  callback = function()
-    vim.o.relativenumber = true
-  end
-})
-
--- Escape function switch
--- if search is highlighted, escape will unhighlight
--- if no search, escape enters insert mode
-vim.keymap.set("n", "<Esc>", function()
-  if vim.v.hlsearch == 1 then
-    vim.cmd("nohlsearch")
-  else
-    vim.cmd("startinsert")
-  end
-end, {silent = true})
 
 -- Install Lazy Package Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -53,7 +28,3 @@ end
 vim.opt.rtp:prepend(lazypath)
 -- Setup Lazy
 require("lazy").setup("plugins")
-
-vim.keymap.set({ "n", "x" }, "<leader>ca", function()
-	require("tiny-code-action").code_action()
-end, { noremap = true, silent = true })

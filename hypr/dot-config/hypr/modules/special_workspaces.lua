@@ -36,3 +36,30 @@ end)
 --     hl.notification.create({ text = utils.tableToString(w.tags), timeout = 5000 })
 --     print(w)
 -- end)
+--
+
+local previous_workspace = nil
+local gpt_workspace = 21
+hl.bind("SUPER + SHIFT + code:201", function()
+    local current = hl.get_active_workspace()
+
+    if not current then
+        return
+    end
+
+    -- Debug
+    hl.notification.create({
+        text = tostring(current.id),
+        timeout = 5000
+    })
+    -- Debug
+
+    if current.id == gpt_workspace then
+        hl.dispatch(hl.dsp.focus({ workspace = previous_workspace }))
+    else
+        previous_workspace = current.id
+        hl.dispatch(hl.dsp.focus({ workspace = gpt_workspace }))
+    end
+
+
+end)
