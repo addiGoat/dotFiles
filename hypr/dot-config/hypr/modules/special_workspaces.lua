@@ -22,7 +22,7 @@ hl.on("window.open", function(w)
         -- check all tags of opened window
         for _, value in pairs(w.tags) do
             -- if any tag has the value "game", cancel the function
-            if value == "game" then
+            if value == "game" or value == "game*" then
                 return
             end
         end
