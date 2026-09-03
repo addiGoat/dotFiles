@@ -1,5 +1,4 @@
 @import "config/general"
-
 @import "themes/murz-nobox"
 
 configuration {
