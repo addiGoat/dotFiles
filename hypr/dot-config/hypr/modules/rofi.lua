@@ -18,3 +18,6 @@ bindRofi("ALT", "semicolon", "powerbar")
 
 -- Replay
 bindRofi("ALT", "SHIFT + S", "replay")
+
+-- Config editor
+bindRofi("SUPER", "E", "config")

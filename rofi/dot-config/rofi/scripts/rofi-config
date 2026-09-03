@@ -1,0 +1,18 @@
+#!/usr/bin/env fish
+
+function open_neovide 
+    set -f directory $argv[1]
+    neovide --chdir="$directory"
+end
+
+set -l config_dir "~/.config"
+
+set -l targets nvim rofi kitty hypr fish
+
+set choice (printf "%s\n" $targets | rofi -dmenu)
+
+if test -z $choice
+    exit 1
+end
+
+open_neovide $config_dir/$choice
