@@ -1,9 +1,13 @@
 -- Set the leader key before absolutely anything else
 vim.g.mapleader = " "
 
+
 require("config.opts")
 require("config.lsp")
 require("config.binds")
+if vim.g.neovide then
+    require("config.neovide")
+end
 
 -- Sync clipboard
 vim.schedule(function()
