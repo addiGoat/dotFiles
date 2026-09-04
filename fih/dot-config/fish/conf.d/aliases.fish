@@ -27,7 +27,7 @@ abbr hyprconf 'nvim ~/.config/hypr/'
 
 ## ---- replace builtins ----
 
-# ls with eza
-alias ls "eza --color=auto --group-directories-first --icons=auto"
-alias ll "eza -l --no-user --color=auto --group-directories-first --icons=auto"
+# Abbreviate ls to eza function, to hide additional cosmetic flags
+abbr ls eza 
+abbr ll "eza -l --no-user"
 
