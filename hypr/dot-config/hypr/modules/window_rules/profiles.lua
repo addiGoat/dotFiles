@@ -10,40 +10,44 @@ end
 local window_profiles = {
     {
         match = { title = "kitty-float" },
-        tags = { "utility", "no_rounding" }
+        tags = { "utility", "no_rounding" },
     },
     {
         match = { class = "^(steam)$" },
-        tags = { "float" }
+        tags = { "float" },
     },
     {
         match = { title = "Stats", class = "com.obsproject.Studio" },
-        tags = { "float" }
+        tags = { "float" },
     },
     {
         match = { class = "Godot" },
-        tags = { "no_rounding", "no_bar" }
+        tags = { "no_rounding", "no_bar" },
     },
     {
         match = { class = "mpv" },
-        tags = { "utility", "no_rounding" }
+        tags = { "utility", "no_rounding" },
     },
     {
         match = { title = ".* - YouTube.*" },
-        tags = { "opaque" }
+        tags = { "opaque" },
     },
     {
         match = { title = "YARG" },
-        tags = { "opaque", "float" }
+        tags = { "opaque", "float" },
     },
     {
         match = { title = "^Minecraft\\*? [0-9]+\\.[0-9]+\\.[0-9]+$" },
-        tags = { "game" }
+        tags = { "game" },
     },
     {
         match = { class = "gamescope"},
-        tags = { "game" }
-    }
+        tags = { "game" },
+    },
+    {
+        match = { class = "sonora" },
+        tags = { "utility" },
+    },
 }
 
 for _, profile in ipairs(window_profiles) do
