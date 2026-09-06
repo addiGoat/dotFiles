@@ -6,12 +6,10 @@ utils.make_special(mainMod, "SHIFT + D", "vesktop", "vesktop", "vesktop")
 utils.make_special("SUPER", "B", "bitwarden", "Bitwarden", "bitwarden-desktop")
 
 -- Game Workspace
-utils.bindSuper("G", hl.dsp.focus({ workspace = 20 }))
-utils.bindSuper("SHIFT + G", hl.dsp.window.move({ workspace = 20 }))
+hl.bind("SUPER + G", hl.dsp.focus({ workspace = 20 }))
+hl.bind("SUPER + SHIFT + G", hl.dsp.window.move({ workspace = 20 }))
 
--- EXPERIMENT
--- stop normal windows from opening on game workspace
-
+-- Stop normal windows from opening on game workspace
 hl.on("window.open", function(w)
     -- 20 is the game workspace
     if hl.get_active_workspace().id == 20 then
@@ -32,12 +30,7 @@ hl.on("window.open", function(w)
     end
 end)
 
--- hl.on("window.open", function(w)
---     hl.notification.create({ text = utils.tableToString(w.tags), timeout = 5000 })
---     print(w)
--- end)
---
-
+-- ChatGPT Workspace Toggle
 local previous_workspace = nil
 local gpt_workspace = 21
 hl.bind("SUPER + SHIFT + code:201", function()

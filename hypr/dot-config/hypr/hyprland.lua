@@ -17,3 +17,5 @@ require("modules.special_workspaces")
 
 -- horrible horrible idea
 require("plugins.foxyd")
+
+local mainMod = "ALT"
