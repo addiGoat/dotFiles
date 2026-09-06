@@ -48,6 +48,10 @@ local window_profiles = {
         match = { class = "sonora" },
         tags = { "utility" },
     },
+    {
+        match = { title = "Bridge" },
+        tags = { "utility" },
+    },
 }
 
 for _, profile in ipairs(window_profiles) do
