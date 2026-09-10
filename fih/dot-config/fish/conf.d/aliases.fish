@@ -31,3 +31,5 @@ abbr hyprconf 'nvim ~/.config/hypr/'
 abbr ls eza 
 abbr ll "eza -l --no-user"
 
+abbr tree eza -T
+
