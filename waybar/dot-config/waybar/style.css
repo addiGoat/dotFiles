@@ -48,6 +48,11 @@ window#waybar {
   padding: 0px 10px;
 }
 
+#custom-orbit {
+    background: @sep1;
+    color: @text;
+    padding: 0px 10px;
+}
 
 #custom-sep1 {
   background: @base-bg; /* next module bg */
@@ -156,3 +161,4 @@ window#waybar {
   padding: 0px;
   font-size: 24px;
 }
+

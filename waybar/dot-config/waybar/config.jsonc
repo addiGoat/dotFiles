@@ -5,7 +5,7 @@
 
   "modules-left": ["custom/power", "custom/sep5", "hyprland/workspaces"],
   "modules-center": ["custom/sepLl", "custom/sepL", "custom/sepLll", "clock", "custom/sepRrr", "custom/sepR", "custom/sepRr" ],
-  "modules-right": ["custom/sep1", "network", "custom/sep2", "battery", "custom/sep3", "pulseaudio", "custom/sep4", "custom/music" ],
+  "modules-right": ["custom/sep1", "network", "custom/orbit", "custom/sep2", "battery", "custom/sep3", "pulseaudio", "custom/sep4", "custom/music"],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -24,8 +24,21 @@
 
   "network": {
     "format-wifi": "  {signalStrength}%",
+    "tooltip": true,
+    "tooltip-format": "{essid}",
     "format-ethernet": "󰈀  Connected",
-    "format-disconnected": "  Offline"
+    "format-disconnected": "  Offline",
+    "on-click": "orbit toggle --tab wifi"
+  },
+
+  "custom/orbit": {
+      "exec": "orbit waybar-status",
+      "tooltip": true,
+      "tooltip-format": "Bluetooth Settings",
+      "return-type": "json",
+      "interval": 10,
+      "on-click": "orbit toggle top-right --tab bluetooth",
+      "format": "󱗿"
   },
 
   "battery": {
