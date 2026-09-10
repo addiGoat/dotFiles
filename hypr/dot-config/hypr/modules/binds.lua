@@ -56,3 +56,6 @@ hl.bind("SUPER + mouse:273", hl.dsp.window.resize())
 -- Screen Capture
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --freeze --clipboard-only"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("pkill -SIGUSR1 -f '^gpu-screen-recorder'"))
+
+-- Laptop Lid Toggle
+hl.bind("switch:[Lid Switch]", hl.dsp.exec_cmd("hyprlock"), { locked = true })
