@@ -21,13 +21,20 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 8px;
+  padding: 0;
+  min-width: 32px;
   color: #cdd6f4;
 }
 
 #workspaces button.active {
   background-color: #89b4fa;
   color: @text;
+}
+
+#window {
+    background-color: @sep1;
+    color: @text;
+    padding: 0 8px;
 }
 
 #clock {
@@ -122,6 +129,10 @@ window#waybar {
   color: @sep1;      /* previous module bg */
   padding: 0;
   font-size: 26px;
+}
+
+#custom-sepRr.window {
+    margin-right: 30px;
 }
 
 #custom-sepLll {
