@@ -5,7 +5,7 @@
 
   "modules-left": ["custom/power", "custom/sep5", "hyprland/workspaces"],
   "modules-center": ["custom/sepLl", "custom/sepL", "custom/sepLll", "clock", "custom/sepRrr", "custom/sepR", "custom/sepRr" ],
-  "modules-right": ["custom/sep1", "network", "custom/orbit", "custom/sep2", "battery", "custom/sep3", "pulseaudio", "custom/sep4", "custom/music"],
+  "modules-right": ["custom/sep1", "network", "custom/text-sep", "custom/orbit", "custom/sep2", "battery", "custom/sep3", "pulseaudio", "custom/sep4", "custom/music"],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -57,6 +57,12 @@
 
   "tray": {
     "spacing": 10
+  },
+
+  "custom/text-sep": {
+      "format": "|",
+      "interval": "once",
+      "tooltip": "false"
   },
 
   "custom/sep1": {

@@ -162,3 +162,8 @@ window#waybar {
   font-size: 24px;
 }
 
+
+#custom-text-sep {
+    color: @text;
+    background: @sep1; 
+}
