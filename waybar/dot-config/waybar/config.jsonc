@@ -3,18 +3,60 @@
   "position": "top",
   "height": 32,
 
-  "modules-left": ["custom/power", "custom/sep5", "hyprland/workspaces"],
-  "modules-center": ["custom/sepLl", "custom/sepL", "custom/sepLll", "clock", "custom/sepRrr", "custom/sepR", "custom/sepRr" ],
-  "modules-right": ["custom/sep1", "network", "custom/sep2", "battery", "custom/sep3", "pulseaudio", "custom/sep4", "custom/music" ],
+  "modules-left": [
+      "custom/power", 
+      "custom/sep5", 
+      "hyprland/workspaces",
+  ],
+  "modules-center": [
+      "custom/sepLl", 
+      "custom/sepL", 
+      "custom/sepLll", 
+      "clock", 
+      "custom/sepRrr", 
+      "custom/sepR", 
+      "custom/sepRr"
+  ],
+  "modules-right": [
+      "custom/sepLl", 
+      "hyprland/window", 
+      "custom/sepRr#window",
+      "custom/sep1", 
+      "network", 
+      "custom/text-sep", 
+      "custom/orbit", 
+      "custom/sep2", 
+      "battery", 
+      "custom/sep3", 
+      "pulseaudio", 
+      "custom/sep4", 
+      "custom/music"
+  ],
 
   "hyprland/workspaces": {
+    "format": "{icon}",
     "disable-scroll": true,
     "active-only": false,
     "all-outputs": true,
     "persistent-workspaces": {
       "*":
       [1, 2, 3, 4, 5]
-    } 
+    },
+    "show-special": true,
+    "special-visible-only": true,
+    "format-icons": {
+        "vesktop": " ", // space after the icon to ensure proper spacing
+        "21": " ",
+        "scratchpad": " "
+
+    }
+  },
+
+  "hyprland/window": {
+      "format": "{}",
+      "max-length": 50,
+      "fallback": "No Windows",
+      "icon": true
   },
 
   "clock": {
@@ -24,8 +66,21 @@
 
   "network": {
     "format-wifi": "  {signalStrength}%",
+    "tooltip": true,
+    "tooltip-format": "{essid}",
     "format-ethernet": "󰈀  Connected",
-    "format-disconnected": "  Offline"
+    "format-disconnected": "  Offline",
+    "on-click": "orbit toggle --tab wifi"
+  },
+
+  "custom/orbit": {
+      "exec": "orbit waybar-status",
+      "tooltip": true,
+      "tooltip-format": "Bluetooth Settings",
+      "return-type": "json",
+      "interval": 10,
+      "on-click": "orbit toggle top-right --tab bluetooth",
+      "format": "󱗿"
   },
 
   "battery": {
@@ -44,6 +99,12 @@
 
   "tray": {
     "spacing": 10
+  },
+
+  "custom/text-sep": {
+      "format": "|",
+      "interval": "once",
+      "tooltip": "false"
   },
 
   "custom/sep1": {
@@ -97,6 +158,12 @@
   },
 
   "custom/sepRr": {
+    "format": "",
+    "interval": "once",
+    "tooltip": "false"
+  },
+
+  "custom/sepRr#window": {
     "format": "",
     "interval": "once",
     "tooltip": "false"

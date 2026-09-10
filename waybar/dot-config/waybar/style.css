@@ -21,13 +21,20 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 8px;
+  padding: 0;
+  min-width: 32px;
   color: #cdd6f4;
 }
 
 #workspaces button.active {
   background-color: #89b4fa;
   color: @text;
+}
+
+#window {
+    background-color: @sep1;
+    color: @text;
+    padding: 0 8px;
 }
 
 #clock {
@@ -48,6 +55,11 @@ window#waybar {
   padding: 0px 10px;
 }
 
+#custom-orbit {
+    background: @sep1;
+    color: @text;
+    padding: 0px 10px;
+}
 
 #custom-sep1 {
   background: @base-bg; /* next module bg */
@@ -119,6 +131,10 @@ window#waybar {
   font-size: 26px;
 }
 
+#custom-sepRr.window {
+    margin-right: 30px;
+}
+
 #custom-sepLll {
   background: @sep2; /* next module bg */
   color: @sep3;      /* previous module bg */
@@ -155,4 +171,10 @@ window#waybar {
   background: @sep1;
   padding: 0px;
   font-size: 24px;
+}
+
+
+#custom-text-sep {
+    color: @text;
+    background: @sep1; 
 }

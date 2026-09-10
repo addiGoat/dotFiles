@@ -53,6 +53,5 @@ hl.bind("SUPER + SHIFT + code:201", function()
         previous_workspace = current.id
         hl.dispatch(hl.dsp.focus({ workspace = gpt_workspace }))
     end
-
-
 end)
+hl.workspace_rule({ workspace = "21", on_created_empty = "chatgpt"})
