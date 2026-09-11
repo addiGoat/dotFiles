@@ -19,6 +19,8 @@ FileExplorer = "yazi"
 	hl.env("XCURSOR_THEME", "moga")
 	hl.env("TERMINAL", "kitty")
 	hl.env("EDITOR", "nvim")
+	hl.env("LIBVA_DRIVER_NAME", "nvidia")
+	hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 
 
 -- AUTOSTART --

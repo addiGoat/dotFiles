@@ -52,6 +52,14 @@ local window_profiles = {
         match = { title = "Bridge" },
         tags = { "utility" },
     },
+    {
+        match = { class = "org.kde.dolphin" },
+        tags = { "utility" },
+    },
+    {
+        match = { class = "org.kde.ark" },
+        tags = { "utility" },
+    },
 }
 
 for _, profile in ipairs(window_profiles) do
