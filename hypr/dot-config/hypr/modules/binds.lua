@@ -10,8 +10,8 @@ hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("gtk-launch $(xdg-settin
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(Launcher))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("kitty --title=kitty-float yazi ~"))
 
--- utils.bindSuper("F", hl.dsp.window.fullscreen({ mode="fullscreen", action="toggle" }))
--- utils.bindSuper("T", hl.dsp.window.float({ action="toggle"}))
+hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode="fullscreen", action="toggle" }))
+hl.bind("SUPER + T", hl.dsp.window.float({ action="toggle"}))
 
 hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
