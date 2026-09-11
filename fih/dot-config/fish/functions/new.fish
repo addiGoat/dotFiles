@@ -7,9 +7,8 @@ function new
     if test -z $argv
         set -f chosen_template (printf "%s\n" $templates | fzf)
         set -f template_extension (string split -r -m1 -f2 . $chosen_template)
-        echo $chosen_template
-        echo $template_extension
         
+        if test -z $chosen_template; return 0; end
         # read only splits on newlines and i can't figure out how to make it split on spaces
         # this is my crummy solution for now, it just splits the read output on space chars,
         # then joins the output of split with dashes for better cli interaction with files
