@@ -7,6 +7,9 @@
       "custom/power", 
       "custom/sep5", 
       "hyprland/workspaces",
+      "custom/sepLl#window", 
+      "hyprland/window", 
+      "custom/sepRr"
   ],
   "modules-center": [
       "custom/sepLl", 
@@ -18,9 +21,6 @@
       "custom/sepRr"
   ],
   "modules-right": [
-      "custom/sepLl", 
-      "hyprland/window", 
-      "custom/sepRr#window",
       "custom/sep1", 
       "network", 
       "custom/text-sep", 
@@ -163,8 +163,8 @@
     "tooltip": "false"
   },
 
-  "custom/sepRr#window": {
-    "format": "",
+  "custom/sepLl#window": {
+    "format": "",
     "interval": "once",
     "tooltip": "false"
   },

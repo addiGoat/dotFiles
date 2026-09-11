@@ -131,8 +131,8 @@ window#waybar {
   font-size: 26px;
 }
 
-#custom-sepRr.window {
-    margin-right: 30px;
+#custom-sepLl.window {
+    margin-left: 30px;
 }
 
 #custom-sepLll {
