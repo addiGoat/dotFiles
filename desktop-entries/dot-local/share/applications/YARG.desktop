@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Categories=Game;
+
+Name=YARG
+Comment=Guitar hero clone
+Exec=/home/addigoat/scripts/launch-yarg.fish
+
+Terminal=false
+StartupNotify=true

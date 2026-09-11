@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Categories=Chat;
+
+Name=ChatGPT
+Comment=LLM Chatbot
+Exec=/usr/bin/chatgpt
+
+Terminal=false
+StartupNotify=true
+MimeType=x-scheme-handler/codex;

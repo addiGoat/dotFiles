@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Categories=Game;
+
+Name=Kristal
+Comment=Framework for making Deltarune fangames
+Exec=/usr/bin/love /home/addigoat/Projects/Engines/Kristal/
+
+Terminal=false
+StartupNotify=true

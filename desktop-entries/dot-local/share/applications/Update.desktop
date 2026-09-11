@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Update Script
+Comment=Checks available package updates and optionally installs
+Exec=/home/addigoat/.scripts/check-updates.sh
+Terminal=False
+Type=Application
+Categories=Game;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Unreal Engine
+Comment=Video game editor developed by Epic Games
+
+Type=Application
+Categories=Game;
+
+Exec=/home/addigoat/UnrealEngine/5.8.2/Engine/Binaries/Linux/UnrealEditor
