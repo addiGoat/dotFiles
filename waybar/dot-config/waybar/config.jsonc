@@ -65,9 +65,9 @@
   },
 
   "network": {
-    "format-wifi": "  {signalStrength}%",
+    "format-wifi": " ",
     "tooltip": true,
-    "tooltip-format": "{essid}",
+    "tooltip-format": "{essid} - {signalStrength}%",
     "format-ethernet": "󰈀  Connected",
     "format-disconnected": "  Offline",
     "on-click": "orbit toggle --tab wifi"
@@ -80,7 +80,7 @@
       "return-type": "json",
       "interval": 10,
       "on-click": "orbit toggle top-right --tab bluetooth",
-      "format": "󱗿"
+      "format": "󰂯"
   },
 
   "battery": {
