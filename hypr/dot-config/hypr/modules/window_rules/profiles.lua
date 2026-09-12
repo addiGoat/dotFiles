@@ -60,6 +60,10 @@ local window_profiles = {
         match = { class = "org.kde.ark" },
         tags = { "utility" },
     },
+    {
+        match = { class = "UnrealEditor" },
+        tags = { "utility" },
+    },
 }
 
 for _, profile in ipairs(window_profiles) do

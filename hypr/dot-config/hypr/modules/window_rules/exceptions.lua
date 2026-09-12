@@ -17,3 +17,7 @@ hl.window_rule({
     size = {865, 700},
     ["hyprbars:no_bar"] = true
 })
+
+hl.window_rule({
+    name = "unreal-secondary-windows"
+})
