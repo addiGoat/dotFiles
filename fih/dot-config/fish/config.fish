@@ -52,6 +52,7 @@ end
 
 starship init fish | source
 zoxide init fish --cmd cd | source
+eval (ssh-agent -c)
 
 
 
