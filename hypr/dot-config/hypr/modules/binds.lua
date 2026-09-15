@@ -59,3 +59,6 @@ hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("pkill -SIGUSR1 -f '^gpu-screen-recor
 
 -- Laptop Lid Toggle
 hl.bind("switch:[Lid Switch]", hl.dsp.exec_cmd("hyprlock"), { locked = true })
+
+-- Kitty toggle term
+hl.bind("CONTROL + SHIFT + K", hl.dsp.exec_cmd("kitten quick-access-terminal"))
