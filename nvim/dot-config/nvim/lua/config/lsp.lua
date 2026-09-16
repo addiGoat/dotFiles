@@ -16,3 +16,13 @@ callback = function(args)
     map('n', '<leader>gd', vim.lsp.buf.definition, 'Goto Definition')
 end
 })
+
+vim.lsp.config("clangd", {
+    cmd = {
+        "clangd",
+        "--compile-commands-dir=/home/addigoat/UnrealEngine/5.8.2",
+        "--query-driver=/home/addigoat/UnrealEngine/5.8.2/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v26_clang-20.1.8-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+    },
+})
+
+vim.lsp.enable("clangd")
