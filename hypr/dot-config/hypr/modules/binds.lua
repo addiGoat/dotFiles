@@ -54,8 +54,29 @@ hl.bind("SUPER + mouse:272", hl.dsp.window.drag())
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize())
 
 -- Screen Capture
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --freeze --clipboard-only"))
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("pkill -SIGUSR1 -f '^gpu-screen-recorder'"))
+hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region --freeze --clipboard-only"))
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("pkill -SIGUSR1 -f '^gpu-screen-recorder'"))
 
 -- Laptop Lid Toggle
 hl.bind("switch:[Lid Switch]", hl.dsp.exec_cmd("hyprlock"), { locked = true })
+
+-- Toggleable term
+hl.bind("CONTROL + SHIFT + K", hl.dsp.exec_cmd("kitten quick-access-terminal"))
+
+
+-- === Submaps ===
+
+-- 'resize'
+hl.bind("SUPER + R", hl.dsp.submap("resize"))
+hl.define_submap("resize", function()
+
+    
+    hl.bind("h", hl.dsp.window.resize({ x = -10, y = 0, relative = true}), { repeating = true })
+    hl.bind("j", hl.dsp.window.resize({ x = 0, y = 10, relative = true}), { repeating = true })
+    hl.bind("k", hl.dsp.window.resize({ x = 0, y = -10, relative = true}), { repeating = true })
+    hl.bind("l", hl.dsp.window.resize({ x = 10, y = 0, relative = true}), { repeating = true })
+
+    -- Use `reset` to go back to the global submap
+    hl.bind("escape", hl.dsp.submap("reset"))
+
+end)
