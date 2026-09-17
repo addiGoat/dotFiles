@@ -64,6 +64,10 @@ local window_profiles = {
         match = { class = "UnrealEditor" },
         tags = { "utility" },
     },
+    {
+        match = { class = "org.vinegarhq.Sober" },
+        tags = { "game" },
+    },
 }
 
 for _, profile in ipairs(window_profiles) do
