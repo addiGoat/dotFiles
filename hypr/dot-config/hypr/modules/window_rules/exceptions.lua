@@ -18,6 +18,28 @@ hl.window_rule({
     ["hyprbars:no_bar"] = true
 })
 
+
+-- hl.window_rule({
+--     name = "fix-unreal",
+--     match = {
+--         class = "UnrealEditor",
+--         float = false
+--     },
+--     workspace = 1,
+--     opacity = 1,
+--     rounding = 0,
+-- })
+--
 hl.window_rule({
-    name = "unreal-secondary-windows"
+    name = "fix-unreal-floating-windows",
+    match = {
+        class = "UnrealEditor",
+        float = true
+    },
+
+    decorate = false,
+    ["hyprbars:no_bar"] = true,
+    rounding = 0,
+    size = {1280, 720},
+    center = true
 })
