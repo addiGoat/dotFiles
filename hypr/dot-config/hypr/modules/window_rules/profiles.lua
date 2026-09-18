@@ -13,6 +13,10 @@ local window_profiles = {
         tags = { "utility", "no_rounding" },
     },
     {
+        match = { title = "kitty-lazygit" },
+        tags = { "utility" },
+    },
+    {
         match = { class = "^(steam)$" },
         tags = { "float" },
     },
@@ -68,6 +72,11 @@ local window_profiles = {
         match = { class = "org.vinegarhq.Sober" },
         tags = { "game" },
     },
+    {
+        match = { class = "zenity" },
+        tags = { "no_bar" },
+    },
+
 }
 
 for _, profile in ipairs(window_profiles) do
