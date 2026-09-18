@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+env SDL_VIDEODRIVER=x11 \
+    ~/UnrealEngine/5.8.2/Engine/Binaries/Linux/UnrealEditor "$@"
+
