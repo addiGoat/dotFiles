@@ -1,0 +1,50 @@
+#!/usr/bin/env fish
+
+function print_readable
+    echo "$argv" >&2
+end
+
+set --local dotfiles_repo ~/.dotfiles
+cd $dotfiles_repo
+
+# Get machine readable remote branch information without local untracked files (-u no)
+# Use string match to get line '# branch.ab +x -y' where x is commits ahead, and y is commits behind remote
+# Split the line on the '-' character to get only the number of commits behind
+# [2] grabs the second element of the string split output, which should 
+# always be the y value of branch.ab if it exists
+set --local num_commits_behind (
+    set --local line (git status --porcelain=2 --branch -u no | 
+        string match 'branch.ab' --entire; or echo "failed")
+
+    print_readable "line: <$line>" 
+
+    if test $line != "failed"
+        print_readable line found
+        string split -r --max=1 - $line
+    else
+        print_readable no line 
+    end
+)[2]
+
+if test $num_commits_behind -le 0
+    notify-send "Dotfiles up to date" "No changes pending on remote"
+    exit 0
+end
+
+# Returns 1 on Later, 0 on Review
+zenity --question \
+    --title="Dotfiles outdated" \
+    --text="Your local branch is $num_commits_behind commits behind the remote. Review changes?" \
+    --ok-label="Review" \
+    --cancel-label="Later"
+
+if test $status -ne 0
+    # exit if later is selected
+    exit 0
+end
+
+# alternate config file sets showWholeGraph to true
+kitty --title=kitty-lazygit \
+    lazygit \
+    -ucf ~/.config/lazygit-alt/config.yml \
+    log

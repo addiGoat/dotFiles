@@ -1,0 +1,3 @@
+[Service]
+type=oneshot
+ExecStart=/home/addigoat/.local/bin/dotfiles-checker
