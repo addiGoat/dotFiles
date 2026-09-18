@@ -1,0 +1,9 @@
+[Unit]
+Description=Check for system upgrades every 6 hours
+
+[Timer]
+OnActiveSec=10min
+OnUnitActiveSec=6h
+
+[Install]
+WantedBy=timers.target
