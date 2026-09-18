@@ -1,11 +1,17 @@
 #!/usr/bin/env fish
 
-function print_readable
+function error
     echo "$argv" >&2
 end
 
 set --local dotfiles_repo ~/.dotfiles
 cd $dotfiles_repo
+
+git fetch
+if test $status -ne 0 
+    error fetch failed
+    exit 1
+end
 
 # Get machine readable remote branch information without local untracked files (-u no)
 # Use string match to get line '# branch.ab +x -y' where x is commits ahead, and y is commits behind remote
@@ -16,13 +22,12 @@ set --local num_commits_behind (
     set --local line (git status --porcelain=2 --branch -u no | 
         string match 'branch.ab' --entire; or echo "failed")
 
-    print_readable "line: <$line>" 
 
     if test $line != "failed"
-        print_readable line found
         string split -r --max=1 - $line
     else
-        print_readable no line 
+        error "branch.ab line not found."
+        exit 1
     end
 )[2]
 

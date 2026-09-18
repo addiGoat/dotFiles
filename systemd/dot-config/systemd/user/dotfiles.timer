@@ -1,9 +1,8 @@
 [Unit]
-Description=Check for system upgrades every 6 hours
+Description=Check dotfiles git status to see if local branch is behind
 
 [Timer]
-OnActiveSec=10min
-OnUnitActiveSec=6h
+OnActiveSec=5min
 
 [Install]
 WantedBy=timers.target
