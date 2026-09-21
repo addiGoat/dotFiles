@@ -33,3 +33,4 @@ abbr ll "eza -l --no-user"
 
 abbr tree eza -T
 
+abbr raybuild 'clang++ main.cpp -o main -lraylib'
