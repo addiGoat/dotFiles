@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=Unreal Engine
+Name=Unreal Engine (XWayland)
 Comment=Video game editor developed by Epic Games
 
 Type=Application
 Categories=Game;
 
-Exec=/home/addigoat/.local/bin/unreal
+Exec=/home/addigoat/.local/bin/unreal --xwayland
