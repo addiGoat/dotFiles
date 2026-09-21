@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+LOW_THRESHOLD=15
+NORMAL_THRESHOLD=20
+
+BATTERY="/sys/class/power_supply/BAT1"
+
+NORMAL_STYLE="$HOME/.config/waybar/style.css"
+LOW_STYLE="$HOME/.config/waybar/style-low.css"
+
+STATE=""
+
+get_capacity() {
+    cat "$BATTERY/capacity"
+}
+
+set_waybar() {
+    local new_state="$1"
+
+    # Don't restart Waybar if we're already in the right state
+    [[ "$STATE" == "$new_state" ]] && return
+
+    case "$new_state" in
+        normal)
+            pkill waybar
+            waybar -s "$NORMAL_STYLE" &
+            ;;
+        low)
+            pkill waybar
+            waybar -s "$LOW_STYLE" &
+            ;;
+    esac
+
+    STATE="$new_state"
+}
+
+update() {
+    local capacity
+    capacity=$(get_capacity)
+
+    if (( capacity <= LOW_THRESHOLD )); then
+        set_waybar low
+    elif (( capacity >= NORMAL_THRESHOLD )); then
+        set_waybar normal
+    fi
+}
+
+# Set the correct state immediately on startup
+capacity=$(get_capacity)
+
+if (( capacity <= LOW_THRESHOLD )); then
+    set_waybar low
+else
+    set_waybar normal
+fi
+
+# React whenever the battery reports a change
+udevadm monitor --udev --subsystem-match=power_supply |
+while read -r _; do
+    update
+done
