@@ -33,3 +33,4 @@ abbr ll "eza -l --no-user"
 
 abbr tree eza -T
 
+abbr ghrc gh repo create --private --source=. --remote=origin --push
