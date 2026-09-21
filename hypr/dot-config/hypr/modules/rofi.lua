@@ -5,19 +5,27 @@ local function bindRofi(super, key, name)
 end
 
 -- Command Palette
-bindRofi("ALT", "SHIFT + P", "palette")
+-- hl.bind("ALT + SHIFT + P", function()
+--     local window = hl.get_active_window()
+--     if window and window.class ~= "UnrealEditor" then
+--         hl.exec_cmd(rofi_script_dir .. "/rofi-powerbar")
+--         return true
+--     end
+-- end, {
+--     auto_consuming = true,
+-- })
 
 -- Website launcher
-bindRofi("ALT", "SHIFT + M", "launch")
+bindRofi("SUPER", "M", "launch")
 
 -- Power Menu
-bindRofi("ALT", "SHIFT + X", "power")
+bindRofi("SUPER", "X", "power")
 
 -- Powerbar
 bindRofi("ALT", "semicolon", "powerbar")
 
 -- Replay
-bindRofi("ALT", "SHIFT + S", "replay")
+bindRofi("SUPER", "S", "replay")
 
 -- Config editor
 bindRofi("SUPER", "E", "config")

@@ -34,3 +34,4 @@ abbr ll "eza -l --no-user"
 abbr tree eza -T
 
 abbr raybuild 'clang++ main.cpp -o main -lraylib'
+abbr ghrc gh repo create --private --source=. --remote=origin --push

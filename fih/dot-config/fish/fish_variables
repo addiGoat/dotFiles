@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export --path CPATH:/home/addigoat/\x2elocal/include
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:true
 SETUVAR __done_min_cmd_duration:10000
 SETUVAR __done_notification_urgency_level:low

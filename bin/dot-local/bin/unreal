@@ -1,5 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
-env SDL_VIDEODRIVER=x11 \
-    ~/UnrealEngine/5.8.2/Engine/Binaries/Linux/UnrealEditor "$@"
+if test -n $argv[1]
+    if test "$argv[1]" = "--xwayland"
+        set flag "x11"
+        set -e argv[1]
+    end
+end
+
+env SDL_VIDEODRIVER="$flag" \
+    ~/UnrealEngine/5.8.2/Engine/Binaries/Linux/UnrealEditor "$argv" &
 
