@@ -2,3 +2,4 @@ rustup.fish
 /scripts/scripts/launch-unreal.sh
 /scripts/scripts/yip
 /nvim/dot-config/nvim/nvim.log
+/bin/dot-local/bin/godot
