@@ -15,6 +15,8 @@ end
 --     auto_consuming = true,
 -- })
 
+bindRofi("SUPER", "P", "palette")
+
 -- Website launcher
 bindRofi("SUPER", "M", "launch")
 
