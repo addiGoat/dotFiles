@@ -31,21 +31,23 @@ hl.on("window.open", function(w)
 end)
 
 -- ChatGPT Workspace Toggle
+local gpt_keybind
+local env = require("modules.env")
+
+if env.is_desktop then
+    gpt_keybind = "Menu"
+else
+    gpt_keybind = "SUPER + SHIFT + code:201"
+end
+
 local previous_workspace = nil
 local gpt_workspace = 21
-hl.bind("SUPER + SHIFT + code:201", function()
+hl.bind(gpt_keybind, function()
     local current = hl.get_active_workspace()
 
     if not current then
         return
     end
-
-    -- Debug
-    hl.notification.create({
-        text = tostring(current.id),
-        timeout = 5000
-    })
-    -- Debug
 
     if current.id == gpt_workspace then
         hl.dispatch(hl.dsp.focus({ workspace = previous_workspace }))
@@ -54,4 +56,8 @@ hl.bind("SUPER + SHIFT + code:201", function()
         hl.dispatch(hl.dsp.focus({ workspace = gpt_workspace }))
     end
 end)
-hl.workspace_rule({ workspace = "21", on_created_empty = "chatgpt"})
+hl.workspace_rule({ 
+    workspace = "21",
+    on_created_empty = "chatgpt",
+    monitor = "DP-1"
+})
