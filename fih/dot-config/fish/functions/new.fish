@@ -1,6 +1,6 @@
 function new
     set -f current_dir $PWD
-    set -f template_dir ~/Templates
+    set -f template_dir ~/.local/share/new
     set -f templates (command eza -1 $template_dir/* | string replace --regex '^/home/addigoat/Templates/' '')
     set -f chosen_template
     
