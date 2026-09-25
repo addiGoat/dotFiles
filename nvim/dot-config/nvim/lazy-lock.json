@@ -1,5 +1,6 @@
 {
   "LuaSnip": { "branch": "master", "commit": "642b0c595e11608b4c18219e93b88d7637af27bc" },
+  "UnrealEngine.nvim": { "branch": "main", "commit": "de517971f08d75541172b827096525e53606f879" },
   "alpha-nvim": { "branch": "main", "commit": "6c6a89d5b068b5251c8bdf0dd57bb921bcfeeb09" },
   "blink.cmp": { "branch": "main", "commit": "3db7326f54b73df4789e0fd6274bedda33975fea" },
   "blink.lib": { "branch": "main", "commit": "b127d48bf8e9ac9cf41f6e0fbead317503f76558" },
