@@ -1,8 +1,9 @@
 {
   "LuaSnip": { "branch": "master", "commit": "642b0c595e11608b4c18219e93b88d7637af27bc" },
-  "alpha-nvim": { "branch": "main", "commit": "4ba26e41990c11620c96c0e1cff20eab65efde4a" },
-  "blink.cmp": { "branch": "main", "commit": "473c928d8b9b5b3f638cd085a01899972cf205c6" },
-  "blink.lib": { "branch": "main", "commit": "fd9a48ebbe6ec30d5dfcc5b42c243941ccdca1aa" },
+  "UnrealEngine.nvim": { "branch": "main", "commit": "de517971f08d75541172b827096525e53606f879" },
+  "alpha-nvim": { "branch": "main", "commit": "6c6a89d5b068b5251c8bdf0dd57bb921bcfeeb09" },
+  "blink.cmp": { "branch": "main", "commit": "3db7326f54b73df4789e0fd6274bedda33975fea" },
+  "blink.lib": { "branch": "main", "commit": "b127d48bf8e9ac9cf41f6e0fbead317503f76558" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "catppuccin": { "branch": "main", "commit": "edefef779ab08ce1a4a404713e3012b0d202bd35" },
   "codex.nvim": { "branch": "main", "commit": "ea699ace144d6db24ad0fbb1973fd8bb398665f5" },
