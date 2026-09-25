@@ -64,10 +64,10 @@ local window_profiles = {
         match = { class = "org.kde.ark" },
         tags = { "utility" },
     },
-    {
-        match = { class = "UnrealEditor" },
-        tags = { "utility" },
-    },
+    -- {
+    --     match = { class = "UnrealEditor" },
+    --     tags = { "utility" },
+    -- },
     {
         match = { class = "org.vinegarhq.Sober" },
         tags = { "game" },
