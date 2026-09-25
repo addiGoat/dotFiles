@@ -6,6 +6,8 @@ require("config.opts")
 require("config.lsp")
 require("config.binds")
 
+require("templates")
+
 if vim.g.neovide then
     require("config.neovide")
 end

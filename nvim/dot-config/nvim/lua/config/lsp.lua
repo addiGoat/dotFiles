@@ -6,6 +6,19 @@ vim.diagnostic.config({
     },
 })
 
+vim.lsp.config('lua_ls', {
+    settings = {
+        Lua = {
+            runtime = {
+                version = 'LuaJIT',
+            },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file('', true),
+            },
+        },
+    },
+})
+
 vim.api.nvim_create_autocmd('LspAttach', {
 callback = function(args)
     local bufnr = args.buf
