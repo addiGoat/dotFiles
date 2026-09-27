@@ -8,6 +8,7 @@ require("modules.events")
 require("modules.scratchpad")
 
 require("plugins.bars")
+require("plugins.gloview")
 require("plugins.dynamic-cursors")
 
 require("modules.rofi")
