@@ -2,6 +2,7 @@ return{
     {
         'akinsho/toggleterm.nvim',
         version = "*",
+        lazy = false,
         
         opts = {
             direction = "horizontal",
@@ -19,20 +20,22 @@ return{
         keys = {
             {
                 "<C-t>",
-                '<cmd>1ToggleTerm direction="horizontal", size=15<CR>',
+                '<cmd>ToggleTerm<CR>',
                 mode = { "n" },
                 desc = "Toggle terminal",
             },
-            {
-                "<leader>tf",
-                "<cmd>2ToggleTerm direction=float<CR>",
-                mode = { "n" },
-                desc = "Toggle floating terminal",
-            },
+            -- {
+            --     "<leader>tf",
+            --     "<cmd>2ToggleTerm direction=float<CR>",
+            --     mode = { "n" },
+            --     desc = "Toggle floating terminal",
+            -- },
         },
 
         config = function(_, opts)
             require("toggleterm").setup(opts)
+
+            require("terminal.apps").setup()
 
             local terminal_options = { buffer = 0, silent = true }
 
@@ -49,8 +52,7 @@ return{
                         [[<C-\><C-n><cmd>ToggleTerm<CR>]],
                         terminal_options
                     )
-
-                    vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], terminal_options)
+                    
                 end
             })
         end
