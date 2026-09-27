@@ -24,12 +24,6 @@ return{
                 mode = { "n" },
                 desc = "Toggle terminal",
             },
-            -- {
-            --     "<leader>tf",
-            --     "<cmd>2ToggleTerm direction=float<CR>",
-            --     mode = { "n" },
-            --     desc = "Toggle floating terminal",
-            -- },
         },
 
         config = function(_, opts)

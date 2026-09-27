@@ -3,36 +3,6 @@ local Terminal = require("toggleterm.terminal").Terminal
 
 local M = {}
 
--- local floating_shell = terminal:new({
---     direction = "float",
---     hidden = true,
---
---     on_open = function(term)
---         vim.keymap.set("t", "<C-t>", function()
---             term:toggle()
---         end, {
---             buffer = term.bufnr,
---             silent = true,
---         })
---     end,
--- })
---
--- local lazygit = terminal:new({
---     cmd = "lazygit",
---     dir = "git_dir",
---     direction = "float",
---     hidden = true,
---
---     on_open = function(term)
---         vim.keymap.set("t", "<C-t>", function()
---             term:toggle()
---         end, {
---             buffer = term.bufnr,
---             silent = true,
---         })
---     end,
--- })
-
 local apps = {
     {
         name = "LazyGit",
@@ -48,7 +18,12 @@ local apps = {
         name = "Cherri Docker",
         cmd = "ssh cherri -t lazydocker",
         key = "<leader>td"
-    }
+    },
+    {
+        name = "Superfile Browser",
+        cmd = "spf",
+        key = "<leader>tb"
+    },
 }
 
 function M.setup()
