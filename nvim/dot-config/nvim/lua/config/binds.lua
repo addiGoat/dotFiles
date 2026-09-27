@@ -20,6 +20,8 @@ vim.api.nvim_create_user_command("Wq",   "wq",   {})
 vim.api.nvim_create_user_command("WQ",   "wq",   {})
 vim.api.nvim_create_user_command("Wqa",  "wqa",  {})
 
+-- Easy terminal mode escape bind
+vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { buffer = 0, silent = true })
 
 -- Escape function switch
 -- if search is highlighted, escape will unhighlight
