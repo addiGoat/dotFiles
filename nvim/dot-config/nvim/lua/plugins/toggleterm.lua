@@ -19,10 +19,16 @@ return{
         keys = {
             {
                 "<C-t>",
-                "<cmd>ToggleTerm<CR>",
-                mode = { "t", "n" },
+                '<cmd>1ToggleTerm direction="horizontal", size=15<CR>',
+                mode = { "n" },
                 desc = "Toggle terminal",
-            }
+            },
+            {
+                "<leader>tf",
+                "<cmd>2ToggleTerm direction=float<CR>",
+                mode = { "n" },
+                desc = "Toggle floating terminal",
+            },
         },
 
         config = function(_, opts)
@@ -35,6 +41,14 @@ return{
                     vim.opt_local.number = false
                     vim.opt_local.relativenumber = false
                     vim.opt_local.signcolumn = "no"
+                    
+                    -- Global terminal mode escape hatch
+                    vim.keymap.set(
+                        "t",
+                        "<C-t>",
+                        [[<C-\><C-n><cmd>ToggleTerm<CR>]],
+                        terminal_options
+                    )
 
                     vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], terminal_options)
                 end
