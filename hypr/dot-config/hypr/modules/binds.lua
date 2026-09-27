@@ -1,4 +1,4 @@
-require("modules.startup")
+-- require("modules.startup")
 
 
 local mainMod = "ALT"
@@ -8,7 +8,7 @@ hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(Terminal))
 hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("gtk-launch $(xdg-settings get default-web-browser)"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(Launcher))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("kitty --title=kitty-float yazi ~"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("kitty --title=kitty-float spf ~"))
 
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode="fullscreen", action="toggle" }))
 hl.bind("SUPER + T", hl.dsp.window.float({ action="toggle"}))
