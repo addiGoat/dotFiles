@@ -35,3 +35,6 @@ abbr tree eza -T
 
 abbr raybuild 'clang++ main.cpp -o main -lraylib'
 abbr ghrc gh repo create --private --source=. --remote=origin --push
+
+
+abbr nvos 'nvim -u ~/.config/nvim-nvos/init.lua'
