@@ -29,11 +29,16 @@ else
 		size = {1920, 1080}
 	})
 
-    for i = 1, 10 do
+    hl.workspace_rule({
+        workspace = "1",
+        monitor = "Chimei Innolux Corporation 0x1631 0x00000200",
+        default = true
+    })
+
+    for i = 2, 10 do
         hl.workspace_rule({
             workspace = tostring(i),
-            monitor = "eDP-1",
-            default = true
+            monitor = "Chimei Innolux Corporation 0x1631 0x00000200",
         })
     end
 
