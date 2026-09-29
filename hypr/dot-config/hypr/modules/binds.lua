@@ -80,3 +80,10 @@ hl.define_submap("resize", function()
     hl.bind("escape", hl.dsp.submap("reset"))
 
 end)
+
+
+local pause_keybind = "SUPER + SHIFT + P"
+hl.bind(pause_keybind, hl.dsp.submap("pause"))
+hl.define_submap("pause", function ()
+   hl.bind(pause_keybind, hl.dsp.submap("reset")) 
+end)
