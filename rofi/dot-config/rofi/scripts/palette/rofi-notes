@@ -1,22 +1,38 @@
 #!/usr/bin/env fish
 
-set -l noteDir "$HOME/Sync/Documents/Obsidian/MainVault/100 - Index"
-
-if not test -e $noteDir then
-    set noteDir "$HOME/Notes"
-    mkdir -p $noteDir
-end
+set -l read_dir "$HOME/Sync/Documents/Obsidian/MainVault/"
+set -l write_dir "$read_dir/100 - Index"
 
 set -l prompt "+ New Note"
 
+if not test -e $read_dir
+    set read_dir "$HOME/Notes"
+    set write_dir "$read_dir"
+end
+
+mkdir -p $write_dir
+
+
+function title_case
+    for word in (string split '-' $argv[1])
+        set first (string upper (string sub -l 1 $word))
+        set rest (string sub -s 2 $word)
+        echo -n "$first$rest "
+    end
+end
+
+function make_note -a name dir
+    set -f pretty_name (title_case "$name")
+    printf "%s\n\n\n%s" "# $pretty_name" (date +"%a, %B %-d, %Y - %I:%M %p") >> "$dir/$name.md"
+end
 
 set -l choice (
 begin
-  echo "$prompt"
-  for note in "$noteDir"/*.md
-    echo (basename "$note")
-  end
-end | rofi -dmenu -p "Notes"
+    echo "$prompt"
+    for note in (cd "$read_dir"; fd . -e md)
+        echo "$note"
+    end
+end | rofi -dmenu -i -p "Notes"
 )
 
 switch $choice
