@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+/usr/lib/firefox/firefox -taskbar-tab db186b57-fe73-4c81-8dd8-c2492983a412 -new-window https://app.notion.com -profile /home/addigoat/.config/mozilla/firefox/6n3z8n42.default-release -container 0
