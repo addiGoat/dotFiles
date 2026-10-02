@@ -1,49 +1,77 @@
 #!/usr/bin/env fish
 
-set -l noteDir "$HOME/Sync/Documents/Obsidian/MainVault/100 - Index"
-
-if not test -e $noteDir then
-    set noteDir "$HOME/Notes"
-    mkdir -p $noteDir
-end
+set -l read_dir "$HOME/Sync/Documents/Obsidian/MainVault/"
+set -l write_dir "$read_dir/100 - Index"
 
 set -l prompt "+ New Note"
 
+if not test -e $read_dir
+    set read_dir "$HOME/Notes"
+    set write_dir "$read_dir"
+end
+
+mkdir -p $write_dir
+
+
+function title_case
+    for word in (string split '-' $argv[1])
+        set first (string upper (string sub -l 1 $word))
+        set rest (string sub -s 2 $word)
+        echo -n "$first$rest "
+    end
+end
+
+function make_note -a name dir
+    set -f pretty_name (title_case "$name")
+    printf "%s\n\n\n%s" "# $pretty_name" (date +"%a, %B %-d, %Y - %I:%M %p") >> "$dir/$name.md"
+end
 
 set -l choice (
 begin
-  echo "$prompt"
-  for note in "$noteDir"/*.md
-    echo (basename "$note")
-  end
-end | rofi -dmenu -p "Notes"
+    echo "$prompt"
+    for note in (cd "$read_dir"; fd . -e md)
+        echo "$note"
+    end
+end | rofi -dmenu -i -p "Notes"
 )
 
 switch $choice
-  case "$prompt"
-    set name (rofi -dmenu -p "Name")
-    test -z $name; and exit 0
-    set target "$noteDir/$name.md"
-    touch $target
-    kitty --class rofi-notes nvim "$target"
-  case ""
-    echo "User exited launcher"; exit 0
-  case "*"
-  set noteChoice (printf "%s\n" "View" "Edit" "Delete" | rofi -dmenu)
-  switch $noteChoice
-    case "View"
-      kitty --title kitty-float glow -t "$noteDir/$choice"
-    case "Edit"
-      kitty --title kitty-float nvim "$noteDir/$choice"
-    case "Delete"
-      set confirm (printf "%s\n" "Yes" "No" | rofi -dmenu)
-      if test "$confirm" = "Yes"
-        rm "$noteDir/$choice"
-        exit 0
-      else
-        exit 0
-      end
-  end
+
+    # New Note Choice
+    case "$prompt"
+        set file_name (rofi -dmenu -p "Name")
+
+        test -z $file_name; and exit 0
+
+        make_note $file_name $write_dir
+
+        kitty --class rofi-notes nvim "$write_dir/$file_name.md"
+
+    case ""
+        echo "User exited launcher"; exit 0
+
+    # Chose existing note
+    case "*"
+
+        set note_action (printf "%s\n" "View" "Edit" "Delete" | rofi -dmenu)
+
+        switch $note_action
+            case "View"
+                kitty --title kitty-float glow -t "$read_dir/$choice"
+
+            case "Edit"
+                kitty --title kitty-float nvim "$read_dir/$choice"
+
+            case "Delete"
+                set confirm (printf "%s\n" "Yes" "No" | rofi -dmenu)
+
+                if test "$confirm" = "Yes"
+                    rm "$read_dir/$choice"
+                    exit 0
+                else
+                    exit 0
+                end
+        end
 end
 
 
