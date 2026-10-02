@@ -57,14 +57,9 @@ return {
         --     desc = "UnrealEngine: Link Plugin - Build Engine"
         -- },
     },
-    -- Optional, this will update and build the Unreal Engine plugin on update
-    build = function()
-        -- Path required to be passed in
-        require("unrealengine.commands").build_engine({ engine_path = "/home/addigoat/UnrealEngine/5.8.2" })
-    end,
     opts = {
         auto_generate = true, -- Auto generates LSP info when detected in CWD | default: false
-        auto_build = true, -- Auto builds on save | default: false
+        auto_build = false, -- Auto builds on save | default: false
         engine_path = "/home/addigoat/UnrealEngine/5.8.2", -- Path to your UnrealEngine source directory
         build_type = "Development", -- Build type: "DebugGame", "Development", or "Shipping"
         with_editor = true, -- Build with editor | default: true
