@@ -1,10 +1,16 @@
 #!/usr/bin/env fish
 
-set noteDir "$HOME/Notes"
-set prompt "+ New Note"
+set -l noteDir "$HOME/Sync/Documents/Obsidian/MainVault/100 - Index"
+
+if not test -e $noteDir then
+    set noteDir "$HOME/Notes"
+    mkdir -p $noteDir
+end
+
+set -l prompt "+ New Note"
 
 
-set choice (
+set -l choice (
 begin
   echo "$prompt"
   for note in "$noteDir"/*.md
@@ -26,9 +32,9 @@ switch $choice
   set noteChoice (printf "%s\n" "View" "Edit" "Delete" | rofi -dmenu)
   switch $noteChoice
     case "View"
-      kitty --class rofi-notes glow -t "$noteDir/$choice"
+      kitty --title kitty-float glow -t "$noteDir/$choice"
     case "Edit"
-      kitty --class rofi-notes nvim "$noteDir/$choice"
+      kitty --title kitty-float nvim "$noteDir/$choice"
     case "Delete"
       set confirm (printf "%s\n" "Yes" "No" | rofi -dmenu)
       if test "$confirm" = "Yes"
