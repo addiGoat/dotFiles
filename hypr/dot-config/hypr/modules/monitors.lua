@@ -24,21 +24,21 @@ else
 	hl.monitor({
 		output = "eDP-1",
 		mode = "2560x1600@165",
-		position = "0x0",
+		position = "2560x730",
 		scale = "1",
 	})
 
 	hl.monitor({
 		output = "eDP-2",
 		mode = "2560x1600@165",
-		position = "0x0",
+		position = "2560x730",
 		scale = "1",
 	})
 
 	hl.monitor({
 		output = "HDMI-A-1",
-		mode = "2560x1440@59.95Hz",
-		position = "0x-1440",
+		mode = "2560x1440@144.00Hz",
+		position = "0x360",
 		scale = "1",
 	})
 end
