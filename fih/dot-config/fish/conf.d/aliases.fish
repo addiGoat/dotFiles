@@ -38,3 +38,4 @@ abbr ghrc gh repo create --private --source=. --remote=origin --push
 
 
 abbr nvos 'nvim -u ~/.config/nvim-nvos/init.lua'
+abbr cheat curl cht.sh
