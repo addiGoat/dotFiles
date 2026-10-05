@@ -1,0 +1,21 @@
+pkgname=
+pkgver=
+pkgrel=1
+pkgdesc=
+arch=()
+url=
+license=()
+
+depends=()
+makedepends=()
+
+source=()
+sha256sums=()
+
+build() {
+    
+}
+
+package() {
+    
+}
