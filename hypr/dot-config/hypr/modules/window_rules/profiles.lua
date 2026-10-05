@@ -13,6 +13,10 @@ local window_profiles = {
         tags = { "utility", "no_rounding" },
     },
     {
+        match = { class = "yad" },
+        tags = { "utility" },
+    },
+    {
         match = { title = "kitty-lazygit" },
         tags = { "utility" },
     },
@@ -76,7 +80,10 @@ local window_profiles = {
         match = { class = "zenity" },
         tags = { "no_bar" },
     },
-
+    {
+        match = { class = "firefox.webapp-db186b57-fe73-4c81-8dd8-c2492983a412" },
+        tags = { "no_bar" },
+    },
 }
 
 for _, profile in ipairs(window_profiles) do

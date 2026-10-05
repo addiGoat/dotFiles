@@ -53,7 +53,7 @@ switch $choice
     # Chose existing note
     case "*"
 
-        set note_action (printf "%s\n" "View" "Edit" "Delete" | rofi -dmenu)
+        set note_action (printf "%s\n" "View" "Edit" "Delete" | rofi -i -dmenu)
 
         switch $note_action
             case "View"
@@ -63,7 +63,7 @@ switch $choice
                 kitty --title kitty-float nvim "$read_dir/$choice"
 
             case "Delete"
-                set confirm (printf "%s\n" "Yes" "No" | rofi -dmenu)
+                set confirm (printf "%s\n" "Yes" "No" | rofi -i -dmenu)
 
                 if test "$confirm" = "Yes"
                     rm "$read_dir/$choice"

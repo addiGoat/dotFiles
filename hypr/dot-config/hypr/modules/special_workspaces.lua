@@ -1,9 +1,19 @@
 local utils = require("modules.utils")
 local mainMod = "ALT"
 
-utils.make_special(mainMod, "SHIFT + D", "vesktop", "vesktop", "vesktop")
 
+local gpt_keybind
+local env = require("modules.env")
+if env.is_desktop then
+    gpt_keybind = "Menu"
+else
+    gpt_keybind = "SUPER + SHIFT + code:201"
+end
+
+-- Basic special workspaces
+utils.make_special(mainMod, "SHIFT + D", "vesktop", "vesktop", "vesktop")
 utils.make_special("SUPER", "B", "bitwarden", "Bitwarden", "bitwarden-desktop")
+utils.make_special("", gpt_keybind, "chatgpt", "Chatgpt", "chatgpt")
 
 -- Game Workspace
 hl.bind("SUPER + G", hl.dsp.focus({ workspace = 20 }))
@@ -30,36 +40,19 @@ hl.on("window.open", function(w)
     end
 end)
 
--- ChatGPT Workspace Toggle
-local gpt_keybind
-local env = require("modules.env")
+-- notion workspace ig
+hl.on("hyprland.start", function ()
+    hl.exec_cmd("/home/addigoat/.local/bin/notion-webapp")
+end)
+hl.bind("SUPER + N", hl.dsp.workspace.toggle_special("notion"))
 
-if env.is_desktop then
-    gpt_keybind = "Menu"
-else
-    gpt_keybind = "SUPER + SHIFT + code:201"
-end
-
-utils.make_special("", gpt_keybind, "chatgpt", "Chatgpt", "chatgpt")
-
--- local previous_workspace = nil
--- local gpt_workspace = 21
--- hl.bind(gpt_keybind, function()
---     local current = hl.get_active_workspace()
---
---     if not current then
---         return
---     end
---
---     if current.id == gpt_workspace then
---         hl.dispatch(hl.dsp.focus({ workspace = previous_workspace }))
---     else
---         previous_workspace = current.id
---         hl.dispatch(hl.dsp.focus({ workspace = gpt_workspace }))
---     end
--- end)
--- hl.workspace_rule({ 
---     workspace = "21",
---     on_created_empty = "chatgpt",
---     monitor = "DP-1"
--- })
+hl.window_rule({
+    name = "notion" .. "-scratchpad",
+    match = {
+        class = "firefox.webapp-db186b57-fe73-4c81-8dd8-c2492983a412",
+    },
+    float = true,
+    workspace = "special-notion silent",
+    size = {1280, 720},
+    move = {"monitor_w / 0.5", "monitor_h / 0.5"}
+})
