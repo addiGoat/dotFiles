@@ -18,7 +18,3 @@ configuration {
     display-name: "";
   }
 }
-
-entry {
-    placeholder: "";
-}
