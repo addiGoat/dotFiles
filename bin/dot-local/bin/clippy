@@ -1,0 +1,8 @@
+#!/usr/bin/env fish
+
+
+set choice (cliphist list | rofi -dmenu -i -p "clip:") 
+test -z $choice; and exit 0 # quit if esc pressed
+
+echo $choice | cliphist decode | wl-copy
+

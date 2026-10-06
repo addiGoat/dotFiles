@@ -54,8 +54,8 @@ hl.bind("SUPER + mouse:272", hl.dsp.window.drag())
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize())
 
 -- Screen Capture
-hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region --freeze --clipboard-only"))
-hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("pkill -SIGUSR1 -f '^gpu-screen-recorder'"))
+hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region --freeze --clipboard-only")) -- Screenshot
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("pkill -SIGUSR1 -f '^gpu-screen-recorder'")) -- Shadowplay
 
 -- Laptop Lid Toggle
 hl.bind("switch:[Lid Switch]", hl.dsp.exec_cmd("hyprlock"), { locked = true })
@@ -63,6 +63,7 @@ hl.bind("switch:[Lid Switch]", hl.dsp.exec_cmd("hyprlock"), { locked = true })
 -- Toggleable term
 hl.bind("CONTROL + SHIFT + K", hl.dsp.exec_cmd("kitten quick-access-terminal"))
 
+hl.bind("SUPER + V", hl.dsp.exec_cmd("clippy"))
 
 -- === Submaps ===
 
