@@ -23,7 +23,7 @@ end
 
 function make_note -a name dir
     set -f pretty_name (title_case "$name")
-    printf "%s\n\n\n%s" "# $pretty_name" (date +"%a, %B %-d, %Y - %I:%M %p") >> "$dir/$name.md"
+    printf "\n\n\n%s" (date +"%a, %B %-d, %Y - %I:%M %p") >> "$dir/$name.md"
 end
 
 set -l choice (
@@ -32,18 +32,20 @@ begin
     for note in (cd "$read_dir"; fd . -e md)
         echo "$note"
     end
-end | rofi -dmenu -i -p "Notes"
+end | rofi -dmenu -i -p "notes:"
 )
 
 switch $choice
 
     # New Note Choice
     case "$prompt"
-        set file_name (rofi -dmenu -p "Name")
+        set file_name (rofi -dmenu -p "name:")
 
-        test -z $file_name; and exit 0
+        if test -z $file_name
+            set file_name (date +%Y-%m-%d_%H-%M-%S)
+        end
 
-        make_note $file_name $write_dir
+        make_note "$file_name" "$write_dir"
 
         kitty --class rofi-notes nvim "$write_dir/$file_name.md"
 
