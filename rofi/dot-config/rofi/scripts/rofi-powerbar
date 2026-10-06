@@ -4,7 +4,7 @@ function openUrl -a entry
 	xdg-open "https://duckduckgo.com/?q=%21$entry"
 end
 
-set command (rofi -config ~/.config/rofi/nobox.rasi -dmenu)
+set command (rofi -dmenu -p "do:" -placeholder "")
 
 if test -z "$command"
 	exit 0

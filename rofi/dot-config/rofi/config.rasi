@@ -1,6 +1,24 @@
-@import "config/general"
 @import "themes/dmenu-split"
 
 configuration {
-	show-icons: false;
+  show-icons: false;
+  font: env(ROFI_FONT, "JetBrainsMono Nerd Font Medium 12");
+
+  modi: "drun,run,window,emoji,ssh";
+
+  drun {
+    display-name: "run:";
+  }
+
+  run {
+    display-name: "";
+  }
+
+  window {
+    display-name: "";
+  }
+}
+
+entry {
+    placeholder: "";
 }
