@@ -8,5 +8,5 @@ if test -n $argv[1]
 end
 
 env SDL_VIDEODRIVER="$flag" \
-    prime-run ~/UnrealEngine/5.8.2/Engine/Binaries/Linux/UnrealEditor "$argv" &
+    ~/UnrealEngine/5.8.2/Engine/Binaries/Linux/UnrealEditor "$argv" &
 
