@@ -1,6 +1,4 @@
 * {
-  background-color: transparent;
-
   border: 0;
   margin: 0;
   padding: 0;
@@ -13,7 +11,7 @@ configuration {
   modi: "drun,run,window,emoji,ssh";
 
   drun {
-    display-name: "";
+    display-name: "run:";
   }
 
   run {
@@ -23,14 +21,4 @@ configuration {
   window {
     display-name: "";
   }
-}
-
-inputbar {
-  children: [prompt, entry];
-}
-
-prompt {
-  padding: 10px;
-  text-color: #e0def4;
-  enabled: false;
 }

@@ -1,5 +1,5 @@
 @import "config/general"
-@import "themes/murz"
+@import "themes/dmenu-split"
 
 configuration {
 	show-icons: false;

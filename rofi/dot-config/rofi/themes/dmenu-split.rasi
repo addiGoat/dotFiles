@@ -28,6 +28,7 @@ mainbox, leftbox, rightbox, inputbar, listview, prompt, entry, leftblank {
     margin: 0px;
     border: 0px;
     border-radius: 0px;
+    expand: false;
 }
 
 mainbox {
@@ -41,7 +42,7 @@ mainbox {
 leftbox {
     orientation: vertical;
     children: [ "prompt", "leftblank" ];
-    width: 68px;
+    width: 0px;
     expand: false;
     spacing: 0px;
     padding: 0px;
@@ -62,11 +63,11 @@ inputbar {
     spacing: 0px;
     padding: 0px;
     margin: 0px;
-    background-color: @bg;
+    background-color: @bg-blue;
 }
 
 prompt {
-    padding: 6px 12px;
+    padding: 6px 10px;
     background-color: @hi-bg;
     text-color: @hi-fg;
 }
@@ -74,21 +75,24 @@ prompt {
 entry {
     margin: 0px;
     padding: 6px 12px;
-    background-color: @bg;
+    background-color: @bg-blue;
     text-color: @fg;
 }
 
 leftblank {
-    expand: true;
+    expand: false;
     background-color: @bg-blue;
 }
 
 listview {
     lines: 6;
-    fixed-height: true;
+    fixed-height: false;
     spacing: 0px;
     padding: 0px;
     background-color: @bg-blue;
+    scrollbar: false;
+
+    separator-style: none;
 }
 
 element {
@@ -97,22 +101,23 @@ element {
     border-radius: 0px;
     padding: 4px 12px;
     background-color: @bg-blue;
-    text-color: @fg;
-}
-
-element selected {
-    margin: 0px;
-    border: 0px;
-    border-radius: 0px;
-    background-color: @hi-bg;
-    text-color: @hi-fg;
+    color: @bg;
+    text-color: @bg;
 }
 
 element-text {
-    background-color: inherit;
-    text-color: inherit;
+    background-color: @bg-blue;
+    text-color: @fg;
 }
 
-scrollbar {
-    enabled: false;
+element-text selected,
+element selected.normal {
+    background-color: @hi-bg;
 }
+
+element normal.normal, 
+element alternate.normal {
+    background-color: @bg-blue;
+}
+
+
