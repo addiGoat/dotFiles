@@ -1,0 +1,39 @@
+#!/usr/bin/env fish
+ 
+function test_string
+    if test -z $argv
+        exit 0
+    end
+end
+
+set -l selection (ps axo pid,comm | rofi -dmenu -i -p "kill:" | string trim --left)
+test_string $selection
+
+set -l pid (string split ' ' $selection)[1]
+set -l command (string split -m1 ' ' $selection)[2]
+
+set -l action (printf "%s\n" "Terminate" "Interrupt" "Kill"  | rofi -dmenu -p "kill:")
+test_string $action
+
+set signal ''
+
+switch $action
+    case "Terminate"
+        set signal "TERM"
+        
+    case "Interrupt"
+        set signal "INT"
+
+    case "Kill"
+        set signal "KILL"
+
+    case '*'
+        echo how did you manage that.
+end
+
+set -l response (printf "%s\n" "no" "yes" | rofi -i -dmenu -p "kill $command?")
+if test "$response" = "yes"
+    kill --signal $signal $pid
+else
+    exit 0
+end
