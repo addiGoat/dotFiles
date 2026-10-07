@@ -5,7 +5,7 @@ save_replay() {
   pkill -SIGRTMIN+$num -f '^gpu-screen-recorder '
 }
 
-choice=$(printf "%s\n" "10 seconds" "30 seconds" "60 seconds" "5 minutes" | rofi -dmenu \
+choice=$(printf "%s\n" "10 seconds" "30 seconds" "60 seconds" "5 minutes" | rofi -i -dmenu \
   -p  "How long to capture?" \
   -mesg "Choose replay length to save")
 

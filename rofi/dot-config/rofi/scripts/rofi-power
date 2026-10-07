@@ -1,10 +1,10 @@
 #!/bin/bash
 
 confirm_action() {
-	printf "%s\n" "No" "Yes" | rofi -dmenu -p "$1"
+	printf "%s\n" "No" "Yes" | rofi -dmenu -i -p "$1"
 }
 
-choice=$(printf "%s\n" " Lock" "󰍃 Logout" "󰤄 Suspend" "󰜉 Reboot" "󰐥 Shutdown" | rofi -dmenu)
+choice=$(printf "%s\n" " Lock" "󰍃 Logout" "󰤄 Suspend" "󰜉 Reboot" "󰐥 Shutdown" | rofi -dmenu -i)
 
 case "$choice" in
 	" Lock")
