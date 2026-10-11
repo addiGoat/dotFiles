@@ -36,3 +36,4 @@ abbr ll         'eza -l --no-user'
 alias grep=     'grep --color=auto'
 
 
+abbr cx "chmod +x"
