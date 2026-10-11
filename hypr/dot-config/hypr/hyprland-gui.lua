@@ -18,12 +18,13 @@ hl.config({
         dim_strength = 0.15,
         inactive_opacity = 0.9,
         shadow = {
-            color = "0xff3d3846",
-            offset = "8 8",
+            color = "0x98a170e0",
+            color_inactive = "0xdc24273a",
+            offset = "6 8",
         },
     },
     general = {
-        border_size = 3,
+        border_size = 0,
         col = {
             active_border = "0xffa170e0",
         },
