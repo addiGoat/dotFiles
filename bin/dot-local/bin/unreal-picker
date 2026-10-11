@@ -1,0 +1,36 @@
+#!/usr/bin/env fish
+
+set unreal_project_dir "$HOME/Sync/Engine/Unreal"
+
+cd $unreal_project_dir
+
+# sub here to remove leading ./ for consistent variable behavior
+set project_paths (find -maxdepth 2 -name "*.uproject" | string sub --start 3)
+
+set project_names \
+(for project in $project_paths
+    set -l name (string sub --end -9 "$project" | string split --max 1 --right /)[2]
+    echo $name
+end)
+
+set choice (printf "%s\n" $project_names | rofi -dmenu -i -p 'proj:')
+
+# quit if user hit esc
+if test -z "$choice"; echo "user quit"; and exit 0; end
+
+set index 0
+for name in (string split ' ' "$project_names")
+    set index (math $index + 1)
+    if test "$name" = "$choice"
+        echo "match"
+        break
+    end
+    
+end
+
+
+echo "$unreal_project_dir/$project_paths[$index]"
+cd "$unreal_project_dir/$project_paths[$index]"
+pwd
+
+
