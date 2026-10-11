@@ -21,3 +21,6 @@ require("modules.special_workspaces")
 require("plugins.foxyd")
 
 local mainMod = "ALT"
+
+-- HyprMod managed settings
+require("hyprland-gui")
