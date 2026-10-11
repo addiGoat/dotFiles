@@ -18,6 +18,6 @@ require("modules.window_rules.init")
 require("modules.special_workspaces")
 
 -- horrible horrible idea
-require("plugins.foxyd")
+-- require("plugins.foxyd")
 
 local mainMod = "ALT"
