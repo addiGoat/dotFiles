@@ -17,7 +17,7 @@ local scripts = {
     },
 }
 
-local rofi_script_dir = "/home/addigoat/.config/rofi/scripts"
+local rofi_script_dir = "$HOME/.config/rofi/scripts"
 
 for _, script in ipairs(scripts) do
     hl.bind(script.bind, hl.dsp.exec_cmd(rofi_script_dir .. "/" .. script.name))
