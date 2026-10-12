@@ -1,6 +1,5 @@
 local env = require("modules.env")
 
-
 -- Bind workspaces to monitors
 local monitor_one = "DP-1"
 local monitor_two = "HDMI-A-1"
