@@ -30,7 +30,7 @@ local window_profiles = {
     },
     {
         match = { class = "Godot" },
-        tags = { "no_rounding", "no_bar" },
+        tags = { "no_rounding" },
     },
     {
         match = { class = "mpv" },
@@ -68,21 +68,9 @@ local window_profiles = {
         match = { class = "org.kde.ark" },
         tags = { "utility" },
     },
-    -- {
-    --     match = { class = "UnrealEditor" },
-    --     tags = { "utility" },
-    -- },
     {
         match = { class = "org.vinegarhq.Sober" },
         tags = { "game" },
-    },
-    {
-        match = { class = "zenity" },
-        tags = { "no_bar" },
-    },
-    {
-        match = { class = "firefox.webapp-db186b57-fe73-4c81-8dd8-c2492983a412" },
-        tags = { "no_bar" },
     },
 }
 

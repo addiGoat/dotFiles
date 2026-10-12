@@ -5,7 +5,6 @@ hl.window_rule({
      float = true,
      size = {1280, 720},
      opaque = true,
-     ["hyprbars:no_bar"] = true
 })
 
 hl.window_rule({
@@ -16,11 +15,6 @@ hl.window_rule({
 })
 
 -- Specific Override Tags
---
-hl.window_rule({
-     match = { tag = "no_bar"},
-     ["hyprbars:no_bar"] = true
-})
 
 hl.window_rule({
      match = { tag = "float"},
