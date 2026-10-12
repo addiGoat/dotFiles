@@ -1,18 +1,28 @@
--- require("modules.startup")
-
-
 local mainMod = "ALT"
 
--- General Bindings
-hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+-- Main bindings (terminal, browser, launcher etc.)
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(Terminal))
+hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("gtk-launch $(xdg-settings get default-web-browser)"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(Launcher))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("kitty --title=kitty-float spf ~"))
 
-hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode="fullscreen", action="toggle" }))
-hl.bind("SUPER + T", hl.dsp.window.float({ action="toggle"}))
 
+-- =====================================
+-- ==== Window/Workspace Management ====
+-- =====================================
+
+-- Workspace Switching
+for i = 1, 5 do
+	-- Alt+[1-5] for main monitor
+	hl.bind(mainMod .. " + " .. i , hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
+
+	-- Super+[1-5] for second monitor
+	hl.bind("SUPER + " .. i , hl.dsp.focus({ workspace = i + 5}))
+	hl.bind("SUPER + SHIFT + " .. i, hl.dsp.window.move({ workspace = i + 5 }))
+end
+
+-- Window Movement
 hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
 hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
@@ -23,68 +33,60 @@ hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
 hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
 
--- Focus workspace with Mod+Number key
-for i = 1, 5 do
-	-- Alt+[1-5] for tiled workspace/main monitor
-	hl.bind(mainMod .. " + " .. i , hl.dsp.focus({ workspace = i }))
-	hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
-
-	-- Super+[1-5] for floating workspace/second monitor
-	hl.bind("SUPER + " .. i , hl.dsp.focus({ workspace = i + 5}))
-	hl.bind("SUPER + SHIFT + " .. i, hl.dsp.window.move({ workspace = i + 5 }))
-end
-
-
--- Multimedia Keys
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
-hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),   { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
-
--- Requires playerctl
-hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode="fullscreen", action="toggle" }))
+hl.bind("SUPER + T", hl.dsp.window.float({ action="toggle"}))
 
 -- Move/Resize windows
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag())
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize())
 
+
+-- =========================
+-- ==== Multimedia Keys ====
+-- =========================
+
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+    { locked = true, repeating = true })
+
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+    { locked = true, repeating = true })
+
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+    { locked = true, repeating = true })
+
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
+    { locked = true, repeating = true })
+
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),
+    { locked = true, repeating = true })
+
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),
+    { locked = true, repeating = true })
+
+-- Requires playerctl
+hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),
+    { locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"),
+    { locked = true })
+hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"),
+    { locked = true })
+hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),
+    { locked = true })
+
+
+
+-- =======================
+-- ==== Miscellaneous ====
+-- =======================
+
 -- Screen Capture
 hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region --freeze --clipboard-only")) -- Screenshot
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("pkill -SIGUSR1 -f '^gpu-screen-recorder'")) -- Shadowplay
 
--- Laptop Lid Toggle
-hl.bind("switch:[Lid Switch]", hl.dsp.exec_cmd("hyprlock"), { locked = true })
-
 -- Toggleable term
 hl.bind("CONTROL + SHIFT + K", hl.dsp.exec_cmd("kitten quick-access-terminal"))
 
+
+-- Clipboard History
 hl.bind("SUPER + V", hl.dsp.exec_cmd("clippy"))
 
--- === Submaps ===
-
--- 'resize'
-hl.bind("SUPER + R", hl.dsp.submap("resize"))
-hl.define_submap("resize", function()
-
-    
-    hl.bind("h", hl.dsp.window.resize({ x = -10, y = 0, relative = true}), { repeating = true })
-    hl.bind("j", hl.dsp.window.resize({ x = 0, y = 10, relative = true}), { repeating = true })
-    hl.bind("k", hl.dsp.window.resize({ x = 0, y = -10, relative = true}), { repeating = true })
-    hl.bind("l", hl.dsp.window.resize({ x = 10, y = 0, relative = true}), { repeating = true })
-
-    -- Use `reset` to go back to the global submap
-    hl.bind("escape", hl.dsp.submap("reset"))
-
-end)
-
-
-local pause_keybind = "SUPER + SHIFT + P"
-hl.bind(pause_keybind, hl.dsp.submap("pause"))
-hl.define_submap("pause", function ()
-   hl.bind(pause_keybind, hl.dsp.submap("reset")) 
-end)
