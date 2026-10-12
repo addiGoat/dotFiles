@@ -1,34 +1,20 @@
-local env = require("modules.env")
-
-local monitor
-
-if env.is_desktop then
-    monitor = "DP-1"
-else
-    monitor = "eDP-1"
-end
--- GLOBAL VARIABLES --
-Terminal = "kitty"
-Launcher = "rofi -show drun"
-FileExplorer = "yazi"
-
--- ENVIRONMENT VARIABLES --
-	hl.env("HYPRCURSOR_SIZE", "24")
-	hl.env("HYPRCURSOR_THEME", "moga")
-	hl.env("XCURSOR_SIZE", "24")
-	hl.env("XCURSOR_THEME", "moga")
-	hl.env("TERMINAL", "kitty")
-	hl.env("EDITOR", "nvim")
-	hl.env("LIBVA_DRIVER_NAME", "nvidia")
-	hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
-	hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
-
-
--- AUTOSTART --
+-- Autostart
 hl.on("hyprland.start", function ()
-	hl.exec_cmd("waybar >> ~/.cache/waybar.log 2>&1")
+    hl.exec_cmd("waybar >> ~/.cache/waybar.log 2>&1")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hyprpm reload")
-    hl.exec_cmd("gpu-screen-recorder -w " .. monitor .. " -f 60 -a default_output -a default_input -q very_high -r 300 -o ~/Videos/Replays -c mkv -sc $HOME/scripts/save-replay")
+    hl.exec_cmd("gpu-screen-recorder -w " .. MonitorOne .. " -f 60  -a default_output  -a default_input  -q very_high  -r 300  -o ~/Videos/Replays  -c mkv  -sc $HOME/scripts/save-replay")
     hl.exec_cmd("wl-paste --watch cliphist store")
+    hl.exec_cmd("vesktop")
 end)
+
+-- ENVIRONMENT VARIABLES --
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_THEME", "moga")
+hl.env("XCURSOR_SIZE", "24")
+hl.env("XCURSOR_THEME", "moga")
+hl.env("TERMINAL", "kitty")
+hl.env("EDITOR", "nvim")
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")

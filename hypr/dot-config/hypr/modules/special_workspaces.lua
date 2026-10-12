@@ -1,19 +1,71 @@
-local utils = require("modules.utils")
-local mainMod = "ALT"
+-- General Purpose Scratchpad
+hl.bind("ALT + GRAVE", hl.dsp.workspace.toggle_special("scratchpad"))
 
+-- Move window to scratchpad and make it float
+hl.bind("ALT + SHIFT + GRAVE", function()
+    local window = hl.get_active_window()
+    if window ~= nil and window.floating == false then
+        hl.dispatch(hl.dsp.window.float({ action = "set"}))
+    end
+    hl.dispatch(hl.dsp.window.move({ workspace = "special:scratchpad", window = window}))
+end)
 
-local gpt_keybind
-local env = require("modules.env")
-if env.is_desktop then
-    gpt_keybind = "Menu"
-else
-    gpt_keybind = "SUPER + SHIFT + code:201"
-end
+-- Chatgpt workspace
+hl.bind("SUPER + SHIFT + code:201", hl.dsp.workspace.toggle_special("chatgpt"))
+hl.bind("Menu", hl.dsp.workspace.toggle_special("chatgpt"))
 
--- Basic special workspaces
-utils.make_special(mainMod, "SHIFT + D", "vesktop", "vesktop", "vesktop")
-utils.make_special("SUPER", "B", "bitwarden", "Bitwarden", "bitwarden-desktop")
-utils.make_special("", gpt_keybind, "chatgpt", "Chatgpt", "chatgpt")
+hl.window_rule({
+    name = "chatgpt-scratchpad",
+    match = { class = "Chatgpt" },
+    float = true,
+    workspace = "special:chatgpt silent",
+    size = {1280, 720},
+    move = {"monitor_w / 0.5", "monitor_h / 0.5"}
+})
+
+hl.workspace_rule({
+    workspace = "special:chatgpt",
+    on_created_empty = "chatgpt",
+})
+
+-- Discord workspace
+hl.bind(MainMod .. "+ SHIFT + D", hl.dsp.workspace.toggle_special("discord"))
+
+hl.window_rule({
+    name = "discord-scratchpad",
+    match = { class = "vesktop" },
+    float = true,
+    workspace = "special:discord silent",
+    size = {1280, 720},
+    move = {"monitor_w / 0.5", "monitor_h / 0.5"}
+})
+
+hl.workspace_rule({
+    workspace = "special:discord",
+    on_created_empty = "vesktop",
+    persistent = true
+})
+
+-- Stop windows opening on discord workspace
+hl.on("window.open", function (w)
+    local special_workspace =  hl.get_active_special_workspace()
+
+    if not special_workspace then
+        return
+    end
+
+    if special_workspace.name == "special:discord" and w.class == "vesktop" then
+        return
+    end
+	local ws = hl.get_active_workspace()
+
+	hl.dispatch(
+		hl.dsp.window.move({
+			workspace = ws,
+			window = w
+		})
+	)
+end)
 
 -- Game Workspace
 hl.bind("SUPER + G", hl.dsp.focus({ workspace = 20 }))
@@ -39,20 +91,3 @@ hl.on("window.open", function(w)
 
     end
 end)
-
--- notion workspace ig
-hl.on("hyprland.start", function ()
-    hl.exec_cmd("/home/addigoat/.local/bin/notion-webapp")
-end)
-hl.bind("SUPER + N", hl.dsp.workspace.toggle_special("notion"))
-
-hl.window_rule({
-    name = "notion" .. "-scratchpad",
-    match = {
-        class = "firefox.webapp-db186b57-fe73-4c81-8dd8-c2492983a412",
-    },
-    float = true,
-    workspace = "special-notion silent",
-    size = {1280, 720},
-    move = {"monitor_w / 0.5", "monitor_h / 0.5"}
-})

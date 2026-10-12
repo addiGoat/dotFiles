@@ -1,18 +1,27 @@
-require("modules.monitors")
-require("modules.general_appearance")
+local env = require("modules.env")
+
+-- GLOBAL VARIABLES --
+MainMod = "ALT"
+
+Terminal = "kitty"
+Launcher = "rofi -show drun"
+
+MonitorOne = "DP-1"
+MonitorTwo = "HDMI-A-1"
+
+if env.is_laptop then
+    MonitorOne = "eDP-1"
+end
+
+-- System config
 require("modules.startup")
-require("modules.binds")
+require("modules.general_appearance")
+require("modules.monitors")
 require("modules.input")
-require("modules.events")
-require("modules.scratchpad")
+
+require("modules.binds")
 require("modules.submaps")
-
-require("plugins.bars")
-require("plugins.gloview")
-require("plugins.dynamic-cursors")
-
 require("modules.rofi")
-
 
 require("modules.window_rules.init")
 require("modules.special_workspaces")
@@ -20,7 +29,7 @@ require("modules.special_workspaces")
 -- horrible horrible idea
 -- require("plugins.foxyd")
 
-local mainMod = "ALT"
+require("plugins.dynamic-cursors")
 
 -- HyprMod managed settings
 require("hyprland-gui")

@@ -1,10 +1,8 @@
-local mainMod = "ALT"
-
 -- Main bindings (terminal, browser, launcher etc.)
-hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(Terminal))
-hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("gtk-launch $(xdg-settings get default-web-browser)"))
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(Launcher))
+hl.bind(MainMod .. " + RETURN", hl.dsp.exec_cmd(Terminal))
+hl.bind(MainMod .. " + Q", hl.dsp.window.close())
+hl.bind(MainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("gtk-launch $(xdg-settings get default-web-browser)"))
+hl.bind(MainMod .. " + D", hl.dsp.exec_cmd(Launcher))
 
 
 -- =====================================
@@ -14,8 +12,8 @@ hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(Launcher))
 -- Workspace Switching
 for i = 1, 5 do
 	-- Alt+[1-5] for main monitor
-	hl.bind(mainMod .. " + " .. i , hl.dsp.focus({ workspace = i }))
-	hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
+	hl.bind(MainMod .. " + " .. i , hl.dsp.focus({ workspace = i }))
+	hl.bind(MainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
 
 	-- Super+[1-5] for second monitor
 	hl.bind("SUPER + " .. i , hl.dsp.focus({ workspace = i + 5}))
@@ -23,15 +21,15 @@ for i = 1, 5 do
 end
 
 -- Window Movement
-hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
-hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
+hl.bind(MainMod .. " + h", hl.dsp.focus({ direction = "left" }))
+hl.bind(MainMod .. " + j", hl.dsp.focus({ direction = "down" }))
+hl.bind(MainMod .. " + k", hl.dsp.focus({ direction = "up" }))
+hl.bind(MainMod .. " + l", hl.dsp.focus({ direction = "right" }))
 
-hl.bind(mainMod .. " + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
-hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
-hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
-hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
+hl.bind(MainMod .. " + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
+hl.bind(MainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
+hl.bind(MainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
+hl.bind(MainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
 
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode="fullscreen", action="toggle" }))
 hl.bind("SUPER + T", hl.dsp.window.float({ action="toggle"}))
@@ -81,7 +79,7 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),
 
 -- Screen Capture
 hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region --freeze --clipboard-only")) -- Screenshot
-hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("pkill -SIGUSR1 -f '^gpu-screen-recorder'")) -- Shadowplay
+hl.bind(MainMod .. " + Print", hl.dsp.exec_cmd("pkill -SIGUSR1 -f '^gpu-screen-recorder'")) -- Shadowplay
 
 -- Toggleable term
 hl.bind("CONTROL + SHIFT + K", hl.dsp.exec_cmd("kitten quick-access-terminal"))
