@@ -1,8 +1,8 @@
---local utils = require("modules.utils")
-
+-- Stop windows opening on special workspaces (minus general scratchpad)
 hl.on("window.open", function (w)
 
-	if hl.get_active_special_workspace() == nil then
+	if hl.get_active_special_workspace() == nil
+    or hl.get_active_special_workspace().name == "special:scratchpad" then
 		return
 	end
 
@@ -16,10 +16,3 @@ hl.on("window.open", function (w)
 	)
 
 end)
-
---hl.on("window.open_early", function (w)
---	hl.notification.create({
---		text = "title: " .. w.title .. ", address: " .. w.address,
---		duration = 4000
---	})
---end)
