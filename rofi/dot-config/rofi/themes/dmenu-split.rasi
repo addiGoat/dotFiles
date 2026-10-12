@@ -2,9 +2,9 @@
     font: "JetBrainsMono Nerd Font 14";
     bg: #14100e;
     fg: #cdd6f8;
-    hi-bg: #7999d9;
+    hi-bg: #708ec9;
     hi-fg: #d8d0c8;
-    bg-blue: #24273a;
+    bg-blue: #1d1f23;
 
     border: 0px;
     border-radius: 0px;
@@ -12,23 +12,16 @@
 }
 
 window {
-    width: 665px;
+    width: 25%;
+    y-offset: 25%;
+
     location: north;
     anchor: north;
-    y-offset: 400px;
 
     padding: 0px;
-    margin: 0px;
     border: 0px;
-    border-radius: 0px;
-    background-color: @bg-blue;
-}
 
-mainbox, leftbox, rightbox, inputbar, listview, prompt, entry, leftblank {
-    margin: 0px;
-    border: 0px;
-    border-radius: 0px;
-    expand: false;
+    background-color: @bg-blue;
 }
 
 mainbox {
@@ -42,71 +35,54 @@ mainbox {
 leftbox {
     orientation: vertical;
     children: [ "prompt", "leftblank" ];
-    width: 0px;
     expand: false;
-    spacing: 0px;
-    padding: 0px;
-    background-color: @bg-blue;
 }
 
 rightbox {
     orientation: vertical;
-    children: [ "inputbar", "listview" ];
-    expand: true;
-    spacing: 0px;
-    padding: 0px;
-    background-color: @bg-blue;
-}
-
-inputbar {
-    children: [ "entry" ];
-    spacing: 0px;
-    padding: 0px;
-    margin: 0px;
-    background-color: @bg-blue;
-}
-
-prompt {
-    padding: 6px 10px;
-    background-color: @hi-bg;
-    text-color: @hi-fg;
+    children: [ "entry", "listview" ];
 }
 
 entry {
+    padding: 4px 4px;
     margin: 0px;
-    padding: 6px 12px;
     background-color: @bg-blue;
     text-color: @fg;
-}
-
-leftblank {
-    expand: false;
-    background-color: @bg-blue;
 }
 
 listview {
     lines: 6;
     fixed-height: false;
-    spacing: 0px;
-    padding: 0px;
-    background-color: @bg-blue;
-    scrollbar: false;
 
-    separator-style: none;
+    padding: 0px;
+    
+    border: 0px;
+
+    scrollbar: false;
+    expand: false;
+
 }
 
-element {
+// "run:", "cmd:" etc.
+prompt {
+    padding: 4px;
+    background-color: @hi-bg;
+    text-color: @hi-fg;
+}
+
+message {
+    padding: 0px;
     margin: 0px;
     border: 0px;
-    border-radius: 0px;
-    padding: 4px 12px;
-    background-color: @bg-blue;
-    color: @bg;
-    text-color: @bg;
+    spacing: 0px;
+}
+
+
+element {
+    padding: 4px 4px;
 }
 
 element-text {
-    background-color: @bg-blue;
     text-color: @fg;
 }
 
