@@ -13,14 +13,17 @@ hl.config({
             passes = 2,
             size = 4,
             special = true,
+            vibrancy = 0.16,
         },
         dim_inactive = true,
         dim_strength = 0.15,
         inactive_opacity = 0.9,
         shadow = {
-            color = "0x98a170e0",
+            color = "0xff7999d9",
             color_inactive = "0xdc24273a",
-            offset = "6 8",
+            offset = "5 5",
+            range = 0,
+            render_power = 2,
         },
     },
     general = {
@@ -30,10 +33,6 @@ hl.config({
         },
         gaps_in = 10,
         gaps_out = 20,
-    },
-    gestures = {
-        workspace_swipe_direction_lock = false,
-        workspace_swipe_forever = true,
     },
     input = {
         touchpad = {
