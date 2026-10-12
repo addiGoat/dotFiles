@@ -46,17 +46,18 @@ hl.workspace_rule({
     persistent = true
 })
 
--- Stop windows opening on discord workspace
+-- Stop windows opening on special workspaces
 hl.on("window.open", function (w)
     local special_workspace =  hl.get_active_special_workspace()
 
-    if not special_workspace then
+    if not special_workspace or special_workspace.name ~= "special:discord" then
         return
     end
 
-    if special_workspace.name == "special:discord" and w.class == "vesktop" then
+    if w.class == "vesktop" then
         return
     end
+
 	local ws = hl.get_active_workspace()
 
 	hl.dispatch(
