@@ -15,11 +15,9 @@ hl.window_rule({
     monitor = "DP-1",
     move = {1675, 45},
     size = {865, 700},
-    ["hyprbars:no_bar"] = true
 })
 
 hl.window_rule({
     name = "unreal-engine-rules",
     match = { class = "UnrealEditor" },
-    ["hyprbars:no_bar"] = true
 })
