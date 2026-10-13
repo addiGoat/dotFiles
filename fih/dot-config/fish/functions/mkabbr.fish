@@ -1,5 +1,3 @@
-#!/usr/bin/env fish
-
 function mkabbr -a name command
     set -f alias_file "$HOME/.config/fish/conf.d/aliases.fish"
 
