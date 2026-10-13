@@ -26,6 +26,8 @@ abbr nvos       'nvim -u ~/.config/nvim-nvos/init.lua'
 abbr kristal    '/usr/bin/love /home/addigoat/Projects/Engines/Kristal/'
 abbr kristail   'tail -f ~/Projects/Engines/Kristal/kristal.log'
 
+abbr -a thatone --position command --function __thatone
+
 ## ---- replace/modify builtins ----
 
 # Abbreviate ls to eza function, to hide additional cosmetic flags
