@@ -5,7 +5,7 @@ hl.bind(MainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("gtk-launch $(xdg-settin
 hl.bind(MainMod .. " + D", hl.dsp.exec_cmd(Launcher))
 
 -- Rofi emoji
-hl.bind("SUPER + E", hl.dsp.exec_cmd("rofi -show emoji 2&>1 | wl-copy"))
+hl.bind("SUPER + E", hl.dsp.exec_cmd("rofi -show emoji"))
 
 
 
