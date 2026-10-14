@@ -55,13 +55,10 @@ switch $choice
     # Chose existing note
     case "*"
 
-        set note_action (printf "%s\n" "View" "Edit" "Delete" | rofi -i -dmenu)
+        set note_action (printf "%s\n" "Edit/View" "Delete" | rofi -i -dmenu)
 
         switch $note_action
-            case "View"
-                kitty --title kitty-float glow -t "$read_dir/$choice"
-
-            case "Edit"
+            case "Edit/View"
                 kitty --title kitty-float nvim "$read_dir/$choice"
 
             case "Delete"
