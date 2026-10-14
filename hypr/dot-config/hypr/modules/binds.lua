@@ -4,6 +4,10 @@ hl.bind(MainMod .. " + Q", hl.dsp.window.close())
 hl.bind(MainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("gtk-launch $(xdg-settings get default-web-browser)"))
 hl.bind(MainMod .. " + D", hl.dsp.exec_cmd(Launcher))
 
+-- Rofi emoji
+hl.bind("SUPER + E", hl.dsp.exec_cmd("rofi -show emoji 2&>1 | wl-copy"))
+
+
 
 -- =====================================
 -- ==== Window/Workspace Management ====
