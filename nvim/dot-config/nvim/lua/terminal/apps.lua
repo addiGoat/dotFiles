@@ -24,6 +24,11 @@ local apps = {
         cmd = "spf",
         key = "<leader>tb"
     },
+    {
+        name = "Concord (Discord Client)",
+        cmd = "concord",
+        key = "<leader>dc"
+    },
 }
 
 function M.setup()
