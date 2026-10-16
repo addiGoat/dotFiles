@@ -10,6 +10,10 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.conceallevel = 2
 
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+
 vim.o.winborder = "rounded"
 vim.o.winblend = 5
 
