@@ -39,3 +39,4 @@ alias grep=     'grep --color=auto'
 
 
 abbr cx "chmod +x"
+abbr ollamacode "ollama launch opencode"
