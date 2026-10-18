@@ -1,24 +1,26 @@
 local languages = {
-    "lua",
-    "python",
-    "javascript",
     "cpp",
-    "html",
     "css",
+    "c_sharp",
+    "gdscript",
+    "html",
+    "javascript",
+    "lua",
     "markdown",
     "markdown_inline",
-    "gdscript",
+    "python",
 }
 
 local filetypes = {
-    "lua",
-    "python",
-    "javascript",
     "cpp",
-    "html",
+    "cs",
     "css",
-    "markdown",
     "gdscript",
+    "html",
+    "javascript",
+    "lua",
+    "markdown",
+    "python",
 }
 return {
     {
@@ -40,11 +42,5 @@ return {
                 end,
             })
         end,
-        -- opts = {
-        --     ensure_installed = { "lua", "python", "javascript", "cpp", "html", "css", "markdown" },
-        --     auto_install = true,
-        --     highlight = { enable = true },
-        --     indent = { enable = true }
-        -- }
     },
 }
