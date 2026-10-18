@@ -10,7 +10,7 @@ SETUVAR __fish_initialized:4300
 SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:\x7e/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/autopair\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/autopair\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
-SETUVAR fish_user_paths:/home/addigoat/Projects/Engines\x1e/home/addigoat/scripts\x1e/home/addigoat/BuildFiles/tiled/default/install\x2droot/usr/local/bin\x1e/home/addigoat/\x2ecargo/bin\x1e/home/addigoat/\x2escripts\x1e/home/addigoat/\x2espicetify\x1e/home/addigoat/\x2ediversion/bin\x1e/home/addigoat/\x2ediversion
+SETUVAR fish_user_paths:/home/addigoat/\x2edotnet/tools\x1e/home/addigoat/Projects/Engines\x1e/home/addigoat/scripts\x1e/home/addigoat/BuildFiles/tiled/default/install\x2droot/usr/local/bin\x1e/home/addigoat/\x2ecargo/bin\x1e/home/addigoat/\x2escripts\x1e/home/addigoat/\x2espicetify\x1e/home/addigoat/\x2ediversion/bin\x1e/home/addigoat/\x2ediversion
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_check_for_new_release:false
 SETUVAR pure_color_at_sign:pure_color_mute
