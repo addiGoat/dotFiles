@@ -21,3 +21,13 @@ hl.window_rule({
     name = "unreal-engine-rules",
     match = { class = "UnrealEditor" },
 })
+
+hl.window_rule({
+    name = "make youtube opaque",
+    match = {
+        class = "firefox",
+        title = "^.*- YouTube —.*$",
+    },
+
+    opacity = "1.0 override 1.0 override"
+})
