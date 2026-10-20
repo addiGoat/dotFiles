@@ -38,7 +38,7 @@ $character"""
 # ░
 # ╭─
 # ╰─
-palette = 'catppuccin_macchiato'
+palette = 'arctic'
 
 [os]
 disabled = true
@@ -179,6 +179,45 @@ style = "bg:lavender"
 disabled = false
 show_notifications = true
 min_time_to_notify = 45000
+
+[palettes.arctic]
+red = "#6488C4"
+peach = "#6995d8"
+yellow = "#77A6DA"
+green = "#8DBFE5"
+sapphire = "#A3D6ED"
+lavender = "#b4befe"
+surface2 = "#585b70"
+crust = "#363a4f"
+
+[palettes.twilight]
+red = "#7699df"
+peach = "#657acd"
+yellow = "#8189d7"
+green = "#a09ce2"
+sapphire = "#7db8dc"
+lavender = "#b4befe"
+surface2 = "#585b70"
+crust = "#11111b"
+
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+maroon = "#eba0ac"
+teal = "#94e2d5"
+sky = "#89dceb"
+blue = "#89b4fa"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
