@@ -51,7 +51,15 @@ if status is-interactive
 end
 
 function starship_transient_prompt_func
-    starship module character
+    set_color 585b70
+    printf "╭─ "
+    set_color 6488C4
+    printf "goat"
+    set_color 585b70
+    printf "\n╰─"
+    set_color --bold 77a6da
+    printf "❯ "
+    set_color normal
 end
 
 starship init fish | source
