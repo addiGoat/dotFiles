@@ -6,10 +6,7 @@
   "modules-left": [
       "custom/power", 
       "custom/sep5", 
-      "hyprland/workspaces",
-      "custom/sepLl#window", 
-      "hyprland/window", 
-      "custom/sepRr"
+      "hyprland/workspaces"
   ],
   "modules-center": [
       "custom/sepLl", 
