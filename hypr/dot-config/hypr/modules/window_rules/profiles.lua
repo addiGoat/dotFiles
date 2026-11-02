@@ -72,6 +72,10 @@ local window_profiles = {
         match = { class = "org.vinegarhq.Sober" },
         tags = { "game" },
     },
+    {
+        match = { class = "Spotify" },
+        tags = { "utility" },
+    },
 }
 
 for _, profile in ipairs(window_profiles) do
