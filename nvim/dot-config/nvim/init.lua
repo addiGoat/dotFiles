@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 require("config.opts")
 require("config.lsp")
 require("config.binds")
+require("config.autocmds")
 
 require("templates")
 
