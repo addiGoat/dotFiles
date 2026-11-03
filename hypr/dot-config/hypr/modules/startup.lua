@@ -6,6 +6,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("gpu-screen-recorder -w " .. MonitorOne .. " -f 60  -a default_output  -a default_input  -q very_high  -r 300  -o ~/Videos/Replays  -c mkv  -sc $HOME/scripts/save-replay")
     hl.exec_cmd("wl-paste --watch cliphist store")
     hl.exec_cmd("vesktop")
+    hl.exec_cmd("snappy-switcher --daemon")
 end)
 
 -- ENVIRONMENT VARIABLES --

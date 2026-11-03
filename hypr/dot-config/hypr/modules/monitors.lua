@@ -28,7 +28,7 @@ if env.is_desktop then
     -- Desktop
 	hl.monitor({
 		output = "DP-1",
-		mode = "2560x1440@164.96",
+		mode = "2560x1440@164.96Hz",
 		position = "1920x0",
 		scale = "1",
 	})

@@ -42,6 +42,9 @@ hl.bind("SUPER + T", hl.dsp.window.float({ action="toggle"}))
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag())
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize())
 
+-- Snappy Switcher
+hl.bind(MainMod .. " + Tab", hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
+hl.bind("SUPER + Tab", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod super"))
 
 -- =========================
 -- ==== Multimedia Keys ====

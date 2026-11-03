@@ -14,7 +14,7 @@ local window_profiles = {
     },
     {
         match = { class = "yad" },
-        tags = { "utility" },
+        tags = { "float" },
     },
     {
         match = { title = "kitty-lazygit" },
@@ -71,6 +71,10 @@ local window_profiles = {
     {
         match = { class = "org.vinegarhq.Sober" },
         tags = { "game" },
+    },
+    {
+        match = { class = "Spotify" },
+        tags = { "utility" },
     },
 }
 

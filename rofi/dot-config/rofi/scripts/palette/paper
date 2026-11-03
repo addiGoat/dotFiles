@@ -1,9 +1,9 @@
 #!/usr/bin/env fish
 
-set paperDir "$HOME/Pictures/Wallpapers"
+set -l quickpaper_dir "$HOME/.config/hyprquickpaper"
 
-set file (
-	command ls $paperDir | rofi -dmenu 
-)
+if not test -d "$quickpaper_dir"
+    exit 1
+end
 
-echo "loadfile $paperDir/$file" | socat - /tmp/mpv-socket
+qs -p "$quickpaper_dir"

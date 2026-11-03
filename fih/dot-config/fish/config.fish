@@ -32,6 +32,27 @@ if test -d ~/Applications/depot_tools
 end
 
 
+function smart-space
+    if test (commandline --current-token) = rr
+        commandline --current-token --replace './'
+    else
+        commandline -f expand-abbr
+        commandline -i ' '
+    end
+end
+
+function fish_vi_custom_bindings
+    bind -M default escape \
+        'set fish_bind_mode insert; commandline -f repaint-mode'
+    bind -M insert escape \
+        'set fish_bind_mode default; commandline -f repaint-mode'
+end
+
+function fish_universal_bindings
+    bind -M insert space smart-space
+    bind -M default space smart-space
+end
+
 function fish_greeting
     if not set -q NO_FETCH
         hyfetch
@@ -42,13 +63,16 @@ if status is-interactive
     if set -q NVIM
         fish_default_key_bindings
     else
-        function fish_user_key_bindings
-            fish_vi_key_bindings insert
-            bind -M default escape 'set fish_bind_mode insert; commandline -f repaint-mode'
-            bind -M insert escape 'set fish_bind_mode default; commandline -f repaint-mode'
-        end
+        fish_vi_key_bindings insert
+        fish_vi_custom_bindings
     end
+
+    fish_universal_bindings
 end
+
+
+
+
 
 function starship_transient_prompt_func
     set_color 585b70
