@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Unreal Launcher
+Comment=Custom launcher for Unreal Engine
+
+Type=Application
+Categories=Game
+
+Exec=/home/addigoat/.local/bin/unreal-launcher
