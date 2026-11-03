@@ -14,7 +14,7 @@ local window_profiles = {
     },
     {
         match = { class = "yad" },
-        tags = { "utility" },
+        tags = { "float" },
     },
     {
         match = { title = "kitty-lazygit" },
