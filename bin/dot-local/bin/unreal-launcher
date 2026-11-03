@@ -58,10 +58,11 @@ if test "$neovim_flag" = "TRUE"
     neovide -- --listen $nvim_socket &
 end
 
+printf "<%s>\n" $driver $prime $run_command
+
 env SDL_VIDEODRIVER=$driver $prime ~/UnrealEngine/5.8.2/Engine/Binaries/Linux/UnrealEditor \
     "$unreal_projects_dir/$project_paths[$index]"
 
-printf "<%s>\n" $driver $prime $run_command
 
 
 # set -l project_dir "$unreal_projects_dir/$project_paths[$index]"
