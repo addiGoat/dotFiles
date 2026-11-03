@@ -41,3 +41,4 @@ alias grep=     'grep --color=auto'
 abbr cx "chmod +x"
 abbr ollamacode "ollama launch opencode"
 abbr fixsway "systemctl --user restart swaync.service"
+abbr :q "exit"
