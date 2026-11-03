@@ -1,0 +1,76 @@
+#!/usr/bin/env fish
+
+set unreal_projects_dir "$HOME/Documents/Unreal Projects"
+
+cd $unreal_projects_dir
+
+# sub here to remove leading ./ for consistent variable behavior
+set project_paths (find -maxdepth 3 -name "*.uproject" | string sub --start 3)
+
+set project_names \
+(for project in $project_paths
+    set -l name (string sub --end -9 "$project" | string split --max 1 --right /)[2]
+    echo $name
+end)
+printf "%s\n" $project_names
+
+set -l form_result (
+    yad --title="Unreal Launcher" --text="Unreal Project Launcher" \
+        --form \
+            --field="Projects":CB (printf "%s" $project_names[1]; and printf "!%s" $project_names[2..]) \
+            --field="XWayland":CHK \
+            --field="Open Neovide?":CHK FALSE TRUE \
+        --width=300 --height=200; or echo "EXIT"
+    )
+    
+if test "$form_result" = "EXIT"; echo "user cancelled"; and exit 0; end
+
+\set -l results_list (string split "|" $form_result)
+
+set -l project_choice "$results_list[1]"
+set -l xwayland_flag "$results_list[2]"
+set -l neovim_flag "$results_list[3]"
+
+if test "$xwayland_flag" = "TRUE"
+    set driver "x11"
+end
+
+if test (cat /etc/hostname) = "archLaptop-addi"
+    set prime "prime-run"
+end
+
+printf "<%s>\n" "$project_choice" "$xwayland_flag" "$neovim_flag"
+
+
+set index 0
+for name in (string split ' ' "$project_names")
+    set index (math $index + 1)
+    if test "$name" = "$project_choice"
+        echo "match"
+        break
+    end
+end
+
+set -l nvim_socket "$XDG_RUNTIME_DIR/unreal-nvim.sock"
+set -lx NVIM $nvim_socket
+
+if test "$neovim_flag" = "TRUE"
+    neovide -- --listen $nvim_socket &
+end
+
+env SDL_VIDEODRIVER=$driver $prime ~/UnrealEngine/5.8.2/Engine/Binaries/Linux/UnrealEditor \
+    "$unreal_projects_dir/$project_paths[$index]"
+
+printf "<%s>\n" $driver $prime $run_command
+
+
+# set -l project_dir "$unreal_projects_dir/$project_paths[$index]"
+# echo "$unreal_projects_dir/$project_paths[$index]"
+    
+# yad --form \
+#     --title="Unreal Launcher" \
+#     --field="Project:CB" "Shooter!Gravity Prototype!Minesweeper" \
+#     --field="Use XWayland:CHK" FALSE \
+#     --field="Enable Logging:CHK" FALSE \
+#     --button="Launch:0" \
+#     --button="Cancel:1"
