@@ -35,6 +35,7 @@ hl.config({
         gaps_out = 20,
     },
     input = {
+        accel_profile = "flat",
         touchpad = {
             clickfinger_behavior = true,
         },
