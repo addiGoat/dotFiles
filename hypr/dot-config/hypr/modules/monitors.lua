@@ -1,29 +1,20 @@
-local env = require("modules.env")
-
--- Bind workspaces to monitors
-local monitor_one = "DP-1"
-local monitor_two = "HDMI-A-1"
-
-if env.is_laptop then
-    monitor_one = "eDP-1"
-end
-
 for i = 1, 5 do
     hl.workspace_rule({
         workspace = tostring(i),
-        monitor = monitor_one,
+        monitor = MonitorOne,
         default = true,
     })
 end
 for i = 6, 10 do
     hl.workspace_rule({
         workspace = tostring(i),
-        monitor = monitor_two,
+        monitor = MonitorTwo,
         default = true,
     })
 end
 
 -- Monitor advanced configuration
+local env = require("modules.env")
 if env.is_desktop then
     -- Desktop
 	hl.monitor({
