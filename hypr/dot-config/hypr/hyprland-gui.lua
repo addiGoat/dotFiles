@@ -91,16 +91,8 @@ hl.animation({
 hl.monitor({
     output = "HDMI-A-1",
     disabled = false,
-    mode = "2560x1440@144.00Hz",
+    mode = "1920x1080@143.98Hz",
     position = "0x150",
-    scale = 1,
-    cm = "srgb",
-})
-hl.monitor({
-    output = "eDP-1",
-    disabled = false,
-    mode = "2560x1600@165.00Hz",
-    position = "-2560x800",
     scale = 1,
     cm = "srgb",
 })

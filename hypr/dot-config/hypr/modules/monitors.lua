@@ -22,6 +22,7 @@ if env.is_desktop then
 		mode = "2560x1440@164.96Hz",
 		position = "1920x0",
 		scale = "1",
+        supports_hdr = -1
 	})
 
 	hl.monitor({
