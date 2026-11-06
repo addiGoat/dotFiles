@@ -6,6 +6,7 @@ require("config.opts")
 require("config.lsp")
 require("config.binds")
 require("config.autocmds")
+require("config.commands")
 
 require("templates")
 
