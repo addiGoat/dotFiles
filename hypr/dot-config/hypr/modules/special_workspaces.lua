@@ -28,6 +28,15 @@ hl.workspace_rule({
     on_created_empty = "chatgpt",
 })
 
+hl.bind("SUPER + N", hl.dsp.workspace.toggle_special("notion"))
+hl.window_rule({
+    name = "notion-special-workspace",
+    match = { class = "com.notion.app.desktop.notion" },
+    float = true,
+    workspace = "special:notion",
+    size = {1280, 720},
+})
+
 -- Discord workspace
 hl.bind(MainMod .. "+ SHIFT + D", hl.dsp.workspace.toggle_special("discord"))
 
