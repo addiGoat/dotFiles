@@ -6,7 +6,16 @@ return {
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
         },
         config = function()
+            local actions = require("telescope.actions")
             require('telescope').setup {
+                defaults = {
+                    mappings ={
+                        i = {
+                            ["<esc>"] = actions.close
+                        }
+                    },
+                },
+
                 pickers = {
                     find_files = {
                         theme = "ivy"
@@ -17,8 +26,9 @@ return {
             -- end
             local builtin = require("telescope.builtin")
             vim.keymap.set('n', '<Leader>ff', builtin.find_files, { desc = 'Search file names' })
-            vim.keymap.set('n', '<Leader>fg', builtin.live_grep, { desc = 'Search project file contents' })
+            vim.keymap.set('n', '<Leader>fg', builtin.live_grep, { desc = 'Live grep project' })
             vim.keymap.set('n', '<Leader>fh', builtin.help_tags, { desc = 'Search help docs' })
+            vim.keymap.set('n', '<Leader>fb', builtin.buffers, { desc = 'Search buffers' })
             vim.keymap.set('n', '<Leader>fc', function()
                 require('telescope.builtin').find_files {
                     cwd = vim.fn.stdpath("config")
