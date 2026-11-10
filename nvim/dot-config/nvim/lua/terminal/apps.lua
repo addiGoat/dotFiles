@@ -12,7 +12,7 @@ local apps = {
     },
     {
         name = "Floating Shell",
-        key = "<leader>tf",
+        key = "<leader>tt",
     },
     {
         name = "Cherri Docker",
