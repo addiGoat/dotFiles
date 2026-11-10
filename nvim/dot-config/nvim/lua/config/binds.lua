@@ -6,13 +6,20 @@ end
 -- General operation commands
 
 --  mode, keybind,      command,        description
-map('n',  '<leader>w',  '<cmd>w<CR>',   "Save Current")
-map('n',  '<leader>a',  '<cmd>wa<CR>',  "Save All")
-map('n',  '<leader>x',  '<cmd>wqa<CR>', "Save All & Quit")
-map('n',  '<leader>qq', '<cmd>q!<CR>',  "Quit Without Saving")
-map('n',  '<leader>qa', '<cmd>qa!<CR>', "Quit all buffers Without Saving")
+map('n', '<leader>w',  '<cmd>w<CR>',   "Save Current")
+map('n', '<leader>a',  '<cmd>wa<CR>',  "Save All")
+map('n', '<leader>x',  '<cmd>wqa<CR>', "Save All & Quit")
+map('n', '<leader>qq', '<cmd>q!<CR>',  "Quit Without Saving")
+map('n', '<leader>qa', '<cmd>qa!<CR>', "Quit all buffers Without Saving")
 
-map('n',  '<C-:>',      ':!',           "Run external shell command")
+map('n', '<C-:>',      ':!',           "Run external shell command")
+
+map("i", "<D-h>",      "<Left>",       "Move left in insert mode")
+map("i", "<D-j>",      "<Down>",       "Move down in insert mode")
+map("i", "<D-k>",      "<Up>",         "Move up in insert mode")
+map("i", "<D-l>",      "<Right>",      "Move right in insert mode")
+
+
 
 vim.api.nvim_create_user_command("W",    "w",    {})
 vim.api.nvim_create_user_command("Q",    "q",    {})
