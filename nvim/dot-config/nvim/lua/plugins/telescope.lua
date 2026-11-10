@@ -17,8 +17,12 @@ return {
                 },
 
                 pickers = {
-                    find_files = {
-                        theme = "ivy"
+                    buffers = {
+                        mappings = {
+                            i = {
+                                ["<C-q>"] = actions.delete_buffer
+                            }
+                        }
                     }
                 }
             }
