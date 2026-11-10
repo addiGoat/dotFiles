@@ -11,17 +11,24 @@ abbr ssh        'kitten ssh'
 abbr stow       'stow --dotfiles'
 abbr v          'nvim'
 abbr y          'yazi'
+alias jai jacket
+
 
 # Helpers
+abbr :q "exit"
+abbr cx "chmod +x"
 abbr fixlock    'sudo systemctl restart sddm'
+abbr fixportal  'systemctl --user restart xdg-desktop-portal.service'
+abbr fixsway "systemctl --user restart swaync.service"
 abbr ghrc       'gh repo create --private --source=. --remote=origin --push'
 abbr hyprupdate 'hyprpm update --verbose; and hyprpm reload'
+abbr neofish "cd ~/.config/fish/; and nvim"
+abbr neovos     'env NVIM_APPNAME=neovos nvim'
+abbr nvos       'nvim -u ~/.config/nvim-nvos/init.lua'
+abbr ollamacode "ollama launch opencode"
 abbr raybuild   'clang++ main.cpp -o main -lraylib'
 abbr tailget    'sudo tailscale file get /home/addigoat/Taildrop/'
 abbr userctl    'systemctl --user'
-abbr fixportal  'systemctl --user restart xdg-desktop-portal.service'
-abbr neovos     'env NVIM_APPNAME=neovos nvim'
-abbr nvos       'nvim -u ~/.config/nvim-nvos/init.lua'
 
 abbr kristal    '/usr/bin/love /home/addigoat/Projects/Engines/Kristal/'
 abbr kristail   'tail -f ~/Projects/Engines/Kristal/kristal.log'
@@ -35,10 +42,7 @@ abbr ls         'eza'
 abbr ll         'eza -l --no-user'
 
 # Color cli output as needed
-alias grep=     'grep --color=auto'
+alias grep     'grep --color=auto'
 
 
-abbr cx "chmod +x"
-abbr ollamacode "ollama launch opencode"
-abbr fixsway "systemctl --user restart swaync.service"
-abbr :q "exit"
+
