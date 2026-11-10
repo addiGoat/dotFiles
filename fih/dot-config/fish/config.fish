@@ -92,3 +92,5 @@ enable_transience
 
 zoxide init fish --cmd cd | source
 
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
