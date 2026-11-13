@@ -35,6 +35,7 @@ hl.config({
         gaps_out = 20,
     },
     input = {
+        accel_profile = "flat",
         touchpad = {
             clickfinger_behavior = true,
         },
@@ -91,15 +92,7 @@ hl.monitor({
     output = "HDMI-A-1",
     disabled = false,
     mode = "2560x1440@144.00Hz",
-    position = "0x150",
-    scale = 1,
-    cm = "srgb",
-})
-hl.monitor({
-    output = "eDP-1",
-    disabled = false,
-    mode = "2560x1600@165.00Hz",
-    position = "-2560x800",
+    position = "-5120x140",
     scale = 1,
     cm = "srgb",
 })
