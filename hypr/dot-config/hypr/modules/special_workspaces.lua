@@ -11,6 +11,7 @@ hl.bind("ALT + SHIFT + GRAVE", function()
 end)
 
 -- Chatgpt workspace
+local gpt_workspace = "special:chatgpt"
 hl.bind("SUPER + SHIFT + code:201", hl.dsp.workspace.toggle_special("chatgpt"))
 hl.bind("Menu", hl.dsp.workspace.toggle_special("chatgpt"))
 
@@ -18,40 +19,71 @@ hl.window_rule({
     name = "chatgpt-scratchpad",
     match = { class = "Chatgpt" },
     float = true,
-    workspace = "special:chatgpt silent",
+    workspace = gpt_workspace .. " silent",
     size = {1280, 720},
     move = {"monitor_w / 0.5", "monitor_h / 0.5"}
 })
 
-hl.workspace_rule({
-    workspace = "special:chatgpt",
-    on_created_empty = "chatgpt",
-})
+
+hl.on("workspace.created", function(ws)
+    if ws.name ~= gpt_workspace then
+        return
+    end
+
+    if ws.is_empty then
+        hl.exec_cmd("chatgpt", { workspace = gpt_workspace })
+    end
+end)
+
+-- Notion workspace
+local notion_workspace = "special:notion"
 
 hl.bind("SUPER + N", hl.dsp.workspace.toggle_special("notion"))
 hl.window_rule({
     name = "notion-special-workspace",
     match = { class = "com.notion.app.desktop.notion" },
     float = true,
-    workspace = "special:notion",
+    workspace = notion_workspace,
     size = {1280, 720},
 })
 
--- Discord workspace
-hl.bind(MainMod .. "+ SHIFT + D", hl.dsp.workspace.toggle_special("discord"))
 
+hl.on("workspace.created", function(ws)
+    if ws.name ~= notion_workspace then
+        return
+    end
+
+    if ws.is_empty then
+        hl.exec_cmd("com.notion.app.desktop.notion", { workspace = notion_workspace })
+    end
+end)
+
+-- Discord workspace
+local discord_workspace = "special:discord"
+
+hl.bind(MainMod .. "+ SHIFT + D", hl.dsp.workspace.toggle_special("discord"))
 hl.window_rule({
     name = "discord-scratchpad",
     match = { class = "vesktop" },
     float = true,
-    workspace = "special:discord silent",
+    workspace = discord_workspace .. " silent",
     size = {1280, 720},
     move = {"monitor_w / 0.5", "monitor_h / 0.5"}
 })
 
+
+hl.on("workspace.created", function(ws)
+    if ws.name ~= discord_workspace then
+        return
+    end
+
+    if ws.is_empty then
+        hl.exec_cmd("vesktop", { workspace = discord_workspace })
+    end
+end)
+
 hl.workspace_rule({
-    workspace = "special:discord",
-    on_created_empty = "vesktop",
+    workspace = discord_workspace,
     persistent = true
 })
 
@@ -84,7 +116,8 @@ hl.bind("SUPER + SHIFT + G", hl.dsp.window.move({ workspace = 20 }))
 -- Stop normal windows from opening on game workspace
 hl.on("window.open", function(w)
     -- 20 is the game workspace
-    if hl.get_active_workspace().id == 20 then
+    local active_ws = hl.get_active_workspace()
+    if active_ws and active_ws.id == 20 then
         if w.tags == nil then
             return
         end
