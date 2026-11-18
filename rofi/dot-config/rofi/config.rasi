@@ -4,7 +4,7 @@ configuration {
   show-icons: false;
   font: env(ROFI_FONT, "JetBrainsMono Nerd Font Medium 12");
 
-  modi: "drun,run,window,emoji,ssh";
+  modi: "drun,run,window,emoji,ssh,calc";
 
   drun {
     display-name: "run:";

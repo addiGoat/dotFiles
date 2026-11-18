@@ -4,7 +4,7 @@ local scripts = {
         name = "palette-launcher"
     },
     {
-        bind = "SUPER + M",
+        bind = "SUPER + L",
         name = "launch"
     },
     {

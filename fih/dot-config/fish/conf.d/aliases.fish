@@ -10,11 +10,14 @@ abbr pyenv      'source .venv/bin/activate.fish'
 abbr ssh        'kitten ssh'
 abbr stow       'stow --dotfiles'
 abbr v          'nvim'
+abbr ng         'nvim +Neogit'
 abbr y          'yazi'
-alias jai jacket
+abbr jai jacket
 
 
 # Helpers
+
+abbr -a thatone --position command --function __thatone
 abbr :q "exit"
 abbr cx "chmod +x"
 abbr fixlock    'sudo systemctl restart sddm'
@@ -22,18 +25,16 @@ abbr fixportal  'systemctl --user restart xdg-desktop-portal.service'
 abbr fixsway "systemctl --user restart swaync.service"
 abbr ghrc       'gh repo create --private --source=. --remote=origin --push'
 abbr hyprupdate 'hyprpm update --verbose; and hyprpm reload'
+abbr kristail   'tail -f ~/Projects/Engines/Kristal/kristal.log'
+abbr kristal    '/usr/bin/love /home/addigoat/Projects/Engines/Kristal/'
 abbr neofish "cd ~/.config/fish/; and nvim"
+abbr neoreal 'neovide -- --listen "$XDG_RUNTIME_DIR/unreal-nvim.sock" & disown'
 abbr neovos     'env NVIM_APPNAME=neovos nvim'
 abbr nvos       'nvim -u ~/.config/nvim-nvos/init.lua'
 abbr ollamacode "ollama launch opencode"
 abbr raybuild   'clang++ main.cpp -o main -lraylib'
 abbr tailget    'sudo tailscale file get /home/addigoat/Taildrop/'
 abbr userctl    'systemctl --user'
-
-abbr kristal    '/usr/bin/love /home/addigoat/Projects/Engines/Kristal/'
-abbr kristail   'tail -f ~/Projects/Engines/Kristal/kristal.log'
-
-abbr -a thatone --position command --function __thatone
 
 ## ---- replace/modify builtins ----
 

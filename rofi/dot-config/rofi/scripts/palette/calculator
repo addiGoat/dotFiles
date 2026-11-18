@@ -1,0 +1,4 @@
+#!/usr/bin/env fish
+
+rofi -show calc &
+return 0
