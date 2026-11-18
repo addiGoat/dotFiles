@@ -176,3 +176,9 @@ window#waybar {
     color: @text;
     background: @sep1; 
 }
+
+#custom-notification {
+    padding: 0 6px 0 0;
+    color: @text;
+    background: @sep2;
+}

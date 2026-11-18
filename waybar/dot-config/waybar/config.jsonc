@@ -24,6 +24,7 @@
       "custom/orbit", 
       "custom/sep2", 
       "battery", 
+      "custom/notification",
       "custom/sep3", 
       "pulseaudio", 
       "custom/sep4", 
@@ -192,6 +193,27 @@
 
   "pulseaudio": {
     "format": "󰕾 {volume}%",
-    "on-click": "/home/addigoat/scripts/pavu-wrapper.sh",
+    "on-click": "/home/addigoat/scripts/pavu-wrapper.sh"
+  },
+
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }
