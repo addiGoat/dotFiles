@@ -16,7 +16,3 @@ case "$choice" in
   "5 minutes") save_replay 4 ;;
   "") echo "user cancelled" && exit 0 ;;
 esac
-
-
-
-notify-send "Captured $choice"
