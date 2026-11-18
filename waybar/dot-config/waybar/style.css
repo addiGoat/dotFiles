@@ -15,7 +15,6 @@ window#waybar {
 }
 
 #workspaces {
-  margin-left: 65px;
   background: @base-bg;
 }
 
@@ -181,4 +180,15 @@ window#waybar {
     padding: 0 6px 0 0;
     color: @text;
     background: @sep2;
+}
+
+#submap {
+    margin: 0px;
+    padding: 0 4px;
+    color: @text;
+    background: @sep1;
+}
+
+#custom-spacer {
+    margin: 0 8px;
 }
