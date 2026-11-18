@@ -10,6 +10,7 @@ abbr pyenv      'source .venv/bin/activate.fish'
 abbr ssh        'kitten ssh'
 abbr stow       'stow --dotfiles'
 abbr v          'nvim'
+abbr ng         'nvim +Neogit'
 abbr y          'yazi'
 abbr jai jacket
 
