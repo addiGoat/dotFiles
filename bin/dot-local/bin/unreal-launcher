@@ -51,6 +51,8 @@ for name in (string split ' ' "$project_names")
     end
 end
 
+cd "$unreal_projects_dir/$project_paths[$index]"
+
 set -l nvim_socket "$XDG_RUNTIME_DIR/unreal-nvim.sock"
 set -lx NVIM $nvim_socket
 
