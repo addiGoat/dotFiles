@@ -70,7 +70,7 @@
     "format-wifi": " ",
     "tooltip": true,
     "tooltip-format": "{essid} - {signalStrength}%",
-    "format-ethernet": "󰈀  Connected",
+    "format-ethernet": "󰈀",
     "format-disconnected": "  Offline",
     "on-click": "orbit toggle --tab wifi"
   },
