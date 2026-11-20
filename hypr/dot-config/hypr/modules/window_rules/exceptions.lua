@@ -32,3 +32,12 @@ hl.window_rule({
 
     opacity = "1.0 override 1.0 override"
 })
+
+hl.window_rule({
+    name = "spotify-scratchpad",
+    match = {
+        class = "Spotify",
+        initial_title = "Spotify"
+    },
+    workspace = "special:scratchpad"
+})
