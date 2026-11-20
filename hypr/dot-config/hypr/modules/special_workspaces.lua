@@ -134,3 +134,20 @@ hl.on("window.open", function(w)
 
     end
 end)
+
+
+-- Scrolling Experiment
+
+hl.workspace_rule({
+    workspace = "15",
+    layout = "scrolling"
+})
+
+hl.config({
+    scrolling = {
+        column_width = 1.0,
+        direction = "right",
+        focus_fit_method = 1,
+        wrap_focus = false,
+    },
+})

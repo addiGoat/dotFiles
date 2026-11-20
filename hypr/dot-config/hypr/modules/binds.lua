@@ -30,6 +30,9 @@ hl.bind(MainMod .. " + j", hl.dsp.focus({ direction = "down" }))
 hl.bind(MainMod .. " + k", hl.dsp.focus({ direction = "up" }))
 hl.bind(MainMod .. " + l", hl.dsp.focus({ direction = "right" }))
 
+hl.bind("SUPER + mouse_up", hl.dsp.focus({ direction = "left" }))
+hl.bind("SUPER + mouse_down", hl.dsp.focus({ direction = "right" }))
+
 hl.bind(MainMod .. " + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
 hl.bind(MainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
 hl.bind(MainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
