@@ -76,6 +76,10 @@ local window_profiles = {
         match = { class = "Spotify" },
         tags = { "utility" },
     },
+    {
+        match = { title = "Unreal Launcher" },
+        tags = { "utility" },
+    },
 }
 
 for _, profile in ipairs(window_profiles) do
