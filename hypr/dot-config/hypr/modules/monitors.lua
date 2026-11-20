@@ -1,14 +1,14 @@
 for i = 1, 5 do
     hl.workspace_rule({
         workspace = tostring(i),
-        monitor = MonitorOne,
+        monitor = MonitorTwo,
         default = true,
     })
 end
 for i = 6, 10 do
     hl.workspace_rule({
         workspace = tostring(i),
-        monitor = MonitorTwo,
+        monitor = MonitorOne,
         default = true,
     })
 end
