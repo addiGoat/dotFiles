@@ -19,6 +19,10 @@ map('i', '<D-k>',      '<Up>',         'Move up in insert mode')
 map('i', '<D-l>',      '<Right>',      'Move right in insert mode')
 map('n', '<Tab>',      'za',           'Toggle fold')
 
+map('n', '<leader>cn', '<cmd>cnext<CR>', 'Jump to next quickfix')
+map('n', '<leader>cp', '<cmd>cprev<CR>', 'Jump to previous quickfix')
+map('n', '<leader>co', '<cmd>copen<CR>', 'Open quickfix menu')
+map('n', '<leader>cx', '<cmd>cclose<CR>', 'Close quickfix menu')
 
 vim.api.nvim_create_user_command("W",    "w",    {})
 vim.api.nvim_create_user_command("Q",    "q",    {})
