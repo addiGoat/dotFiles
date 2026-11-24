@@ -1,22 +1,23 @@
-for i = 1, 5 do
-    hl.workspace_rule({
-        workspace = tostring(i),
-        monitor = MonitorTwo,
-        default = true,
-    })
-end
-for i = 6, 10 do
-    hl.workspace_rule({
-        workspace = tostring(i),
-        monitor = MonitorOne,
-        default = true,
-    })
-end
 
 -- Monitor advanced configuration
 local env = require("modules.env")
 if env.is_desktop then
     -- Desktop
+    for i = 1, 5 do
+        hl.workspace_rule({
+            workspace = tostring(i),
+            monitor = MonitorOne,
+            default = true,
+        })
+    end
+    for i = 6, 10 do
+        hl.workspace_rule({
+            workspace = tostring(i),
+            monitor = MonitorTwo,
+            default = true,
+        })
+    end
+
 	hl.monitor({
 		output = "DP-1",
 		mode = "2560x1440@164.96Hz",
@@ -39,6 +40,20 @@ if env.is_desktop then
     })
 else
     -- Laptop
+    for i = 1, 5 do
+        hl.workspace_rule({
+            workspace = tostring(i),
+            monitor = MonitorTwo,
+            default = true,
+        })
+    end
+    for i = 6, 10 do
+        hl.workspace_rule({
+            workspace = tostring(i),
+            monitor = MonitorOne,
+            default = true,
+        })
+    end
 	hl.monitor({
 		output = "eDP-1",
 		mode = "2560x1600@165",
