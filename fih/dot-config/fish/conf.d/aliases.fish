@@ -45,5 +45,7 @@ abbr ll         'eza -l --no-user'
 # Color cli output as needed
 alias grep     'grep --color=auto'
 
-
-
+# Automatically pipe help output through bat
+abbr -a --position anywhere -- --help '--help | bat -plhelp'
+abbr mesonc "meson compile -C build"
+abbr mesoninit "meson setup build"
