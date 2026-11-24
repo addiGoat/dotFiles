@@ -28,6 +28,9 @@ vim.opt.foldenable = true
 
 vim.opt.foldcolumn = "1"
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 vim.opt.fillchars = {
     foldopen = "",
     foldclose = "",
