@@ -80,6 +80,10 @@ local window_profiles = {
         match = { title = "Unreal Launcher" },
         tags = { "utility" },
     },
+    {
+        match = { initial_title = "HyprFM" },
+        tags = { "utility" },
+    },
 }
 
 for _, profile in ipairs(window_profiles) do
