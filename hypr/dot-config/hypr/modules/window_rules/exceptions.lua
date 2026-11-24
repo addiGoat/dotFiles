@@ -20,7 +20,8 @@ hl.window_rule({
 hl.window_rule({
     name = "unreal-engine-rules",
     match = { class = "UnrealEditor" },
-    no_initial_focus = true
+    no_initial_focus = true,
+    opaque = true
 })
 
 hl.window_rule({
