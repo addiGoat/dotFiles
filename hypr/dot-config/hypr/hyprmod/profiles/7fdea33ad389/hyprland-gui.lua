@@ -96,6 +96,14 @@ hl.monitor({
     scale = 1,
     cm = "srgb",
 })
+hl.monitor({
+    output = "eDP-1",
+    disabled = false,
+    mode = "2560x1600@165.00Hz",
+    position = "-2560x710",
+    scale = 1,
+    cm = "srgb",
+})
 
 -- Workspaces
 hl.workspace_rule({
