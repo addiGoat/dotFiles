@@ -1,4 +1,5 @@
 #!/usr/bin/env fish
 
-rofi -show calc &
+rofi -show calc -modi calc -no-show-match -no-sort \
+    -calc-command "printf '%s' '{result}' | wl-copy"
 return 0
